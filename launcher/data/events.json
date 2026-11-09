@@ -1,0 +1,4 @@
+{
+  "_doc": "Launcher events. Shown only while start <= now < end, on the player's clock. start/end are ISO 8601 with an offset (Lisbon: +00:00 in winter, +01:00 in summer). kind is free text; short is the 1-3 word label for the week strip. Leave the list empty when nothing runs: the strip then says NO EVENTS. Example entry: {\"id\":\"exp-weekend\",\"kind\":\"exp\",\"short\":{\"en\":\"EXP ×2\",\"pt\":\"EXP ×2\"},\"title\":{\"en\":\"Double EXP all weekend\",\"pt\":\"EXP a dobrar todo o fim de semana\"},\"body\":{\"en\":\"...\",\"pt\":\"...\"},\"start\":\"2026-11-13T18:00:00+00:00\",\"end\":\"2026-11-15T23:59:00+00:00\"}",
+  "events": []
+}

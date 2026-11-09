@@ -1,0 +1,28 @@
+{
+  "_": "Cinematic constants. cine9: body frames 1600x900 (3x supersampled render, Lanczos, WebP q92), fx layer 1280x720 (soft glows), so the 1280x720 stage, scaled up to 1.6x by the page, is not upsampled more than 1.3x (was 1.6x with the 1280 frames); the sword flash and its sound cue are gone. Anything missing or invalid falls back to the defaults in the page.",
+  "frames": 72,
+  "fxFrames": 72,
+  "handoffFrame": 60,
+  "fps": 30,
+  "rate": 1.25,
+  "bodyWidth": 1600,
+  "bodyHeight": 900,
+  "fxWidth": 1280,
+  "fxHeight": 720,
+  "fxFadeFrom": 9999,
+  "folder": "img/cine/",
+  "idle": "idle.webp",
+  "body": "b{n}.webp",
+  "fx": "f{n}.jpg",
+  "sound": {
+    "voice": "audio/omegamon_skill01.mp3",
+    "voiceOffset": 0.65,
+    "sync": {
+      "_": "R107 and later: the voice is placed so its loud peak (0.30 s into the clip) lands on the swoop at frame 28 and its tail ends before the shot. cine9: no sword cue (file left in audio/, never requested or played).",
+      "voiceOffset": 0.45,
+      "voiceGain": 1,
+      "duckTo": 0.35,
+      "duckMs": 90
+    }
+  }
+}

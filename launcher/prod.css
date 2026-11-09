@@ -1,0 +1,41 @@
+/* Terminus launcher — production layer styles. The review bar and every control with no real backing go away. */
+html.prod, html.prod body { background: #000208 }
+html.prod .review, html.prod #verTag, html.prod #selftest-out { display: none !important }
+html.prod body { display: block !important }
+html.prod #win { box-shadow: none; outline: 0 }
+/* no backing in the launcher exe (yet): compact strip, per-start display menu, game graphics, download limit, install folder, open folder/logs */
+html.prod #ylb, html.prod .prod-off, html.prod #dlogs { display: none !important }
+html.prod #win.nodiscord .comm { display: none !important }
+/* exe features appear only when the exe says it has them */
+html.prod #win:not(.caps2) .sh-a { display: none !important }
+html.prod #win:not(.caps2) [aria-label=Minimise] { visibility: hidden !important }
+/* the server dot while the first check is out */
+html.prod #win .srv .d.wait { background: #4B8AA5; box-shadow: none }
+/* the demo's in-page tray card: the real launcher uses the Windows notification-area icon instead */
+html.prod .tray { display: none !important }
+/* native pass: the BUILD chip is plain text, headlines are not links, no settings 'apply on next launch' counter */
+html.prod #ph2:not(.er) { cursor: default !important }
+html.prod #story h1 { cursor: default !important }
+html.prod #sfoot .c { visibility: hidden }
+/* no native scrollbars anywhere: every scrolling panel has its own teal position marker */
+html.prod *, html.prod { scrollbar-width: none }
+html.prod *::-webkit-scrollbar, html.prod::-webkit-scrollbar { width: 0; height: 0; display: none }
+/* Discord opens through the exe (open-url); an exe without it gets no dead button */
+html.prod #win:not(.caps2) .comm { display: none !important }
+/* the review page's 15 px top gutter pushed the launcher's last 15 px out of the window (portrait cut at the bottom) */
+html.prod #fit { padding: 0 !important }
+/* R132 audit (prod): the frame belongs to the window, not the scaled canvas (no 7 px inset at 1158x644) */
+html.prod #win.r131::after { display: none }
+html.prod body::after { content: ''; position: fixed; inset: 0; border: 1px solid rgba(47,182,216,.42); box-shadow: inset 0 0 0 1px rgba(0,2,8,.55), inset 0 0 22px rgba(47,182,216,.07); pointer-events: none; z-index: 2147483000 }
+/* the status line under the bar title never wraps into a second line that would lift the row */
+html.prod #win .prog .sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+/* a dimmed story behind progress stays readable */
+html.prod #win:is([data-st=verify],[data-st=dl],[data-st=running],[data-st=launching]) .story { opacity: .75 !important }
+html.prod #win:is([data-st=verify],[data-st=dl],[data-st=running],[data-st=launching]) .story .kc { visibility: hidden }
+html.prod #win:not(.capcompact) #cmp { visibility: hidden !important; pointer-events: none }
+/* the invisible settings warm-up never shows or animates */
+html.prod #win.prewarm .sheet, html.prod #win.prewarm .scrim { visibility: hidden !important; transition: none !important }
+/* while the story is dimmed the key hint takes no space (the Read button stays centred) */
+html.prod #win:is([data-st=verify],[data-st=dl],[data-st=running],[data-st=launching]) .story .kc { display: none !important }
+/* the launch view's labels stay off the cinematic's arm */
+html.prod #win .world .wl { max-width: 420px }
