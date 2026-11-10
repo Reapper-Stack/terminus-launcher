@@ -1,6 +1,6 @@
 {
  "counts": {
-  "bytes": 6529929684,
+  "bytes": 6529962073,
   "files": 21966
  },
  "files": [
@@ -26,8 +26,9 @@
   },
   {
    "path": "DigimonTerminus_Data/Managed/Assembly-CSharp.dll",
-   "sha256": "2a351c9c58043850c33fa1705189264c5147199f546e4d4d20e0420f9a7dc563",
-   "size": 3940352
+   "sha256": "a743d1630b0b6bf9829091a0f9a8a45c38183cdb4f7d8c09ff6b8a64a87cd1ca",
+   "size": 3972608,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026110903/a743d1630b0b6bf9_Assembly-CSharp.dll"
   },
   {
    "path": "DigimonTerminus_Data/Managed/Mono.Security.dll",
@@ -551,8 +552,9 @@
   },
   {
    "path": "DigimonTerminus_Data/RuntimeInitializeOnLoads.json",
-   "sha256": "dc458b96b615fbac6e0024730a0305b53355a9b400acb25a414db41a37b964d3",
-   "size": 1212
+   "sha256": "dad0a4a4e53b6f88069004c8d4a84b3b7c83378104964f90f849a0a46931e2dc",
+   "size": 1345,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026110903/dad0a4a4e53b6f88_RuntimeInitializeOnLoads.json"
   },
   {
    "path": "DigimonTerminus_Data/ScriptingAssemblies.json",
@@ -108816,13 +108818,27 @@
   },
   {
    "path": "DigimonTerminus_Data/boot.config",
-   "sha256": "f922ea403d3c6dcc1b8eb6fd4927c3cd9335b271900abf4949954fbd55a308a7",
-   "size": 156
+   "sha256": "879b6f04b039ece194f3a8f2ee96343d7c2b7e19087cb96a4ab50853f4fc656b",
+   "size": 156,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026110903/879b6f04b039ece1_boot.config"
   },
   {
+   "parts": [
+    {
+     "sha256": "6bbe63fdf2bfa0930697b51f27c9ac2468a34eab241be42e67e8bd70d375e967",
+     "size": 2040109465,
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026110903/6bbe63fdf2bfa093_data.unity3d.p000"
+    },
+    {
+     "sha256": "0425b7b727d18ebf555a5e806275068dcb7a7d7b2467486ad6b69df0aa81f569",
+     "size": 1103763603,
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026110903/0425b7b727d18ebf_data.unity3d.p001"
+    }
+   ],
    "path": "DigimonTerminus_Data/data.unity3d",
-   "sha256": "69b09808907f9261d4e52ba619fb7c1d2db209b4b467a9b673bee96d633679ae",
-   "size": 3143873068
+   "sha256": "8994ec933a6b96d74687031c3d3da509a75df3c96905296bbef37b4ada433b2f",
+   "size": 3143873068,
+   "url": "urn:dso:parts-only"
   },
   {
    "path": "LauncherLib/Microsoft.Web.WebView2.Core.dll",
@@ -109835,9 +109851,9 @@
    "size": 42556
   }
  ],
- "minimumVersion": 2026110902,
+ "minimumVersion": 2026110903,
  "patches": [],
  "playExe": "DigimonTerminus.exe",
  "schema": "dso-launcher-manifest/1",
- "version": 2026110902
+ "version": 2026110903
 }
