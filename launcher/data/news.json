@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026110904",
+      "date": "2026-11-10",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Update 2026110904: guilds, parties and a sturdier launcher",
+        "pt": "Update 2026110904: guildas, parties e um launcher mais robusto"
+      },
+      "body": {
+        "en": "Guilds now show new members joining and who is online or offline. Your party is told when a member disconnects. HP/DS absorb effects and auras now appear in game. Personal shops explain why a listing was refused. The launcher retries a failed update check, cleans up old files and can save a crash report for you to send us.",
+        "pt": "As guildas mostram agora a entrada de novos membros e quem está online ou offline. A tua party é avisada quando um membro se desliga. Os efeitos de absorção de HP/DS e as auras aparecem no jogo. As lojas pessoais explicam porque é que um item foi recusado. O launcher volta a tentar quando a verificação de update falha, limpa ficheiros antigos e pode guardar um relatório de erro para nos enviares."
+      }
+    },
+    {
       "id": "update-2026110903",
       "date": "2026-11-10",
       "tag": "client",
