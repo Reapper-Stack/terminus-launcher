@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026110905",
+      "date": "2026-11-11",
+      "tag": "client",
+      "thumb": "img/thumbs/n2.png",
+      "title": {
+        "en": "Update 2026110905: buy-back, clearer HUD and new sounds",
+        "pt": "Update 2026110905: recompra, HUD mais claro e novos sons"
+      },
+      "body": {
+        "en": "NPC shops now let you buy back the last items you sold. The target window shows attributes and more tooltips, buffs explain themselves, and middle-click resets the camera. Chat colours survive line breaks. Tamers and Digimon now sound when they appear and leave. Guilds need a real Guild Permit, and using an item on cool-down tells you why. The launcher protects your install folder better.",
+        "pt": "As lojas dos NPC deixam-te recomprar os últimos itens que vendeste. A janela do alvo mostra atributos e mais tooltips, os buffs explicam-se e o botão do meio do rato repõe a câmara. As cores do chat mantêm-se nas quebras de linha. Tamers e Digimon passam a ter som ao aparecer e ao sair. Criar uma guilda exige uma Licença de Guilda verdadeira, e usar um item em cooldown diz-te porquê. O launcher protege melhor a pasta do jogo."
+      }
+    },
+    {
       "id": "update-2026110904",
       "date": "2026-11-10",
       "tag": "client",
