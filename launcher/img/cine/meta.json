@@ -1,8 +1,8 @@
 {
-  "_": "Cinematic constants. cine9: body frames 1600x900 (3x supersampled render, Lanczos, WebP q92), fx layer 1280x720 (soft glows), so the 1280x720 stage, scaled up to 1.6x by the page, is not upsampled more than 1.3x (was 1.6x with the 1280 frames); the sword flash and its sound cue are gone. Anything missing or invalid falls back to the defaults in the page.",
-  "frames": 72,
-  "fxFrames": 72,
-  "handoffFrame": 60,
+  "_": "Cinematic constants. omni_bs01: Omnimon skill bs01 (sword), game shaders (Lab TS materials), the game's real skill camera, source frames 36..140 of 141 (30 fps). Body 1600x900 WebP q92 straight alpha, fx 1280x720 on black (screen). No whiteout: the cinematic ends on the fire slash and the page holds that last frame until the game runs (owner 2026-11-11).",
+  "frames": 105,
+  "fxFrames": 105,
+  "handoffFrame": 93,
   "fps": 30,
   "rate": 1.25,
   "bodyWidth": 1600,
@@ -18,11 +18,14 @@
     "voice": "audio/omegamon_skill01.mp3",
     "voiceOffset": 0.65,
     "sync": {
-      "_": "R107 and later: the voice is placed so its loud peak (0.30 s into the clip) lands on the swoop at frame 28 and its tail ends before the shot. cine9: no sword cue (file left in audio/, never requested or played).",
+      "_": "omni_bs01: the sword cue lands on the fire burst (source frame 101); the voice keeps its R107 place (peak 0.30 s into the clip) over the blade close-up and ducks the sword while it speaks.",
       "voiceOffset": 0.45,
       "voiceGain": 1,
       "duckTo": 0.35,
-      "duckMs": 90
-    }
+      "duckMs": 90,
+      "swordOffset": 1.68,
+      "swordGain": 0.9
+    },
+    "sword": "audio/sword01.mp3"
   }
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terminus Launcher — 136 rounds</title>
+<title>Terminus Launcher — 137 rounds</title>
 <link rel="icon" href="data:,">
 <style>
   /* One hundred rounds, cumulative: round N = round N-1 + one change. #win gets classes r1..rN.
@@ -1045,6 +1045,7 @@
   #win.big .skb{left:375px;width:1225px;height:900px} #win.big .skf{width:1600px;height:900px}
   #win.skplay .skb,#win.skplay .skf{display:block} #win.skplay .pair,#win.skhold .pair{visibility:hidden!important;opacity:0!important}
   #win.skhold .skb{display:block}
+  #win.r137.skhold .skf{display:block}
   #win.mini .skb,#win.mini .skf{display:none!important}
 
   /* R104 skip chip · R105 setting row · R106 scene progress */
@@ -1397,7 +1398,7 @@ window.__errs=[];addEventListener("error",function(e){__errs.push("error: "+e.me
     '<b>Round 60 · Cleanup.</b> Dropped: wordmark hairline, server load meter and LIVE badges. The community link (Discord) shrinks to an icon with a tooltip; key hints show after a keypress.',
     '<b>Round 61 · Retired.</b> The cannon-fire effect was removed: PLAY goes straight to the launch sequence.'
 ];
-  var NR=136, R=1, L='en', EVT='double-drops';
+  var NR=137, R=1, L='en', EVT='double-drops';
   // the state each round opens on, so its one change is visible on arrival
   var SHOW={42:'open',46:'article',47:'installing',48:'newsoff',49:'disk',50:'takeover',51:'winter',52:'sheet',53:'tips',54:'hover',55:'ribbon',56:'status',58:'running',59:'notes',12:'install',13:'running',14:'notes',18:'neterr',19:'keys',20:'pt',25:'update',26:'notes',27:'maint',28:'launching',31:'install',32:'mini',33:'big',34:'sheet',35:'crashed',36:'neterr',38:'dl',39:'a11y'};
   var MINR={skill:101,newsoff:48,takeover:50,winter:51,install:12,installing:12,running:13,neterr:18,damaged:18,maint:27,launching:28,crashed:35};
@@ -2500,6 +2501,7 @@ NOTES[133]='<b>Round 133 · Re-measured.</b> Equal 32 px top-bar boxes, a still 
 NOTES[134]='<b>Round 134 · The last pixels.</b> PLAY label on the plate centre, all window buttons 32 px, compact focus ring fully visible.';
 NOTES[135]='<b>Round 135 · Motion defects.</b> Fixed-size close and pager boxes, cue chip clear of the bar, pager holds the news, one name: Omegamon.';
 NOTES[136]='<b>Round 136 · Quiet power.</b> Lighter effects (30 motes, 2 soft beams, no sweep); headlines cross-fade; PLAY gleams on hover and every 8 s.';
+NOTES[137]='<b>Round 137 · Omegamon’s skill.</b> The launch cinematic is now his sword skill, rendered with the game’s own shaders and its real skill camera: blade and sparks, close-up, the fire slash. It ends on the fire slash, which stays on screen until the game runs (no whiteout). Press PLAY (or Skill in the bar).';
   /* R136 proposal: headline cross-fade — keep a ghost of the old story while the new one rises */
   (function () { var _s136 = show; show = function (i) {
     var st = $('story'); if (!W.classList.contains('r136') || !st || !st.firstChild || W.classList.contains('rm') || i === undefined || i === cur) { _s136(i); return }
@@ -2909,11 +2911,15 @@ function draw(r,i){var P=r.P,bm=best(r,'b',i),fm=best(r,'f',i),a=cb.getContext('
 function clearCv(){cb.getContext('2d').clearRect(0,0,cb.width,cb.height);cf.getContext('2d').clearRect(0,0,cf.width,cf.height)}
 function resetCv(){clearTimeout(fadeT);cb.style.display='';cf.style.display='';cb.style.opacity='';cf.style.opacity='';cb.style.transition='';cf.style.transition='';camOff()}
 function release(){clearTimeout(holdT);W.classList.remove('skhold');if(!holding)return;holding=false;
+ if(lastP&&lastP.key==='cine'&&has('r137')&&!rm()){cb.style.transition='opacity .6s ease-out';cf.style.transition='opacity .6s ease-out';cb.style.opacity='0';cf.style.opacity='0';clearTimeout(fadeT);fadeT=setTimeout(function(){resetCv();clearCv()},660);return}
  if(!rm()){cb.style.display='block';cb.style.opacity='1';cb.style.transition='none';void cb.offsetWidth;cb.style.transition='opacity .6s ease-out';cb.style.opacity='0';
   clearTimeout(fadeT);fadeT=setTimeout(function(){cb.style.display='';cb.style.opacity='';cb.style.transition='';cb.getContext('2d').clearRect(0,0,cb.width,cb.height);camOff()},650)}
  else{cb.getContext('2d').clearRect(0,0,cb.width,cb.height);camOff()}}
 /* the canvases keep their own pixels, so the bitmaps are already closed while the last frame dissolves */
 function endVisual(P,hold,quick){var ms=quick?240:500;
+ /* R137: after PLAY the last frame stays on screen while the game starts; it only dissolves when the launch is over (state change) or after 30 s */
+ if(P.key==='cine'&&has('r137')&&hold&&!quick&&W.dataset.st==='launching'&&!rm()){W.classList.remove('skplay');cb.style.display='block';cf.style.display='block';cb.style.transition='none';cf.style.transition='none';cb.style.opacity='1';cf.style.opacity='1';
+  holding=true;W.classList.add('skhold');clearTimeout(holdT);holdT=setTimeout(release,30000);return}
  if(P.key==='cine'&&!rm()){W.classList.remove('skplay');cb.style.display='block';cf.style.display='block';cb.style.transition='none';cf.style.transition='none';cb.style.opacity='1';cf.style.opacity='1';void cb.offsetWidth;
   cb.style.transition='opacity '+ms+'ms ease-out';cf.style.transition='opacity '+ms+'ms ease-out';cb.style.opacity='0';cf.style.opacity='0';clearTimeout(fadeT);fadeT=setTimeout(function(){resetCv();clearCv()},ms+60);return}
  cf.getContext('2d').clearRect(0,0,cf.width,cf.height);W.classList.remove('skplay');
@@ -2998,6 +3004,6 @@ function pinLoad(f){W.classList.add('cinepin','cineload');W.style.setProperty('-
 window.__SK.pin=pin;window.__SK.unpin=unpin;window.__SK.pinLoad=pinLoad;
 var m=/-sk(\d+)/.exec(location.hash);if(m)still(+m[1]);
 })();
-</script><div id="verTag">build 2026-11-07 UX · R136</div>
+</script><div id="verTag">build 2026-11-11 UX · R137</div>
 </body>
 </html>
