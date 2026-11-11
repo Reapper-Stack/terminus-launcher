@@ -397,7 +397,22 @@
 
   function pager() { var g = $('pgn'), n = T.vis().length; if (g && n) g.textContent = ((T.vis().indexOf(curIdx()) + 1) || 1) + ' / ' + n }
   function curIdx() { var on = document.querySelector('#rail .ri.on'); return on ? +on.dataset.i : 0 }
-  if ($('story')) new MutationObserver(function () { setTimeout(pager, 0) }).observe($('story'), { childList: true });
+  /* the hero clamps a long story (prod.css); the notes panel opens with that story in full, above the patch notes */
+  function fillNews() {
+    var nt = $('notes'), n = (T.NEWS[T.L] || [])[curIdx()]; if (!nt || !n || !$('pnv')) return;
+    var b = $('pnnews'); if (!b) { b = document.createElement('div'); b.id = 'pnnews'; nt.insertBefore(b, $('pnv')) }
+    var html = '<div class="eb">' + n.d + ' · ' + n.t + '</div><h3>' + n.h + '</h3><p>' + n.p + '</p>';
+    if (b.innerHTML !== html) b.innerHTML = html;
+  }
+  new MutationObserver(function () { if (W.classList.contains('notesopen')) fillNews() }).observe(W, { attributes: true, attributeFilter: ['class'] });
+  if ($('pnb')) new MutationObserver(fillNews).observe($('pnb'), { childList: true });
+  /* the title keeps the shipped fit (fit-story shrinks it 2px a step, down to 30px, until the story clears the tabs);
+     only a title still over 2 lines after that is cut to 2 (.long, plain wrapping before the ellipsis) */
+  function clampTitle() { var h = document.querySelector('#story h1'); if (!h) return; h.classList.remove('long'); if (window.__fitStory) window.__fitStory();
+    var lh = parseFloat(getComputedStyle(h).lineHeight) || parseFloat(getComputedStyle(h).fontSize) * 1.06; h.classList.toggle('long', h.getBoundingClientRect().height > 2 * lh + 1) }
+  if ($('story')) new MutationObserver(function () { setTimeout(pager, 0); setTimeout(clampTitle, 40) }).observe($('story'), { childList: true });
+  new MutationObserver(function () { setTimeout(clampTitle, 40) }).observe(W, { attributes: true, attributeFilter: ['class', 'data-st'] });
+  addEventListener('resize', function () { setTimeout(clampTitle, 0) });
   if ($('ph2')) $('ph2').addEventListener('click', function (e) {
     e.stopImmediatePropagation(); if (!this.classList.contains('er')) return;
     var t = this.textContent + ' · BUILD ' + buildLabel() + ' · ' + new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';

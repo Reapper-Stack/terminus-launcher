@@ -37,5 +37,14 @@ html.prod #win:not(.capcompact) #cmp { visibility: hidden !important; pointer-ev
 html.prod #win.prewarm .sheet, html.prod #win.prewarm .scrim { visibility: hidden !important; transition: none !important }
 /* while the story is dimmed the key hint takes no space (the Read button stays centred) */
 html.prod #win:is([data-st=verify],[data-st=dl],[data-st=running],[data-st=launching]) .story .kc { display: none !important }
+/* a long news item never runs over the tabs and cards: the body keeps 2 lines (the approved spacing above the tabs at
+   1158x644); the title first shrinks as it always did (fit-story), and only a title still over 2 lines at the smallest
+   size is cut to 2 (.long); the read button stays in place and the notes panel carries the full text */
+html.prod #win .story p, html.prod #win .story h1.long { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden }
+html.prod #win .story h1.long { text-wrap: wrap; font-size: 30px !important }
+#pnnews { margin-top: 18px; padding: 14px 0 16px; border-top: 1px solid var(--un); border-bottom: 1px solid var(--un) }
+#pnnews .eb { font: 11px Consolas, monospace; color: var(--lb); letter-spacing: 2px }
+#pnnews h3 { margin: 8px 0; font: 400 24px/1.2 Georgia, serif; color: var(--gl) }
+#pnnews p { margin: 0; font-size: 14px; line-height: 1.6; color: #b3c2cb }
 /* the launch view's labels stay off the cinematic's arm */
 html.prod #win .world .wl { max-width: 420px }
