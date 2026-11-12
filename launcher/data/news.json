@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026110906",
+      "date": "2026-11-12",
+      "tag": "client",
+      "thumb": "img/thumbs/n3.png",
+      "title": {
+        "en": "Update 2026110906: Masters Match, DATS cards and data trade",
+        "pt": "Update 2026110906: Masters Match, cartas DATS e troca de dados"
+      },
+      "body": {
+        "en": "Hover over a tamer, Digimon, monster, item or NPC to see its details in the bottom-right corner (you can turn it off in Options); more NPCs now show their name. New: the Masters Match window, the DATS card game when enchanting, and data trade at the NPC. Jogress tells you why it cannot happen. Option sliders behave like the original game. Other tamers' absorb effects now have sound. Coming with the next server update: the achievement reward tab, crafting with protection items, and every party member's loot dice roll.",
+        "pt": "Passa o rato por cima de um tamer, Digimon, monstro, item ou NPC para veres os detalhes no canto inferior direito (podes desligar nas Opções); mais NPC mostram agora o nome. Novo: a janela do Masters Match, o jogo de cartas DATS ao fazer enchant e a troca de dados no NPC. A jogress diz-te porque não pode acontecer. Os sliders das opções comportam-se como no jogo original. A absorção dos outros tamers passa a ter som. Com a próxima atualização do servidor: o separador de recompensas das conquistas, o craft com itens de proteção e o dado de loot de cada membro da party."
+      }
+    },
+    {
       "id": "update-2026110905",
       "date": "2026-11-11",
       "tag": "client",
