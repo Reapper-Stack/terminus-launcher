@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terminus Launcher — 137 rounds</title>
+<title>Terminus Launcher — 159 rounds</title>
 <link rel="icon" href="data:,">
 <style>
   /* One hundred rounds, cumulative: round N = round N-1 + one change. #win gets classes r1..rN.
@@ -1204,6 +1204,265 @@
   #win.r125 .notes .sfade::before{left:-36px} #win.r125 .notes .sfade::after{left:0}
   #win.r125 .art .chg em{background:rgba(0,2,8,.92)} #win.r125 .art :is(p,.chg div){text-shadow:0 0 3px #000208,0 0 6px #000208}
   #win.r125.stopen .ymar{display:none!important}
+  /* ==== mock parity with prod.css (not a round, not in the handoff): no native scrollbars anywhere; every scrolling panel has its own teal position marker ==== */
+  html,body,*{scrollbar-width:none}
+  html::-webkit-scrollbar,body::-webkit-scrollbar,*::-webkit-scrollbar{width:0;height:0;display:none}
+  /* R138 bar-blank */
+  /* once the opening has played, the bar (bs138) and the headline (set138) carry no animation, so a state
+     change that swaps the animation name (o-bar <> bar136) or rebuilds the headline cannot replay the intro */
+  #win.r138.bs138 .bar,#win.r138.open.set138 .story>*{animation:none}
+  /* the ring segments settle later (sg138): their opening sweep (o-seg) only ends at 1.64 s */
+  #win.r138.open.sg138 .gatebadge .sg{animation:none}
+  /* the one intended fade: coming back from the launch cinematic (or the installer) to ready / running */
+  #win.r138.bs138.back138 .bar,#win.r138.open.set138.back138 .story>*{animation:bar136 .22s ease both}
+  /* R139 block-steady */
+  /* the column under the emblem is one fixed box: 318 px wide (the English row under PLAY was 323.9 px and pushed
+     the whole block 5.9 px left) and 102 px tall (the action-button row made it 98 px, the quality row 102 px, so
+     the centred block moved 2 px) */
+  #win.r139 .actwrap>div:last-child{flex:none;width:318px;height:102px}
+  /* the row under PLAY gives up its spare gap instead of growing the column */
+  #win.r139 .ysub{gap:4px}
+  /* compact has no quality row: the place of the action-button row is always kept, so the plate does not jump 13 px */
+  #win.r139.mini .actwrap>div:last-child{height:98px}
+  /* R140 row-aligned */
+  /* the row under PLAY starts where the plate comes out from behind the emblem (the plate's own 40 px inset, was 46)
+     and ends on the plate's right edge; the 6 px won back restore the 10 px gap between LAST PLAYED and OPTIONS */
+  #win.r140 .ysub{padding-left:40px}
+  #win.r140 .ysub .cld{left:40px}
+  /* the action buttons (PAUSE / VERIFY / OPEN FOLDER) take the same left edge, share the width up to the plate's right
+     edge, and sit on the same line as OPTIONS (they touched the plate; OPTIONS hangs 5 px under it) */
+  #win.r140 .minor{padding-left:40px;margin-top:5px}
+  #win.r140 .minor button{flex:1 1 auto;min-width:0}
+  #win.r140 .minor button{text-align:center;justify-content:center}
+  /* compact has no OPTIONS line to match and no spare height: the buttons stay against the plate there */
+  #win.r140.mini .minor{margin-top:0}
+  /* R141 row-legible */
+  /* OPTIONS reads as a button: its outline was #0d2a34 (1.33:1 on the bar), now a teal that clears 3:1; the label is a
+     step brighter. Hover (r92) and the open state keep their own brighter colours. Same size, same teal family. */
+  #win.r141 .ysub .lb{border-color:#2B7389;color:#8FC4DC}
+  #win.r141.ov-opts .ysub .lb{color:var(--ink);border-color:var(--tc)}
+  /* the action buttons that take this row's place in other states carry the same outline */
+  #win.r141 .minor button{border-color:#2B7389}
+  /* LAST PLAYED: a dim key and a brighter value (the line was one flat #9DBBC8) */
+  #win.r141 .ysub .lp .k141{color:#7896A4}
+  #win.r141 .ysub .lp .v141{color:#DCE8EF}
+  /* R142 no ENTER cap: the key cap on the PLAY plate is gone in every state. The Enter key itself still works */
+  #win.r142 .play .kc{display:none!important}
+  /* R143 ring-follows-plate */
+  /* filled ring segments take the plate's colour while it shows progress (download, check, launch); every other state keeps its gold ring */
+  #win.r143:is([data-st=dl],[data-st=verify],[data-st=launching]):has(#play.teal) .gatebadge .sg.l{fill:var(--tc)}
+  /* the leading segment is the pale tip of the same colour (it was cream on a teal plate) */
+  #win.r143:is([data-st=dl],[data-st=verify],[data-st=launching]):has(#play.teal) .gatebadge .sg.hd{fill:#d8f3fb}
+  /* a 2 px line along the plate's bottom edge carries the same progress value as the ring; it runs over the visible
+     edge only (23 px in, where the ring stops covering the plate, to the 18 px corner cut). Full-width line scaled on the compositor (transform), never a width change: no layout per progress tick */
+  #win.r143:is([data-st=dl],[data-st=verify]) .play .in::after{content:"";position:absolute;left:23px;bottom:0;height:2px;width:calc(100% - 41px);
+    background:var(--tb);transform-origin:0 50%;transform:scaleX(var(--p143,0));transition:transform .2s linear;pointer-events:none}
+  #win.r143.paused:is([data-st=dl],[data-st=verify]) .play .in::after{opacity:.5}
+  #win.r143.rm:is([data-st=dl],[data-st=verify]) .play .in::after{transition:none}
+  @media (prefers-reduced-motion:reduce){#win.r143:is([data-st=dl],[data-st=verify]) .play .in::after{transition:none}}
+  /* R144 embers */
+  /* the 30 one-pixel motes give way to 9 soft warm embers (9 compositor animations instead of 30; transform + opacity only); winter keeps its snow */
+  #win.r144 .emb144{position:absolute;inset:0;pointer-events:none;display:none}
+  #win.r144:not([data-season=winter]) .motes{display:none}
+  #win.r144:not(.mini,.rm,.skplay,.skhold,[data-season=winter]) .emb144{display:block}
+  @media (prefers-reduced-motion:reduce){#win.r144 .emb144{display:none!important}}
+  #win.r144 .emb144 i{position:absolute;border-radius:50%;opacity:0;will-change:transform,opacity;background:radial-gradient(circle,rgba(255,244,214,.95) 0,rgba(246,200,118,.8) 20%,rgba(232,150,70,.3) 46%,rgba(226,130,60,.07) 62%,transparent 72%);animation:em144a 14s linear infinite}
+  #win.r144 .emb144 i.b{animation-name:em144b} #win.r144 .emb144 i.c{animation-name:em144c}
+  @keyframes em144a{0%{transform:translate(0,0) scale(.6);opacity:0}18%{opacity:var(--o)}50%{transform:translate(12px,-80px) scale(.9)}68%{opacity:var(--o)}100%{transform:translate(3px,-160px) scale(.55);opacity:0}}
+  @keyframes em144b{0%{transform:translate(0,0) scale(.65);opacity:0}20%{opacity:var(--o)}50%{transform:translate(-15px,-94px) scale(1)}66%{opacity:var(--o)}100%{transform:translate(-5px,-188px) scale(.5);opacity:0}}
+  @keyframes em144c{0%{transform:translate(0,0) scale(.55);opacity:0}22%{opacity:var(--o)}50%{transform:translate(8px,-62px) scale(.85)}64%{opacity:var(--o)}100%{transform:translate(-7px,-126px) scale(.5);opacity:0}}
+  /* R145 breathing light */
+  /* one soft radial glow between the room and Omegamon (it sits under .pair, so it can never tint him, the news or the PLAY block);
+     the wrapper only fades in and out, the single painted layer inside only changes opacity (9 s, .62 to 1) */
+  #win.r145 .aura145{position:absolute;left:470px;top:30px;width:570px;height:540px;pointer-events:none;display:none;opacity:1;transition:opacity .6s ease}
+  #win.r145:not(.mini) .aura145{display:block}
+  #win.r145.big .aura145{left:588px;top:38px;width:712px;height:675px}
+  #win.r145 .aura145 i{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(104,208,242,.40),rgba(60,180,216,.26) 34%,rgba(31,143,174,.09) 54%,transparent 72%);animation:br145 9s ease-in-out infinite alternate}
+  @keyframes br145{from{opacity:.62}to{opacity:1}}
+  #win.r145.rm .aura145 i{animation:none;opacity:.8}
+  @media (prefers-reduced-motion:reduce){#win.r145 .aura145 i{animation:none;opacity:.8}}
+  /* the cinematic and the launch screen own the picture: the light is out */
+  #win.r145:is(.skplay,.skhold,.launch,[data-st=launching]) .aura145{opacity:0;transition:none}
+  /* R146 moments: one-shot layer built by JS for a real event and removed whole about 1.2 s later */
+  #win.r146 .mo146{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+  #win.r146 .mo146 i{position:absolute;display:block;opacity:0}
+  /* a small ring that leaves the indicator (the gate badge or the server dot) */
+  #win.r146 .mo146 .rg{border-radius:50%;border:1.5px solid var(--mc);box-shadow:0 0 10px var(--mg),inset 0 0 6px var(--mg);animation:mo146r .95s cubic-bezier(.15,.7,.25,1) both}
+  @keyframes mo146r{0%{transform:scale(.5);opacity:.9}100%{transform:scale(var(--ms,1.6));opacity:0}}
+  /* a thin line that opens along the bar's top edge from the indicator, then fades */
+  #win.r146 .mo146 .lw{left:0;right:0;height:21px;opacity:1}
+  #win.r146 .mo146 .ln{left:0;right:0;top:10px;height:1px;background:linear-gradient(90deg,transparent,var(--mc) 12%,var(--mc) 88%,transparent);box-shadow:0 0 8px var(--mg);transform-origin:var(--mx) 50%;animation:mo146l 1.1s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes mo146l{0%{transform:scaleX(0);opacity:0}18%{opacity:.95}55%{opacity:.8}100%{transform:scaleX(1);opacity:0}}
+  /* never during the cinematic, never in compact, never with reduced motion */
+  #win.r146:is([data-st=launching],.skplay,.skhold,.mini,.rm) .mo146{display:none}
+  @media (prefers-reduced-motion:reduce){#win.r146 .mo146{display:none}}
+  /* R147 quiet scene */
+  /* server offline / disk error: the room goes quiet. Only opacity and one static filter per layer change, over .6 s both ways;
+     the looping animations are paused, not removed, so they pick up where they stopped when the server is back */
+  #win.r147 :is(.shafts,.floor,.haze,.emb144,.aura145){transition:opacity .6s ease,filter .6s ease}
+  #win.r147:not(.launch) .pair{transition:filter .6s ease}
+  #win.r147:is([data-st=offline],[data-st=disk]) .shafts{opacity:.3;filter:saturate(.45)}
+  #win.r147:is([data-st=offline],[data-st=disk]) :is(.shafts i,.emb144 i,.aura145 i,.motes i){animation-play-state:paused}
+  #win.r147:is([data-st=offline],[data-st=disk]) .floor{opacity:.4}
+  #win.r147:is([data-st=offline],[data-st=disk]) .haze{opacity:.45}
+  #win.r147:is([data-st=offline],[data-st=disk]) .emb144{opacity:.3}
+  #win.r147:is([data-st=offline],[data-st=disk]) .aura145{opacity:.3}
+  #win.r147:is([data-st=offline],[data-st=disk]) .pair{filter:brightness(.8) saturate(.82)}
+  #win.r147.rm :is(.shafts,.floor,.haze,.emb144,.aura145,.pair){transition:none}
+  @media (prefers-reduced-motion:reduce){#win.r147 :is(.shafts,.floor,.haze,.emb144,.aura145,.pair){transition:none}}
+  /* the opening animations of the character, floor and haze stay applied after they end (fill both) and would make the dimming
+     jump instead of fade; once the opening is over (q147, set 1.3 s after it starts) they are dropped. Nothing changes on screen */
+  #win.r147.open.q147 :is(.pair,.floor,.haze){animation:none}
+  /* R148 server clock: a small legend on the left of the week card’s top edge (clear of the sound cue chip, which lands on the right half); takes no room inside the card, so the DROPS countdown does not move */
+  #win.r148 .ywk .sc148{position:absolute;left:6px;top:-8px;padding:0 7px 0 6px;background:#01060d;font:9.5px/13px Consolas,monospace;letter-spacing:.14em;color:var(--lb);white-space:nowrap;pointer-events:none}
+  #win.r148 .ywk .sc148 b{font-weight:400;color:var(--ink);letter-spacing:.06em}
+  /* R149 pick a day: today keeps its own mark (gold initial + outline) whatever is selected; the selected day keeps the bright teal box */
+  #win.r149 .ywk .dy.td u{color:var(--gold)}
+  #win.r149 .ywk.sel149 .dy.td{border-color:var(--td);background:none;box-shadow:none}
+  #win.r149 .ywk .dy:focus-visible{outline:1px solid var(--gold);outline-offset:1px;position:relative;z-index:1}
+  /* the mock events of other days draw on the day's track like the rest: gold = a timed bonus, red = maintenance */
+  #win.r149 .ywk .dy .tr s.e149{position:absolute;left:0;top:0}
+  #win.r149 .ywk .dy .tr s.x149{background:var(--gold)}
+  /* R150 the headline advances by itself every 8 s; a thin gold line on the open card's picture shows the time left (one element, scaleX on the compositor) */
+  #win.r150 .ri .tm{display:none}
+  #win.r150 .ri .th{position:relative;overflow:hidden}
+  #win.r150 .pl150{position:absolute;left:1px;right:1px;bottom:1px;height:2px;display:block;background:rgba(0,2,8,.62);pointer-events:none}
+  #win.r150 .pl150 b{position:absolute;inset:0;display:block;background:linear-gradient(90deg,var(--gd),var(--gl));transform-origin:0 50%;transform:scaleX(0);will-change:transform}
+  #win.r150 .ri:only-child .pl150,#win.r150.rm .pl150{display:none}
+  @media (prefers-reduced-motion:reduce){#win.r150 .pl150{display:none}}
+  /* in game (and while it starts) the count cannot resume: no frozen line on the card */
+  #win.r150:is([data-st=running],[data-st=launching]) .pl150{display:none}
+  /* R151 a news card answers the pointer: the whole card lifts 2 px, the picture brightens a touch and one soft light crosses it once (transform + opacity, .5 s, never looping). Keyboard focus lifts without the light */
+  #win.r151 .ri{transition:translate .2s cubic-bezier(.2,.7,.2,1)}
+  #win.r151 .ri:is(:hover,.hv,:focus-visible){translate:0 -2px}
+  #win.r151 .ri:is(:hover,.hv) .h{translate:none}
+  #win.r151 .ri .th{position:relative;overflow:hidden;transition:filter .2s,outline-color .2s}
+  #win.r151 .ri:is(:hover,.hv) .th{background-size:100%!important;filter:brightness(1.16) saturate(.95)}
+  /* the open card keeps its own brighter picture and bright teal frame under the pointer, so it never reads as just another hovered card */
+  #win.r151 .ri.on:is(:hover,.hv) .th{filter:brightness(1.4);outline:1px solid var(--tb);outline-offset:-1px}
+  #win.r151 .ri .th::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(105deg,transparent 34%,rgba(214,240,255,.09) 43%,rgba(226,246,255,.32) 50%,rgba(214,240,255,.09) 57%,transparent 66%);transform:translateX(-105%)}
+  #win.r151:not(.rm) .ri:hover .th::after{animation:sw151 .5s cubic-bezier(.4,.1,.6,.9) 1 both}
+  @keyframes sw151{0%{transform:translateX(-105%);opacity:1}85%{opacity:1}100%{transform:translateX(105%);opacity:0}}
+  #win.r151.rm .ri{transition:none}
+  @media (prefers-reduced-motion:reduce){#win.r151 .ri{transition:none}#win.r151 .ri:hover .th::after{animation:none!important}}
+  /* R152 a headline change is one short cross-fade: the old text leaves 6 px up while the new one rises 6 px, .28 s each, and nothing below moves (the notes button holds one place: see r152.js) */
+  #win.r152 .story.ghost{animation:s152out .28s ease forwards}
+  @keyframes s152out{to{opacity:0;transform:translateY(-6px)}}
+  #win.r152 #story.swap>*{animation:s152in .28s ease both!important;animation-delay:0s!important}
+  @keyframes s152in{from{opacity:0;transform:translateY(6px)}}
+  #win.r152 #story.swap>.rd{animation:none!important}
+  #win.r152 .story.ghost .rd{visibility:hidden}
+  /* the button leaves the text flow and sits where the tallest story would put it; the paragraph keeps the room it took, so the block is exactly as tall as before */
+  #win.r152 .story.pin152 p{margin-bottom:var(--rg152)}
+  #win.r152 #story.pin152 #rdl{position:absolute!important;left:0;top:var(--rt152);margin-top:0}
+  @media (prefers-reduced-motion:reduce){#win.r152 .story.ghost,#win.r152 #story.swap>*{animation:none!important}}
+  /* with reduced motion the old text must not linger over the new one */
+  #win.r152.rm .story.ghost{display:none}
+  @media (prefers-reduced-motion:reduce){#win.r152 .story.ghost{display:none}}
+  /* R153 since-last-session: one more box of the notice family (it carries the .ynot class, so it inherits the notice
+     box, its width at 1280 / 1600 and every rule that hides notices: in game, installing, launching, compact). JS sets
+     its top so it sits 11 px under the notice slot (the gap between the week card and the notices), or in the slot's
+     place when there is no notice. A gold left rule marks it as "about you", not about the server. */
+  #win.r153 .ys153{border-left:3px solid var(--gd);padding-top:6px;padding-bottom:10px}
+  #win.r153 .ys153 .k153{font-size:10px;letter-spacing:.2em;color:var(--lb);white-space:nowrap}
+  #win.r153 .ys153 .l153{display:flex;align-items:center;white-space:nowrap;letter-spacing:.5px;line-height:14px;margin-top:2px}
+  #win.r153 .ys153 .l153 i{font-style:normal;color:#3F7186;margin:0 7px}
+  #win.r153 .ys153 .l153 u{color:var(--sil);border-bottom-color:#2B7389}
+  #win.r153 .ys153 .l153 u b{font-weight:400;color:var(--gl)}
+  #win.r153 .ys153 .l153 u:hover{color:var(--ink);border-bottom-color:var(--tb)}
+  /* an open panel on the right (launch options) owns that corner */
+  #win.r153.ov-opts .ys153{display:none}
+  /* R154 play-time: local play time, no account. The session length joins the LAST PLAYED line only when the line still
+     clears OPTIONS (JS measures; the row is a fixed 318 px box, R139/R140); a one-line card under the line, shown on
+     hover or keyboard focus, always carries SESSION / WEEK / TOTAL. The card is absolute, so no rect in the block moves. */
+  #win.r154 .ysub .lp .s154{color:#DCE8EF}
+  #win.r154 .ysub .lp .s154 i{font-style:normal;color:#7896A4}
+  #win.r154 .ysub .lp{cursor:default}
+  #win.r154 .ysub .lp:focus-visible{outline:1px solid var(--tb);outline-offset:2px}
+  #win.r154 .ysub .tp154{position:absolute;left:40px;top:calc(100% + 5px);z-index:9;display:flex;align-items:center;height:24px;padding:0 9px;border:1px solid var(--td);border-left:2px solid var(--gd);background:#030812;font:10px Consolas,monospace;letter-spacing:1px;color:#7896A4;white-space:nowrap;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .12s linear,visibility 0s .12s}
+  #win.r154 .ysub .tp154 b{font-weight:400;color:#DCE8EF}
+  #win.r154 .ysub .tp154 i{font-style:normal;color:#3F7186;margin:0 7px}
+  #win.r154 .ysub .lp:is(:hover,:focus-visible)~.tp154{opacity:1;visibility:visible;transition-delay:0s}
+  #win.r154.rm .ysub .tp154{transition:none}
+  @media (prefers-reduced-motion:reduce){#win.r154 .ysub .tp154{transition:none}}
+  /* R155 empty and failure states for the news zone (headline, text, tabs, rail) and the week card.
+     Nothing is removed from the page: in a forced mode the real nodes stay laid out but hidden, so every box keeps its
+     place and the stand-ins (one layer per zone, .ns155 / .es155) are drawn on the measured places. No mode = no rule applies. */
+  #win.r155.n155 .story>*{visibility:hidden!important}
+  #win.r155.n155 :is(.cats,.ymar,.rail .ri,.mtx,.mnav){visibility:hidden!important}
+  #win.r155.e155 .ywk :is(.we,.wd,.wcap){visibility:hidden!important}
+  #win.r155 .ns155{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none}
+  #win.r155 .ywk .es155{position:absolute;inset:0;pointer-events:none}
+  #win.r155 :is(.ns155,.es155)[hidden]{display:none}
+  /* (a) loading: flat blocks where the headline, text, tabs, cards and days will be; the whole layer breathes once every 5.6 s (opacity only) */
+  #win.r155 :is(.ns155,.es155) i{position:absolute;display:block;background:rgba(92,150,176,.15)}
+  #win.r155 :is(.ns155,.es155) i.o{background:none;box-shadow:inset 0 0 0 1px rgba(92,150,176,.24)}
+  #win.r155 :is(.ns155,.es155) i.d{background:rgba(92,150,176,.09)}
+  #win.r155 :is(.ns155,.es155) i.r{background:rgba(23,80,95,.6)}
+  #win.r155 :is(.ns155,.es155).ld{animation:p155 2.8s ease-in-out infinite alternate}
+  @keyframes p155{from{opacity:1}to{opacity:.5}}
+  #win.r155.rm :is(.ns155,.es155).ld,#win.r155:is([data-st=running],[data-st=launching]) :is(.ns155,.es155).ld{animation:none}
+  @media (prefers-reduced-motion:reduce){#win.r155 :is(.ns155,.es155).ld{animation:none}}
+  /* (b) empty and (c) fail: one line, in the headline's own place; fail adds a text button */
+  #win.r155 :is(.ns155,.es155) .m155{position:absolute;display:flex;flex-direction:column;align-items:flex-start;pointer-events:auto}
+  #win.r155 .m155 .k155{display:flex;align-items:center;gap:10px;font:11px Consolas,monospace;letter-spacing:.24em;color:var(--lb);white-space:nowrap}
+  #win.r155 .m155 .k155::before,#win.r155 .es155 .m155 .t155::before{content:'';flex:none;width:6px;height:6px;background:var(--td)}
+  #win.r155 .m155.f .k155::before,#win.r155 .es155 .m155.f .t155::before{background:#C8553A}
+  #win.r155 .m155 .t155{margin-top:16px;font:400 30px/36px Georgia,serif;color:var(--sil);text-wrap:balance}
+  #win.r155.big .ns155 .m155 .t155{font-size:36px;line-height:42px}
+  #win.r155 .m155 .rt155{box-sizing:border-box;margin-top:22px;height:30px;padding:0 13px;border:1px solid rgba(199,164,82,.45);font:12px/28px Consolas,monospace;letter-spacing:1px;color:var(--gold);white-space:nowrap;cursor:pointer;position:relative}
+  #win.r155 .m155 .rt155::before{content:'';position:absolute;inset:-4px}
+  #win.r155 .m155 .rt155:hover{border-color:var(--gold);color:var(--gl);background:rgba(199,164,82,.07)}
+  #win.r155 .m155 .rt155:active{translate:0 1px}
+  #win.r155 .m155 .rt155:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+  /* the week card: the same line at the card's own scale, centred in the room the days and the caption leave */
+  #win.r155 .es155 .m155{justify-content:center}
+  #win.r155 .es155 .m155 .t155{display:flex;align-items:center;gap:9px;margin-top:0;font:400 15px/20px Georgia,serif;white-space:nowrap}
+  #win.r155 .es155 .m155 .rt155{margin:9px 0 0 15px;height:24px;padding:0 9px;font:10.5px/22px Consolas,monospace}
+  /* Compact: the one-line headline row carries the same three cases */
+  #win.r155 .ns155 .m155.mn{flex-direction:row;align-items:center;gap:14px}
+  #win.r155 .ns155 .m155.mn .t155{margin:0;font:400 17px/28px Georgia,serif;white-space:nowrap}
+  #win.r155 .ns155 .m155.mn .rt155{margin:0;height:26px;padding:0 10px;font:10.5px/24px Consolas,monospace}
+  /* R156 background updates */
+  /* one Settings > LAUNCHER row under Download limit: same line, label, segmented buttons and hint type as its neighbours.
+     It is not a .sh-o on purpose: the saved-settings list (R116) counts .sh-o rows, and this row keeps its own key instead. */
+  #win.r156 #sheet .bg156{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 10px;position:relative;min-height:40px;padding:6px 0 9px;border-top:1px solid var(--un);font-size:13.5px;color:var(--sil)}
+  #win.r156 #sheet .bg156>small{flex:0 0 100%;display:block;font:11px/1.45 Consolas,monospace;color:#7DB3CB;margin-top:3px}
+  #win.r156.t115 #sheet .bg156>small{font-size:12px}
+  /* the bar says once that an update was applied while the launcher sat in the tray */
+  #win.r156 #psub .bg156m{color:#9DBBC8}
+  #win.r156 #psub .bg156m b{color:#E8EDF2;font-weight:400}
+  /* R157 what changed stays in the launcher */
+  /* the launcher's own version tab stands apart from the game versions: a gap, a thin rule before it, and quieter type until it is chosen */
+  #win.r157 #pnv button{white-space:nowrap}
+  #win.r157 #pnv .lt157{margin-left:17px;position:relative;overflow:visible}
+  #win.r157 #pnv .lt157::after{content:'';position:absolute;left:-10px;top:4px;bottom:4px;width:1px;background:var(--td);pointer-events:none}
+  /* on that tab the meta line opens with a LAUNCHER <version> chip (the version comes from the page, data-lv; LAUNCHER alone while it is not known), so nobody reads it as a game update; the game key art above steps back */
+  #win.r157 #notes.lv157 #pnm::before{content:attr(data-lv);display:inline-block;margin-right:9px;padding:1px 6px;border:1px solid var(--td);color:var(--tb);letter-spacing:1.5px}
+  #win.r157 #notes.lv157 .pnart{filter:grayscale(1) brightness(.55)}
+  /* R158 distant city */
+  /* three rows of building silhouettes behind the floor and the character: far (hazy, small, pale), mid, near (dark, taller).
+     Static: no animation. Faded out to the left so nothing sits behind the headline, and at the bottom into the floor */
+  #win.r158 .city158{position:absolute;inset:0;pointer-events:none;display:none;opacity:1;transition:opacity .6s ease;
+    -webkit-mask:linear-gradient(90deg,transparent 30%,#000 52%),linear-gradient(0deg,transparent 30%,#000 40%);-webkit-mask-composite:source-in;
+    mask:linear-gradient(90deg,transparent 30%,#000 52%),linear-gradient(0deg,transparent 30%,#000 40%);mask-composite:intersect}
+  #win.r158:not(.mini) .city158{display:block}
+  #win.r158 .city158 svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  /* the cinematic and the launch screen own the picture */
+  #win.r158:is(.skplay,.skhold,.launch,[data-st=launching]) .city158{opacity:0;transition:none}
+  /* offline and disk error: the city goes dark with the rest of the scene (R147) */
+  #win.r158.r147:is([data-st=offline],[data-st=disk]) .city158{opacity:.45}
+  /* R159 road with street lamps */
+  /* the dark band between the city's base line (y 474) and the first floor line (y 500) becomes a road seen side-on:
+     asphalt, a faint dashed centre line, low lamp posts with a small warm head, a faint halo and a pool of light on the road.
+     Static, dim on purpose. Same left fade as the city so nothing sits behind the headline */
+  #win.r159 .road159{position:absolute;inset:0;pointer-events:none;display:none;opacity:1;transition:opacity .6s ease;
+    -webkit-mask:linear-gradient(90deg,transparent 30%,#000 52%);mask:linear-gradient(90deg,transparent 30%,#000 52%)}
+  #win.r159:not(.mini) .road159{display:block}
+  #win.r159 .road159 svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #win.r159:is(.skplay,.skhold,.launch,[data-st=launching]) .road159{opacity:0;transition:none}
+  /* offline and disk error: the lamps go low with the rest of the scene (R147) */
+  #win.r159.r147:is([data-st=offline],[data-st=disk]) .road159{opacity:.4}
 </style>
 </head>
 <body>
@@ -1398,7 +1657,7 @@ window.__errs=[];addEventListener("error",function(e){__errs.push("error: "+e.me
     '<b>Round 60 · Cleanup.</b> Dropped: wordmark hairline, server load meter and LIVE badges. The community link (Discord) shrinks to an icon with a tooltip; key hints show after a keypress.',
     '<b>Round 61 · Retired.</b> The cannon-fire effect was removed: PLAY goes straight to the launch sequence.'
 ];
-  var NR=137, R=1, L='en', EVT='double-drops';
+  var NR=159, R=1, L='en', EVT='double-drops';
   // the state each round opens on, so its one change is visible on arrival
   var SHOW={42:'open',46:'article',47:'installing',48:'newsoff',49:'disk',50:'takeover',51:'winter',52:'sheet',53:'tips',54:'hover',55:'ribbon',56:'status',58:'running',59:'notes',12:'install',13:'running',14:'notes',18:'neterr',19:'keys',20:'pt',25:'update',26:'notes',27:'maint',28:'launching',31:'install',32:'mini',33:'big',34:'sheet',35:'crashed',36:'neterr',38:'dl',39:'a11y'};
   var MINR={skill:101,newsoff:48,takeover:50,winter:51,install:12,installing:12,running:13,neterr:18,damaged:18,maint:27,launching:28,crashed:35};
@@ -2502,6 +2761,483 @@ NOTES[134]='<b>Round 134 · The last pixels.</b> PLAY label on the plate centre,
 NOTES[135]='<b>Round 135 · Motion defects.</b> Fixed-size close and pager boxes, cue chip clear of the bar, pager holds the news, one name: Omegamon.';
 NOTES[136]='<b>Round 136 · Quiet power.</b> Lighter effects (30 motes, 2 soft beams, no sweep); headlines cross-fade; PLAY gleams on hover and every 8 s.';
 NOTES[137]='<b>Round 137 · Omegamon’s skill.</b> The launch cinematic is now his sword skill, rendered with the game’s own shaders and its real skill camera: blade and sparks, close-up, the fire slash. It ends on the fire slash, which stays on screen until the game runs (no whiteout). Press PLAY (or Skill in the bar).';
+NOTES[138]='<b>Round 138 · Steady bar (fix).</b> Changing state no longer replays the opening animation: the bottom bar stays put and the headline no longer blinks out (it only cross-fades when its text really changes). The opening itself and the fade after the launch cinematic are kept.';
+  /* R138 bar-blank */
+  (function(){var tS=0,tG=0,tB=0,t0=0,bs=0,BACK={launching:1,install:1,installing:1},STEADY={ready:1,running:1};
+    function done(){clearTimeout(tS);bs=1;W.classList.add('set138','bs138')}
+    /* a new opening: the headline and the ring replay it; the bar replays it only where R137 did (not in ready / running, where it never moved) */
+    function arm(){clearTimeout(tS);clearTimeout(tG);clearTimeout(tB);t0=performance.now();W.classList.remove('set138','sg138','back138');
+      /* (the review bar rewrites the class list, so the bar's flag is put back from bs) */
+      bs=bs&&STEADY[W.dataset.st]?1:0;W.classList.toggle('bs138',!!bs);
+      tS=setTimeout(done,1300);tG=setTimeout(function(){W.classList.add('sg138')},1750)}
+    new MutationObserver(function(ms){ms.forEach(function(m){
+      if(m.attributeName==='class'){if(W.classList.contains('open')&&(' '+(m.oldValue||'')+' ').indexOf(' open ')<0)arm()}
+      else if(m.oldValue!==W.dataset.st&&W.classList.contains('r138')){
+        /* a state that arrives while the opening is still playing ends it for the bar and the headline at once */
+        if(m.oldValue&&!W.classList.contains('set138')&&performance.now()-t0>60)done();
+        if(BACK[m.oldValue]&&STEADY[W.dataset.st]){W.classList.add('back138');clearTimeout(tB);tB=setTimeout(function(){W.classList.remove('back138')},600)}}
+    })}).observe(W,{attributes:true,attributeFilter:['class','data-st'],attributeOldValue:true});
+    if(W.classList.contains('open'))arm();
+  })();
+NOTES[139]='<b>Round 139 · PLAY stays put.</b> The PLAY block no longer shifts a few pixels between states or between English and Portuguese, and in compact the plate no longer jumps when the buttons under it appear. Nothing was restyled.';
+NOTES[140]='<b>Round 140 · Row lines up with PLAY.</b> The line under PLAY (LAST PLAYED and OPTIONS, or PAUSE / VERIFY / OPEN FOLDER while downloading) now starts where the plate comes out from behind the emblem and ends exactly on the plate’s right edge, at the same height in every state. While downloading, the buttons share that width evenly.';
+NOTES[141]='<b>Round 141 · Row is readable.</b> OPTIONS now has an outline you can actually see, so it reads as a button and not as loose text, and LAST PLAYED shows a dim label with the date and time brighter beside it. Same size and same colour family as before.';
+  /* R141 row-legible: split "KEY · VALUE" into two spans each time the page repaints the line (language change) */
+  (function(){var l=$('ylp');if(!l)return;
+    function split(){if(!W.classList.contains('r141')||l.firstElementChild)return;var t=l.textContent,i=t.indexOf(' \u00b7 ');if(i<0)return;
+      var k=document.createElement('span'),v=document.createElement('span');k.className='k141';v.className='v141';k.textContent=t.slice(0,i+3);v.textContent=t.slice(i+3);l.textContent='';l.appendChild(k);l.appendChild(v)}
+    new MutationObserver(split).observe(l,{childList:true});
+    new MutationObserver(split).observe(W,{attributes:true,attributeFilter:['class']});split();
+  })();
+NOTES[142]='<b>Round 142 · No ENTER on PLAY.</b> The ENTER key cap is gone from the PLAY plate, in every state. The plate carries the word and nothing else. The Enter key still starts the game.';
+NOTES[143]='<b>Round 143 · One colour for progress.</b> While the plate is teal (download, check) the ring fills in teal instead of gold, and a thin line along the bottom of the plate shows the same progress.';
+  /* R143 ring-follows-plate: the plate line reads the value the ring shows (exact while a live download runs, else the ring's own number) */
+  (function(){var gp=document.getElementById('gpc'),pl=document.querySelector('#play .in');if(!gp||!pl)return;
+    function sync(){if(!W.classList.contains('r143'))return;var s=W.dataset.st,p=null;if(s!=='dl'&&s!=='verify')return;
+      try{if(LV)p=LV.phase==='dl'?Math.min(100,LV.mb/312*100):LV.vp}catch(e){}
+      if(p==null||isNaN(p))p=parseFloat(gp.textContent)||0;
+      pl.style.setProperty('--p143',(Math.max(0,Math.min(100,p))/100).toFixed(4))}
+    new MutationObserver(sync).observe(gp,{childList:true,characterData:true,subtree:true});
+    new MutationObserver(sync).observe(W,{attributes:true,attributeFilter:['class','data-st']});
+    sync();
+  })();
+NOTES[144]='<b>Round 144 · Embers.</b> The thirty tiny drifting dots are replaced by nine soft warm embers that rise slowly behind Omegamon and fade out. The winter event keeps its snow; reduced motion shows none.';
+  /* R144 embers: left %, top %, size px, duration s, delay s, path, peak opacity; built once, in the page only while the round is on */
+  (function(){var mo=document.getElementById('motes');if(!mo)return;var e=document.createElement('div');e.className='emb144 px2';e.setAttribute('aria-hidden','true');
+    [[46,58,14,14,-2,'a',.85],[52,36,11,17,-9,'b',.7],[58,50,16,13,-5,'c',.9],[64,30,10,18,-12,'a',.6],[70,44,13,15,-7,'b',.8],[77,34,15,13,-1,'c',.75],[83,48,11,16,-10,'a',.8],[88,60,10,19,-4,'b',.6],[49,78,13,15,-13,'c',.75]]
+    .forEach(function(d){var i=document.createElement('i');if(d[5]!=='a')i.className=d[5];i.style.cssText='left:'+d[0]+'%;top:'+d[1]+'%;width:'+d[2]+'px;height:'+d[2]+'px;--o:'+d[6]+';animation-duration:'+d[3]+'s;animation-delay:'+d[4]+'s';e.appendChild(i)});
+    function put(){var on=W.classList.contains('r144');if(on&&!e.parentNode)mo.parentNode.insertBefore(e,mo.nextSibling);else if(!on&&e.parentNode)e.remove()}
+    new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class']});put()})();
+NOTES[145]='<b>Round 145 · A breathing light.</b> One soft light behind Omegamon slowly brightens and fades, about every nine seconds, so he stands out from the room. It stays behind him and is off during the cinematic.';
+  /* R145 breathing light: one wrapper + one painted layer, placed just under the character */
+  (function(){var p=W.querySelector('.pair');if(!p)return;var a=document.createElement('div');a.className='aura145 px2';a.setAttribute('aria-hidden','true');a.appendChild(document.createElement('i'));
+    function put(){var on=W.classList.contains('r145');if(on&&!a.parentNode)p.parentNode.insertBefore(a,p);else if(!on&&a.parentNode)a.remove()}
+    new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class']});put()})();
+NOTES[146]='<b>Round 146 · Small moments.</b> When something real happens the bar marks it once, for about a second: an update is found or a download finishes (a gold ring leaves the gate and a thin gold line runs along the bar’s top edge), or the server comes back (the same in green, from the server dot). Nothing plays on opening, on errors, or with reduced motion.';
+  /* R146 moments */
+  (function(){var lay=null,tm=0,DONE={dl:1,verify:1},BACK={ready:1,maint:1,update:1},FOUND={ready:1,checking:1,maint:1,running:1};
+    function still(){return W.classList.contains('mini')||W.classList.contains('skplay')||W.classList.contains('skhold')||W.classList.contains('rm')||!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)}
+    function rel(el){var wr=W.getBoundingClientRect(),sc=wr.width/W.offsetWidth||1,r=el.getBoundingClientRect();return{x:(r.left-wr.left)/sc,y:(r.top-wr.top)/sc,w:r.width/sc,h:r.height/sc}}
+    function clear(){clearTimeout(tm);if(lay){lay.remove();lay=null}}
+    function fire(el,col,glow,d,sc){var b=document.querySelector('.bar');if(!el||!b)return;var f=rel(el),r=rel(b);if(!f.w||!r.w)return;
+      clear();var cx=f.x+f.w/2,cy=f.y+f.h/2;
+      lay=document.createElement('div');lay.className='mo146';lay.setAttribute('aria-hidden','true');lay.style.cssText='--mc:'+col+';--mg:'+glow;
+      var g=document.createElement('i');g.className='rg';g.style.cssText='left:'+(cx-d/2)+'px;top:'+(cy-d/2)+'px;width:'+d+'px;height:'+d+'px;--ms:'+sc;
+      var l=document.createElement('i');l.className='ln';l.style.cssText='--mx:'+cx+'px';var lw=document.createElement('i');lw.className='lw';lw.style.top=(r.y-10)+'px';lw.appendChild(l);
+      /* the line passes behind the PLAY block, not across it: a gap is cut (on a holder that does not scale) where the block overlaps the bar's top edge */
+      var aw=document.querySelector('.actwrap'),k=aw?rel(aw):null;if(k&&k.w&&k.y<r.y&&k.y+k.h>r.y){var m='linear-gradient(90deg,#000 '+(k.x-34)+'px,transparent '+(k.x-6)+'px,transparent '+(k.x+k.w)+'px,#000 '+(k.x+k.w+20)+'px)';lw.style.webkitMaskImage=m;lw.style.maskImage=m}
+      lay.appendChild(g);lay.appendChild(lw);W.appendChild(lay);tm=setTimeout(clear,1180)}
+    /* only a real change of state counts: the first state (no old value) and a repaint of the same state (round or language switch) are ignored */
+    new MutationObserver(function(ms){ms.forEach(function(m){var p=m.oldValue,s=W.dataset.st;
+      if(!p||p===s){return}if(!W.classList.contains('r146')||still()){clear();return}
+      if(p==='offline'&&BACK[s])fire(document.getElementById('sd'),'#39D98A','rgba(57,217,138,.7)',14,3.4);
+      else if(s==='update'&&FOUND[p])fire(document.getElementById('gb'),'#E3C56E','rgba(227,197,110,.7)',72,1.55);
+      else if(DONE[p]&&s==='ready')fire(document.getElementById('gb'),'#E3C56E','rgba(227,197,110,.7)',72,1.55);
+      else clear();
+    })}).observe(W,{attributes:true,attributeFilter:['data-st'],attributeOldValue:true});
+  })();
+NOTES[147]='<b>Round 147 · The scene goes quiet.</b> When the server is offline (or the disk has an error) the light beams dim and stop, the floor glow drops, the embers and the light behind Omegamon pause and fade, and he dims a little. The status and the retry button stay fully bright; everything comes back in about half a second.';
+  /* R147 quiet scene: q147 marks "the opening has finished" (the review bar rewrites the class list, so it is put back on every class change) */
+  (function(){var t0=-1;
+    function sync(){if(W.classList.contains('open')&&t0>=0&&performance.now()-t0>=1290&&!W.classList.contains('q147'))W.classList.add('q147')}
+    function arm(){t0=performance.now();W.classList.remove('q147');setTimeout(sync,1300)}
+    new MutationObserver(function(ms){ms.forEach(function(m){if(W.classList.contains('open')&&(' '+(m.oldValue||'')+' ').indexOf(' open ')<0)arm()});sync()}).observe(W,{attributes:true,attributeFilter:['class'],attributeOldValue:true});
+    if(W.classList.contains('open'))arm()})();
+NOTES[148]='<b>Round 148 · Server time.</b> A small clock on the week card shows the server’s time (hours and minutes). Events are given in server time, so there is nothing to convert.';
+  /* R148 server clock: one timeout per minute, aligned to the minute; the node lives in the week card only while the round is on */
+  (function(){var MT_START=18*3600, /* mock: the demo's server "now" is the 18:00 maintenance start minus the page's own maintenance countdown (mleft), so the clock agrees with STARTS IN and the week strip. The real launcher gets the time from the server. */
+      w=document.getElementById('ywk'),el=null,tm=0;if(!w)return;
+    Y.D({'sc148.l':['SERVER TIME','HORA DO SERVIDOR']});
+    function hhmm(){var t=((MT_START-mleft)%86400+86400)%86400,h=Math.floor(t/3600),m=Math.floor(t/60)%60;return(h<10?'0':'')+h+':'+(m<10?'0':'')+m}
+    function put(){if(!W.classList.contains('r148')){clearTimeout(tm);tm=0;if(el){el.remove();el=null}return}
+      if(!el){el=document.createElement('div');el.className='sc148';el.setAttribute('role','timer')}
+      var h='<span>'+Y.t('sc148.l')+'</span> <b>'+hhmm()+'</b>';if(el.innerHTML!==h)el.innerHTML=h;
+      if(el.parentNode!==w)w.appendChild(el);
+      if(!tm&&!document.hidden&&W.dataset.st!=='running')tm=setTimeout(function(){tm=0;put()},(mleft%60||60)*1000+80)}
+    /* the strip redraws itself (state, language, a pressed day): the clock is put back each time */
+    new MutationObserver(put).observe(w,{childList:true});
+    new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class','data-st']});document.addEventListener('visibilitychange',put);put()})();
+NOTES[149]='<b>Round 149 · Pick a day.</b> Press a day in the week strip and the line under it shows that day’s events (two more days have one now: a past maintenance and an EXP evening) (a day with nothing says NO EVENTS). Today keeps its gold initial, the picked day has the teal box, focus stays on the day you pressed, and pressing today or Esc goes back.';
+  /* R149 pick a day. The strip already selects (wkSel) and redraws itself; this round adds the other days' events, keeps the focus through the redraw, and Esc. */
+  (function(){var w=document.getElementById('ywk'),foc=-1;if(!w)return;
+    /* mock: what the real launcher reads from data/events.json (short, start, end), here for WED and THU. s = [start %, width %] of the day */
+    var EV149={2:{k:'e149.mt',c:'mt',s:[25,5]},3:{k:'e149.exp',c:'x149',s:[83,9]}};
+    Y.D({'e149.mt':['MAINT. 06:00 TO 07:00 · DONE','MANUT. 06:00 ÀS 07:00 · FEITA'],'e149.exp':['EXP ×2 · 20:00 TO 22:00','EXP ×2 · DAS 20:00 ÀS 22:00']});
+    function on(){return W.classList.contains('r149')&&!WK}
+    function deco(){if(!on()){w.classList.remove('sel149');foc=-1;return}
+      for(var i in EV149){var b=w.querySelector('.dy[data-i="'+i+'"]'),tr=b&&b.querySelector('.tr');if(tr&&!tr.querySelector('.e149')){var s=document.createElement('s');s.className=EV149[i].c+' e149';s.style.cssText='margin-left:'+EV149[i].s[0]+'%;width:'+EV149[i].s[1]+'%';tr.appendChild(s);b.classList.add('ev')}}
+      var cap=w.querySelector('.wcap'),e=EV149[wkSel],day=DL2[L][wkSel]+' 0'+DT[wkSel]+' '+Y.t('wk.nov')+' · ';
+      if(cap&&e)cap.textContent=day+Y.t(e.k);
+      w.classList.toggle('sel149',wkSel!==TODAY);
+      if(foc>=0){var f=w.querySelector('.dy[data-i="'+foc+'"]');foc=-1;if(f)f.focus()}}
+    /* the strip rebuilds its buttons on every press: remember which day was pressed and give it the focus back */
+    w.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.dy');if(b&&on())foc=+b.dataset.i},true);
+    w.addEventListener('keydown',function(e){if(e.key==='Escape'&&on()&&wkSel!==TODAY){e.preventDefault();e.stopPropagation();foc=TODAY;wkSel=TODAY;wkDraw()}});
+    new MutationObserver(deco).observe(w,{childList:true});
+    new MutationObserver(function(){if(w.classList.contains('sel149')!==(on()&&wkSel!==TODAY)||(on()&&!w.querySelector('.e149')))deco()}).observe(W,{attributes:true,attributeFilter:['class']});deco()})();
+NOTES[150]='<b>Round 150 · The headline moves on.</b> The big news changes by itself every 8 seconds, and a thin gold line on the open card’s picture shows how long is left. It waits while you point at the news, tab into it, open a panel, hide the window or start the game; choosing a card starts the count again. Reduced motion: no auto-advance, no line.';
+  /* R150 one clock for the headline: el (ms) is the truth, the line is a WAAPI scaleX kept on that same time; the old 300 ms stepper stands down while the round is on */
+  (function(){var D=8000,el=0,last=performance.now(),ln=document.createElement('i'),fl=document.createElement('b'),an=null,_nh=newsHeld,_s=show;
+    ln.className='pl150';ln.setAttribute('aria-hidden','true');ln.appendChild(fl);
+    function on(){return W.classList.contains('r150')}
+    function held(){var c=W.classList,s=W.dataset.st;return _nh()||s==='launching'||s==='running'||c.contains('skplay')||c.contains('skhold')||c.contains('artopen')||c.contains('takeover')||c.contains('closed')}
+    function sync(run){if(!fl.animate)return;if(!an)an=fl.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:D,fill:'both'});
+      if(run){if(an.playState!=='running'){an.currentTime=el;an.play()}}else if(an.playState!=='paused'||Math.abs((an.currentTime||0)-el)>1){an.pause();an.currentTime=el}}
+    newsHeld=function(){return on()?true:_nh()};
+    show=function(i){_s(i);if(on()){el=0;if(an){an.currentTime=0}}};
+    setInterval(function(){var now=performance.now(),dt=Math.min(250,now-last);last=now;
+      if(!on()){if(ln.parentNode){ln.remove();el=0}return}
+      var row=$('rail').querySelector('.ri.on'),th=row&&row.querySelector('.th');if(th&&ln.parentNode!==th){th.appendChild(ln);sync(false)}
+      var n=$('rail').children.length;if(held()||n<2||!row){sync(false);return}
+      el+=dt;tick=Math.min(24,Math.floor(el/D*24));sync(true);
+      if(el>=D){el=0;step(1);if(an)an.currentTime=el}
+    },100)})();
+NOTES[151]='<b>Round 151 · Cards answer the pointer.</b> Pointing at a news card lifts the whole card 2 px, brightens its picture a touch and sends one soft light across it, once. Tabbing to a card lifts it without the light. The open card keeps its bright teal frame, so it still stands apart from one you are only pointing at.';
+  /* R151 is CSS only */
+NOTES[152]='<b>Round 152 · The headline changes softly.</b> When the big news changes, the old headline, date and text fade out upwards while the new ones rise in, in about a quarter of a second. The “read the notes” button now holds one place for every story, so nothing under the headline jumps, and that place always stays at least 12 px clear of the news tabs: where a story leaves no room for it, the button simply sits under the text as before. Reduced motion swaps instantly, as before.';
+  /* R152 the notes button keeps one place: every story the rail can show is laid out in a hidden copy (with the same headline shrink the page applies), and the button is pinned where the tallest one puts it.
+     THE PIN IS CLAMPED (owner defect, R157 pass): the first version measured once while the page was still starting up (the copy did not get the headline shrink, so the "tallest story" came out one
+     headline line too tall), and never measured again because none of its inputs changed: the button sat 19 px INSIDE the news tabs on first paint at 1280 EN. Now:
+       - geometry is read from layout offsets (offsetTop/offsetHeight), never from bounding boxes, so the opening animation's transforms cannot skew it;
+       - upper bound: the pin never goes below (tabs top - 12 px - button height); while the tabs are not laid out (start-up, install) there is no pin at all;
+       - lower bound: the story on screen. If its own text would reach the pinned button, the pin is dropped for that story (the pristine flow layout, which fit-story keeps clear of the tabs);
+       - the measure is redone whenever the layout it depends on changes (tabs/story position, width, button height), after load, after fonts, and after the opening has played;
+       - chk() re-verifies the live result after every story change and after fit-story has resized the headline. */
+  (function(){var _s=show,key='',G=0,raf=0;
+    function on(){var c=W.classList;return c.contains('r152')&&!c.contains('mini')}
+    function tabs(){var c=W.querySelector('.cats');return c&&c.offsetHeight?c:null}
+    function bound(st){var c=tabs();return c&&c.offsetParent===st.offsetParent?c:null}
+    /* the live check: the pinned button must clear the text above it and stay 12 px off the tabs (or the rail) */
+    function chk(){var st=$('story'),rd=$('rdl');if(!st||!rd||!st.classList.contains('pin152'))return;
+      var p=st.querySelector('p'),b=bound(st),t=rd.offsetTop;
+      if(!b||(p&&t<p.offsetTop+p.offsetHeight+G-.5)||st.offsetTop+t+rd.offsetHeight>b.offsetTop-12+.5)st.classList.remove('pin152')}
+    function fit(){var st=$('story'),rd=$('rdl');if(!st)return;st.classList.remove('pin152');if(!rd||!on()||!st.offsetHeight||!bound(st))return;
+      var rh=rd.offsetHeight,gap=parseFloat(getComputedStyle(rd).marginTop)||0,m=st.cloneNode(true);m.removeAttribute('id');m.setAttribute('aria-hidden','true');m.className='story';m.style.visibility='hidden';m.style.pointerEvents='none';
+      var q=m.querySelector('.rd');if(q)q.removeAttribute('id');st.parentNode.insertBefore(m,st.nextSibling);
+      var h1=m.querySelector('h1'),p=m.querySelector('p'),cs=bound(st),same=!!cs&&cs.offsetParent===m.offsetParent,s=W.offsetWidth?W.getBoundingClientRect().width/W.offsetWidth:1,mx=0,N=NEWS[L];
+      if(h1&&p)vis().forEach(function(i){if(!N[i])return;h1.innerHTML=N[i].h;p.innerHTML=N[i].p;h1.style.fontSize='';
+        /* the page's own fit-story rule: shrink the headline 2 px at a time until the block is 10 px (on screen) above the tabs, floor 30 px, 12 steps */
+        if(same){var fs=parseFloat(getComputedStyle(h1).fontSize),n=0;while((m.offsetTop+m.offsetHeight-cs.offsetTop)*s>-10&&fs>30&&n<12){fs-=2;h1.style.fontSize=fs+'px';n++}}
+        mx=Math.max(mx,m.offsetHeight)});
+      m.remove();if(!mx)return;
+      var top=Math.min(mx-rh,cs.offsetTop-st.offsetTop-12-rh);
+      G=gap;st.style.setProperty('--rt152',top+'px');st.style.setProperty('--rg152',(gap+rh)+'px');st.classList.add('pin152');chk()}
+    function sig(){var c=W.classList,N=NEWS[L]||[],st=$('story'),rd=$('rdl'),b=st&&bound(st);
+      return [c.contains('r152'),c.contains('big'),c.contains('mini'),c.contains('t115'),L,cat,W.dataset.season||'',vis().map(function(i){return N[i]?N[i].h.length+N[i].p.length:0}).join(','),
+        b?b.offsetTop:-1,st?st.offsetTop+'/'+st.offsetWidth:'',rd?rd.offsetHeight:0].join('|')}
+    function sync(force){var k=sig(),st=$('story');if(force||k!==key||(st&&!st.classList.contains('pin152')&&on())){key=k;fit()}else chk()}
+    function soon(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;if(W.classList.contains('r152'))sync();else{var st=$('story');if(st)st.classList.remove('pin152');key=''}})}
+    /* the page shrinks a long headline 20 ms AFTER a story change (fit-story); until then the new text stood at full size, the pin was dropped for it and the button dipped into the tabs for a frame or two.
+       So the shrink is run here, at once, before the pin is checked: the first painted frame of a story is already its final layout. */
+    /* RELEASE (R159 package). The shipped page has one more rule of its own (prod.css + prod.js clampTitle, live commit c18b992): a headline still over 2 lines after the shrink gets .long
+       (2 lines, 30 px). prod.js applies it 40 ms after a story change; for those 40 ms the new headline stood unclamped, the pin was dropped for it and the button sat 15 px inside the tabs
+       (measured: PT, long titles). So in the shipped page that same rule, with the same arithmetic, runs here at once; prod.js repeats it 40 ms later and finds nothing to change. */
+    function long152(){if(!window.TD_PROD)return;var h=document.querySelector('#story h1');if(!h)return;h.classList.remove('long');if(window.__fitStory)window.__fitStory();
+      var lh=parseFloat(getComputedStyle(h).lineHeight)||parseFloat(getComputedStyle(h).fontSize)*1.06;h.classList.toggle('long',h.getBoundingClientRect().height>2*lh+1)}
+    show=function(i){_s(i);if(!W.classList.contains('r152'))return;if(window.__fitStory&&on())window.__fitStory();if(on())long152();sync();setTimeout(function(){if(W.classList.contains('r152'))sync()},60)};
+    new MutationObserver(soon).observe(W,{attributes:true,attributeFilter:['class','data-season','data-st']});
+    /* the page settles in steps (styles, fonts, the opening): measure again once each has happened */
+    function again(){if(W.classList.contains('r152'))sync(true)}
+    addEventListener('load',function(){[60,700,1800,3200].forEach(function(t){setTimeout(again,t)})});addEventListener('resize',soon);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(again)})();
+NOTES[153]='<b>Round 153 · Since your last session.</b> A small block under the notices tells a returning player what is new since they last played: how many updates, how many news and whether an event started, each one a link to its place (patch notes, the news list, the week). Close it and it stays closed until something new arrives; when nothing changed it is not there at all.';
+  /* R153 since-last-session. MOCK: LAST = when the last game session ended, NOW = the demo's "today" (SAT 07 NOV, as the week strip),
+     EV = event starts (the week strip's DROPS x2, FRI 18:00). Updates come from the patch-note versions (PN), news from NEWS. */
+  (function(){var LAST=new Date(2026,9,27,21,42),NOW=new Date(2026,10,7,16,18),EV=[new Date(2026,10,6,18,0)],KEY='terminus.since153',el=null,drawn='';
+    var MO={JAN:0,FEB:1,MAR:2,APR:3,MAY:4,JUN:5,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11};
+    function dt(s){var m=/(\d\d) ([A-Z]{3})/.exec(s||'');return m&&MO[m[2]]!==undefined?new Date(2026,MO[m[2]],+m[1],12):null}
+    function since(d){return !!d&&d>LAST&&d<=NOW}
+    function count(){return{u:PN.en.v.filter(function(v){return since(dt(v))}).length,n:NEWS.en.filter(function(n){return since(dt(n.d))}).length,e:EV.filter(since).length}}
+    function sig(c){return LAST.getTime()+'|'+c.u+'|'+c.n+'|'+c.e}
+    function gone(c){try{return localStorage.getItem(KEY)===sig(c)}catch(e){return false}}
+    function word(k,n){var pt=L==='pt';return k==='u'?(pt?(n===1?'atualização':'atualizações'):(n===1?'update':'updates')):k==='n'?(pt?(n===1?'notícia':'notícias'):'news'):(pt?(n===1?'evento novo':'eventos novos'):(n===1?'event started':'events started'))}
+    function go(k){if(k==='u'){notes(true)}
+      else if(k==='n'){var b=$('cats').querySelector('button');if(b){b.click();b=$('cats').querySelector('button');if(b)b.focus()}}
+      else{var w=$('ywk'),i=(EV[0].getDay()+6)%7;if(w){var d=w.querySelector('.dy[data-i="'+i+'"]');if(d){d.click();d=w.querySelector('.dy[data-i="'+i+'"]');if(d)d.focus()}}}}
+    function draw(c){var k=L+'|'+sig(c);if(drawn===k)return;drawn=k;var p=[];['u','n','e'].forEach(function(g){if(c[g])p.push('<u role="button" tabindex="0" data-g="'+g+'"><b>'+c[g]+'</b> '+word(g,c[g])+'</u>')});
+      el.setAttribute('aria-label',L==='pt'?'Desde a tua última sessão':'Since your last session');
+      el.innerHTML='<div class="nk"><span class="k153">'+(L==='pt'?'DESDE A TUA ÚLTIMA SESSÃO':'SINCE YOUR LAST SESSION')+'</span><button class="x2" aria-label="'+(L==='pt'?'Dispensar':'Dismiss')+'">✕</button></div><div class="l153">'+p.join('<i>·</i>')+'</div>';
+      el.querySelector('.x2').onclick=function(){try{localStorage.setItem(KEY,sig(c))}catch(e){}sync()};
+      [].forEach.call(el.querySelectorAll('u'),function(u){u.onclick=function(){go(u.dataset.g)};u.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(u.dataset.g)}}})}
+    function sync(){var yn=$('ynot'),c=count(),on=W.classList.contains('r153')&&!!yn&&(c.u+c.n+c.e)>0&&!gone(c);
+      if(!on){if(el){el.remove();el=null;drawn=''}return}
+      if(!el){el=document.createElement('div');el.className='ynot ys153';el.setAttribute('role','group');yn.parentNode.insertBefore(el,yn.nextSibling)}
+      draw(c);var t=getComputedStyle(yn).display!=='none'&&yn.offsetHeight?(yn.offsetTop+yn.offsetHeight+11)+'px':'';if(el.style.top!==t)el.style.top=t}
+    function hook(){var yn=$('ynot');if(yn)new MutationObserver(sync).observe(yn,{childList:true,attributes:true,attributeFilter:['style','class']});sync()}
+    new MutationObserver(sync).observe(W,{attributes:true,attributeFilter:['class','data-st']});
+    new MutationObserver(function(){drawn='';sync()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    if($('ynot'))hook();else setTimeout(hook,0);
+  })();
+NOTES[154]='<b>Round 154 · Play time.</b> Point at LAST PLAYED (or reach it with Tab) and a small card under it shows how long that session was, your hours this week and your total. It is counted on this PC only, no account. The session length also joins the line itself whenever there is room for it beside OPTIONS; PLAY and the row under it do not move.';
+  /* R154 play-time. MOCK values: s = length of the last session, w = this week, t = total hours (all local, from the exe) */
+  (function(){var l=$('ylp');if(!l)return;var row=l.parentNode,card=null,MOCK={s:'0:48',w:'6:20',t:142};
+    function fill(){if(card.dataset.l===L)return;card.dataset.l=L;var pt=L==='pt';card.innerHTML='<span>'+(pt?'SESSÃO':'SESSION')+' <b>'+MOCK.s+'</b></span><i>·</i><span>'+(pt?'SEMANA':'WEEK')+' <b>'+MOCK.w+'</b></span><i>·</i><span>TOTAL <b>'+MOCK.t+' H</b></span>'}
+    function sync(){var on=W.classList.contains('r154'),s=l.querySelector('.s154');
+      if(!on){if(s)s.remove();if(card){card.remove();card=null;l.removeAttribute('tabindex');l.removeAttribute('aria-describedby');delete l.dataset.nf154}return}
+      if(!card){card=document.createElement('span');card.className='tp154';card.id='tp154';card.setAttribute('role','tooltip');row.appendChild(card);l.tabIndex=0;l.setAttribute('aria-describedby','tp154')}
+      fill();
+      /* the session length on the line: only if the line still ends 4 px (the row's gap) before OPTIONS; never wrap, never shrink */
+      if(s||!l.querySelector('.v141')||!row.offsetWidth||l.dataset.nf154===l.textContent)return;
+      var b=$('ylb'),key=l.textContent;s=document.createElement('span');s.className='s154';s.innerHTML=' <i>·</i> '+MOCK.s;l.appendChild(s);
+      var sc=row.getBoundingClientRect().width/row.offsetWidth||1;
+      if(b&&l.getBoundingClientRect().right+4*sc+b.getBoundingClientRect().width>row.getBoundingClientRect().right+.5){s.remove();l.dataset.nf154=key}}
+    new MutationObserver(sync).observe(l,{childList:true});
+    new MutationObserver(sync).observe(W,{attributes:true,attributeFilter:['class','data-st']});sync();
+  })();
+NOTES[155]='<b>Round 155 · Empty and failure states.</b> When the news or the week have nothing to show, their place is no longer blank: quiet blocks while they load, one calm line when there is nothing, and one line with a RETRY button when they could not load. With data the page is exactly Round 154.';
+  /* R155 empty and failure states. M = the mode of each zone ('ok' | 'loading' | 'empty' | 'fail'). In a forced mode the real nodes stay laid out
+     (hidden by r155.css), the stand-ins are drawn on their measured places, and the rounds that act on those nodes stand down:
+     R150 finds no open card (so its count and line pause), R151 has nothing to hover, R152 has no headline change, R149 gets no day press.
+     MOCK: load(zone) waits 1 s and answers 'ok'. The real launcher calls its fetch there and answers ok / empty / fail. */
+  (function(){var M={news:'ok',events:'ok'},tm={news:0,events:0},kb={news:false,events:false},nd=null,ed=null,was={news:'ok',events:'ok'},MODES=['ok','loading','empty','fail'],busy=false,_st=step;
+    Y.D({'s155.nk':['NEWS','NOTÍCIAS'],'s155.ne':['No news yet.','Ainda não há notícias.'],'s155.nf':['Could not load the news.','Não foi possível carregar as notícias.'],
+         's155.ee':['Nothing scheduled this week.','Nada marcado para esta semana.'],'s155.ef':['Could not load the events.','Não foi possível carregar os eventos.'],
+         's155.rt':['RETRY','TENTAR DE NOVO'],'s155.nl':['Loading the news','A carregar as notícias'],'s155.el':['Loading the events','A carregar os eventos']});
+    function on(){return W.classList.contains('r155')}
+    function nm(){return on()&&!W.classList.contains('newsoff')?M.news:'ok'}   /* the R48 "launcher offline" panel owns the zone when it is up */
+    function em(){return on()?M.events:'ok'}
+    function tog(k,v){if(W.classList.contains(k)!==v)W.classList.toggle(k,v)}
+    /* places come from the layout (offsets up to the window), not from the painted rect: a card that is still rising in, or a window that is scaled, measures the same */
+    function box(e){var x=0,y=0,w=e.offsetWidth,h=e.offsetHeight;while(e&&e!==W){x+=e.offsetLeft;y+=e.offsetTop;e=e.offsetParent}return{x:x,y:y,w:w,h:h}}
+    function px(v){return Math.round(v*10)/10}
+    function bar(x,y,w,h,c){return '<i'+(c?' class="'+c+'"':'')+' style="left:'+px(x)+'px;top:'+px(y)+'px;width:'+px(w)+'px;height:'+px(h)+'px"></i>'}
+    function lines(b,lh,th,ws,c){var n=Math.max(1,Math.round(b.h/lh)),s='';for(var k=0;k<n;k++)s+=bar(b.x,b.y+k*lh+(lh-th)/2,b.w*ws[Math.min(k,ws.length-1)]*(k===n-1&&n>1?.62:1),th,c);return s}
+    function shown(e){return !!e&&e.getClientRects().length>0&&getComputedStyle(e).visibility!=='hidden'}
+    function msg(mode,zone,style,cls){var f=mode==='fail';
+      return '<div class="m155'+(f?' f':'')+(cls?' '+cls:'')+'" role="status" style="'+style+'">'+(zone==='news'&&!cls?'<span class="k155">'+Y.t('s155.nk')+'</span>':'')+'<span class="t155">'+Y.t('s155.'+zone[0]+(f?'f':'e'))+'</span>'+(f?'<button class="rt155" data-z="'+zone+'">'+Y.t('s155.rt')+'</button>':'')+'</div>'}
+    /* ---- the news zone ---- */
+    function newsHTML(mode){var st=$('story'),mini=W.classList.contains('mini');
+      if(mini){var mx=$('mtx'),mn=$('mnav'),a=mn&&shown(mn.parentNode)&&mn.getClientRects().length?box(mn):null,b=mx&&mx.getClientRects().length?box(mx):null;if(!b)return null;var x0=a?a.x:b.x;
+        if(mode!=='loading')return msg(mode,'news','left:'+px(x0)+'px;top:'+px(a?a.y:b.y-4)+'px;height:28px','mn');
+        var s='';if(a){[].forEach.call(mn.querySelectorAll('button'),function(q){var r=box(q);s+=bar(r.x,r.y,r.w,r.h,'o')})}
+        return s+bar(b.x,b.y+(b.h-9)/2,46,9,'d')+bar(b.x+62,b.y+(b.h-12)/2,Math.min(300,b.w?b.w-62:300),12)}
+      if(!st||!st.getClientRects().length||getComputedStyle(st).visibility==='hidden')return null;
+      var S=box(st);if(mode!=='loading')return msg(mode,'news','left:'+px(S.x)+'px;top:'+px(S.y)+'px;width:'+px(S.w)+'px');
+      var eb=st.querySelector('.eb'),h1=st.querySelector('h1'),p=st.querySelector('p'),rd=st.querySelector('.rd'),o='',r,cs;
+      if(eb){r=box(eb);o+=bar(r.x,r.y+(r.h-9)/2,58,9,'d')+bar(r.x+70,r.y+(r.h-9)/2,64,9,'d')}
+      if(h1){r=box(h1);cs=getComputedStyle(h1);var lh=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.08;o+=lines(r,lh,lh*.64,[.9,.74,.82])}
+      if(p){r=box(p);cs=getComputedStyle(p);var pl=parseFloat(cs.paddingLeft)||0;o+=bar(r.x,r.y,1,r.h,'r');r.x+=pl;r.w-=pl;o+=lines(r,parseFloat(cs.lineHeight)||24,9,[.96,1,.9],'d')}
+      var ca=$('cats'),cb=ca&&ca.getClientRects().length?box(ca):null;
+      if(rd){r=box(rd);if(cb&&r.y+r.h>cb.y-10)r.y=cb.y-10-r.h;o+=bar(r.x,r.y,r.w,r.h,'o')}   /* the stand-in for the notes button never touches the tabs */
+      if(ca&&ca.getClientRects().length)[].forEach.call(ca.children,function(q){r=box(q);o+=bar(r.x,r.y,r.w,r.h,'o')});
+      var rl=$('rail'),c0=rl&&rl.children[0];
+      if(c0&&rl.getClientRects().length){var R0=box(rl),C=box(c0),gap=parseFloat(getComputedStyle(rl).columnGap)||10,th=c0.querySelector('.th'),d=c0.querySelector('.d'),h=c0.querySelector('.h'),T=th&&box(th),D=d&&box(d),H=h&&box(h);
+        if(C.w<R0.w*.6){for(var k=0;k<3;k++){var dx=k*(C.w+gap);if(T&&T.h)o+=bar(T.x+dx,T.y,T.w,T.h);if(D)o+=bar(D.x+dx,D.y+(D.h-8)/2,Math.min(92,C.w*.6),8,'d');if(H){var hl=parseFloat(getComputedStyle(h).lineHeight)||19;o+=bar(H.x+dx,H.y+(hl-9)/2,C.w*.92,9,'d')+bar(H.x+dx,H.y+hl+(hl-9)/2,C.w*.56,9,'d')}}}
+        else{for(var j=0;j<3;j++){var dy=j*C.h;if(T&&T.h)o+=bar(T.x,T.y+dy,T.w,T.h);if(H)o+=bar(H.x,H.y+dy+(H.h-9)/2,Math.min(280,H.w*.8),9,'d')}}}
+      return o}
+    function drawNews(mode){if(mode==='ok'){if(nd){nd.remove();nd=null}if(was.news!=='ok'){was.news='ok';paintRail()}return}
+      was.news=mode;
+      /* R150 looks for the open card: while the zone has no data there is none (paintRail puts it back on the way out) */
+      [].forEach.call($('rail').querySelectorAll('.ri.on'),function(r){r.classList.remove('on')});
+      if(!nd){nd=document.createElement('div');nd.className='ns155';$('rail').after(nd)}
+      var h=newsHTML(mode),k=mode+'|'+h;nd.hidden=h===null;nd.classList.toggle('ld',mode==='loading');
+      if(mode==='loading'){nd.setAttribute('role','status');nd.setAttribute('aria-busy','true');nd.setAttribute('aria-label',Y.t('s155.nl'))}else{nd.removeAttribute('role');nd.removeAttribute('aria-busy');nd.removeAttribute('aria-label')}
+      if(modalNow())nd.setAttribute('inert','');else nd.removeAttribute('inert');
+      if(nd._k!==k){nd._k=k;nd.innerHTML=h||''}}
+    /* ---- the week card ---- */
+    function evHTML(mode,w){var wd=w.querySelector('.wd'),wc=w.querySelector('.wcap'),we=w.querySelector('.we');if(!wd)return '';
+      if(mode!=='loading')return msg(mode,'events','left:'+wd.offsetLeft+'px;right:'+wd.offsetLeft+'px;top:'+wd.offsetTop+'px;bottom:'+(wc?w.clientHeight-wc.offsetTop-wc.offsetHeight:8)+'px');
+      var o='';if(we)o+=bar(we.offsetLeft+we.offsetWidth-118,we.offsetTop+(we.offsetHeight-8)/2,118,8,'d');
+      [].forEach.call(wd.children,function(b){var u=b.querySelector('u'),n=b.querySelector('b'),t=b.querySelector('.tr'),cx=b.offsetLeft+b.offsetWidth/2;
+        if(u)o+=bar(cx-4,u.offsetTop+(u.offsetHeight-7)/2,8,7,'d');if(n)o+=bar(cx-9,n.offsetTop+(n.offsetHeight-11)/2,18,11);if(t)o+=bar(t.offsetLeft,t.offsetTop,t.offsetWidth,t.offsetHeight,'d')});
+      if(wc)o+=bar(wc.offsetLeft,wc.offsetTop,wc.offsetWidth,1,'r')+bar(wc.offsetLeft,wc.offsetTop+wc.offsetHeight-13,176,8,'d');
+      return o}
+    function drawEvents(mode){var w=$('ywk');if(mode==='ok'||!w){if(ed){ed.remove();ed=null}was.events='ok';return}
+      if(was.events==='ok'&&!WK&&wkSel!==TODAY){was.events=mode;wkSel=TODAY;wkDraw();return}   /* a pressed day does not outlive the data (the redraw comes back here) */
+      was.events=mode;
+      if(!ed){ed=document.createElement('div');ed.className='es155'}
+      if(ed.parentNode!==w)w.appendChild(ed);
+      ed.classList.toggle('ld',mode==='loading');
+      if(mode==='loading'){ed.setAttribute('role','status');ed.setAttribute('aria-busy','true');ed.setAttribute('aria-label',Y.t('s155.el'))}else{ed.removeAttribute('role');ed.removeAttribute('aria-busy');ed.removeAttribute('aria-label')}
+      var h=evHTML(mode,w),k=mode+'|'+h;if(ed._k!==k){ed._k=k;ed.innerHTML=h}}
+    function apply(){if(busy)return;busy=true;
+      try{if(!on()){M.news=M.events='ok';clearTimeout(tm.news);clearTimeout(tm.events)}
+        var n=nm(),e=em();['loading','empty','fail'].forEach(function(m){tog('n155-'+m,n===m);tog('e155-'+m,e===m)});tog('n155',n!=='ok');tog('e155',e!=='ok');
+        drawNews(n);drawEvents(e)}finally{busy=false}}
+    function set(zone,mode){clearTimeout(tm[zone]);tm[zone]=0;M[zone]=mode;apply();
+      /* a retry made from the keyboard keeps its place: back on the zone when the data is there, or on RETRY when it failed again */
+      if(kb[zone]&&mode!=='loading'){kb[zone]=false;var f=mode==='ok'?(zone==='news'?$('rail').querySelector('.ri.on,.ri'):$('ywk')&&$('ywk').querySelector('.dy.td')):(zone==='news'?nd:ed)&&(zone==='news'?nd:ed).querySelector('.rt155');if(f&&f.focus)f.focus({focusVisible:true})}}
+    /* the loader. MOCK: one second, then the data is there */
+    function load(zone){set(zone,'loading');tm[zone]=setTimeout(function(){set(zone,'ok')},1000)}
+    W.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;
+      var b=t.closest('.rt155');if(b&&on()){e.preventDefault();e.stopPropagation();kb[b.dataset.z]=e.detail===0;load(b.dataset.z);return}
+      if(em()!=='ok'&&t.closest('#ywk .dy')){e.preventDefault();e.stopPropagation()}},true);
+    /* nothing steps the headline while there is no headline (arrow keys, the Compact arrows, R150) */
+    step=function(d){if(nm()!=='ok')return;_st(d)};
+    new MutationObserver(apply).observe(W,{attributes:true,attributeFilter:['class','data-st','data-season']});
+    new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    ['story','rail','cats'].forEach(function(id){var e=$(id);if(e)new MutationObserver(function(){if(nm()!=='ok')apply()}).observe(e,{childList:true,subtree:true,attributes:true,attributeFilter:['class']})});
+    function hookWk(){var w=$('ywk');if(!w)return;new MutationObserver(function(){if(em()!=='ok')apply()}).observe(w,{childList:true})}
+    setTimeout(function(){hookWk();apply()},0);addEventListener('load',function(){setTimeout(apply,350)});addEventListener('resize',apply);
+    /* review hook: __r155('news'|'events','ok'|'loading'|'empty'|'fail') forces a case; no argument reads both. The hash does the same:
+       #r155-nload / -nempty / -nfail / -eload / -eempty / -efail (any mix, with -pt, -big, -mini) */
+    window.__r155=function(zone,mode){if(!on())return null;if((zone==='news'||zone==='events')&&MODES.indexOf(mode)>=0){kb[zone]=false;set(zone,mode)}return{news:M.news,events:M.events}};
+    Y.reg({r:155,paint:function(){apply()},state:function(){apply()},
+      token:function(a){var m=/^([ne])(load|empty|fail)$/.exec(a);if(!m)return false;var z=m[1]==='n'?'news':'events',md=m[2]==='load'?'loading':m[2];setTimeout(function(){if(on())set(z,md)},60);return true}});
+  })();
+NOTES[156]='<b>Round 156 · Update in the background.</b> Settings › LAUNCHER gets one row: OFF, ON or AT NIGHT (02:00–07:00). The launcher downloads while it sits in the tray, never while the game is running, and when you come back the bar says once that it updated, with a link to what changed.';
+  /* R156 background updates: the row lives in the page only while the round is on; the choice keeps its own key (terminus.bgupd), like the cinematic.
+     Mocked here; the real launcher gets the mode and the last result from the exe (see bg_update_spec.md). */
+  (function(){var KEY='terminus.bgupd',MODES=['off','on','night'],
+    BT=[['OFF','NÃO'],['ON','SIM'],['AT NIGHT','À NOITE']],
+    HT={off:['The launcher only updates when you open it.','O launcher só atualiza quando o abres.'],
+        on:['Downloads from the tray, never while the game is running.','Transfere na área de notificação, nunca com o jogo aberto.'],
+        night:['Between 02:00 and 07:00, in the tray, never while in game.','Das 02:00 às 07:00, na área de notificação, nunca em jogo.']},
+    MSG=['<span class="bg156m">Updated to <b>0.9.1</b> while you were away · </span><u data-a="notes" role="button" tabindex="0">what changed</u>','<span class="bg156m">Atualizado para a <b>0.9.1</b> enquanto estiveste fora · </span><u data-a="notes" role="button" tabindex="0">o que mudou</u>'],
+    row=null,applied=false,ps=document.getElementById('psub');
+    function pt(){return document.documentElement.lang==='pt'}
+    function on(){return W.classList.contains('r156')}
+    function get(){var v='';try{v=localStorage.getItem(KEY)||''}catch(e){}return MODES.indexOf(v)>=0?v:'on'}
+    function set(v){if(MODES.indexOf(v)<0)v='on';try{localStorage.setItem(KEY,v)}catch(e){}paint()}
+    function tx(e,p){e.setAttribute('data-en',p[0]);e.setAttribute('data-pt',p[1]);e.innerHTML=p[pt()?1:0]}
+    function paint(){if(!row)return;var m=get();[].forEach.call(row.querySelectorAll('.seg button'),function(b){b.setAttribute('aria-pressed',b.dataset.m===m);tx(b,BT[MODES.indexOf(b.dataset.m)])});
+      tx(row.querySelector('.l'),['Update in the background','Atualizar em segundo plano']);row.querySelector('.seg').setAttribute('aria-label',pt()?'Atualizar em segundo plano':'Update in the background');tx(row.querySelector('small'),HT[m])}
+    function make(){var r=document.createElement('div');r.className='bg156';r.id='bg156';
+      r.innerHTML='<span class="l"></span><div class="seg" role="group" aria-label="Update in the background">'+MODES.map(function(m){return '<button data-m="'+m+'" aria-pressed="false"></button>'}).join('')+'</div><small></small>';
+      r.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.seg button');if(b)set(b.dataset.m)});return r}
+    function anchor(){var rows=document.querySelectorAll('#sheet .sh-o');for(var i=0;i<rows.length;i++){var s=rows[i].querySelector('span');if(s&&(s.getAttribute('data-en')||s.textContent).indexOf('Download limit')===0)return rows[i]}return null}
+    function put(){if(on()){if(!row)row=make();if(!row.parentNode){var a=anchor();if(!a)return;a.parentNode.insertBefore(row,a.nextSibling)}paint()}
+      else{if(row&&row.parentNode)row.remove();applied=false}}
+    /* the once-only line: it stays while the bar is at rest in READY (language switches repaint it) and goes with the first change of state */
+    function line(){if(!applied||!on()||!ps||W.dataset.st!=='ready'||ps.querySelector('.bg156m'))return;ps.innerHTML=MSG[pt()?1:0]}
+    if(ps)new MutationObserver(line).observe(ps,{childList:true});
+    new MutationObserver(function(ms){ms.forEach(function(m){if(m.attributeName==='data-st'){if(W.dataset.st!=='ready')applied=false}else put()})}).observe(W,{attributes:true,attributeFilter:['class','data-st']});
+    setTimeout(put,0);
+    /* RESET (its confirm button) in the sheet's footer also puts this row back to ON (capture phase, round on only); a language switch repaints the label */
+    document.getElementById('sheet').addEventListener('click',function(e){if(on()&&e.target.closest&&e.target.closest('#sfy'))set('on')},true);
+    new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    /* review hook: 'applied' shows the bar as the player finds it after a background update; 'clear' takes the line away; 'off'/'on'/'night' set the mode; no argument reads it */
+    window.__r156=function(a){if(!on())return null;
+      if(a==='applied'){BUILD='0.9.1';applied=true;state('ready');line()}
+      else if(a==='clear'){applied=false;state(S)}
+      else if(MODES.indexOf(a)>=0)set(a);
+      return {mode:get(),applied:applied}};
+  })();
+NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “what changed” link now opens the patch notes inside the launcher, on the exact version it talks about, and never the browser. The launcher notice opens a new LAUNCHER tab, set apart from the game versions and headed LAUNCHER with the launcher’s own version (no invented “from” version or date); the “updated while you were away” line opens 0.9.1; the “updates” link opens the newest version. Enter and Space work too, and closing the notes puts you back on the link you came from.';
+  /* R157 what-changed links stay in the launcher.
+     The launcher's own notes are one more entry of the patch-notes data (PN / DIFF), present only while the round is on, so every round below is untouched.
+     Its tab label carries no date on purpose: R153 counts "updates since your last session" from the dates in the game version labels.
+     The tab says LAUNCHER only (four full labels do not fit the 487 px row on one line); the version is on the chip that opens the meta line.
+     RELEASE (R159 package): the rows say only what players really get in this release; no date, no "from" version (none is measured), and the
+     number on the chip is the page's launcher version (LVER) only once it is real: see ver(). */
+  (function(){var LV={en:{v:'LAUNCHER',meta:'4 CHANGES · NOT A GAME UPDATE',g:[['LAUNCHER',[
+        ['The headline news moves on by itself, with a thin line that shows the time left, and the news cards react to the pointer.','NEWS'],
+        ['A city and a road with street lamps stand in the distance behind Omegamon.','SCENE'],
+        ['The bottom bar no longer flickers when its state changes, and PLAY keeps its size.','BAR'],
+        ['The link on the “launcher updated” notice now opens these notes, the launcher’s own.','NOTES']]]]},
+      pt:{v:'LAUNCHER',meta:'4 ALTERAÇÕES · O JOGO NÃO MUDA',g:[['LAUNCHER',[
+        ['As notícias avançam sozinhas, com uma linha fina que mostra o tempo que falta, e os cartões das notícias reagem ao rato.','NOTÍCIAS'],
+        ['Uma cidade e uma estrada com candeeiros ao longe, atrás do Omegamon.','CENÁRIO'],
+        ['A barra de baixo já não pisca quando muda de estado, e o botão JOGAR mantém o tamanho.','BARRA'],
+        ['A ligação do aviso «launcher atualizado» abre agora estas notas, as do próprio launcher.','NOTAS']]]]}},
+      LD=[['new',''],['new',''],['fix',''],['chg','']],known=!window.TD_PROD,hooked=false,
+      SEL='#ynot u[data-a="relnotes"],#ribbon u,#psub u[data-a="notes"],.ys153 u[data-g="u"]',ret=null,busy=false;
+    function on(){return W.classList.contains('r157')}
+    /* the number on the chip. The mockup shows its own sample LVER. The shipped page (TD_PROD) starts with that same sample in LVER and gets the real
+       version only when the exe reports it (prod.js: setLver on caps): until that call is SEEN here the chip says LAUNCHER alone, never a number nobody measured */
+    function hook(){var t=window.__TERM;if(hooked||known||!t||!t.setLver)return;hooked=true;var s=t.setLver;t.setLver=function(x){s(x);known=!!x;if(on()&&W.classList.contains('notesopen'))pn(PV)}}
+    function ver(){hook();return known&&typeof LVER!=='undefined'&&LVER?String(LVER):''}
+    setTimeout(hook,0);
+    function has(){var v=PN.en.v;return v[v.length-1]===LV.en.v}
+    function li(){return PN.en.v.length-1}
+    /* the entry comes and goes with the round */
+    function sync(){var o=on();
+      if(o&&!has()){['en','pt'].forEach(function(l){PN[l].v.push(LV[l].v);PN[l].meta.push(LV[l].meta);PN[l].g.push(LV[l].g)});DIFF[li()]=LD}
+      else if(!o&&has()){var k=li();['en','pt'].forEach(function(l){PN[l].v.pop();PN[l].meta.pop();PN[l].g.pop()});if(DIFF.length>k)DIFF.length=k;if(PV>=PN.en.v.length)PV=0;$('notes').classList.remove('lv157')}}
+    var _pn=pn;pn=function(v){sync();if(!(v>=0&&v<PN.en.v.length))v=0;_pn(v);if(!on())return;
+      var k=li(),bs=$('pnv').children,b=$('pnd').querySelector('.dh b'),lv=ver();if(bs[k])bs[k].classList.add('lt157');$('notes').classList.toggle('lv157',v===k);$('pnm').setAttribute('data-lv',LV.en.v+(lv?' '+lv:''));
+      /* the compare label: the launcher entry has no measured "from" version, so its label is taken out (the count of changes stays, no gap); and the oldest game version no longer "comes from" the launcher tab */
+      if(b){if(v===k){if(b.parentNode.parentNode===$('pnd').querySelector('.dh'))b.parentNode.remove()}else if(v===k-1)b.textContent='— → '+PN[L].v[v].split(' ')[0]}};
+    /* a plain opener (N key, the notes button, the update state's What's new) never lands on the launcher tab by accident; closing gives the focus back to the link that opened the panel */
+    var _n=notes;notes=function(o){var was=W.classList.contains('notesopen');
+      if(on()){sync();if(o&&!was&&!busy&&PV===li())PV=0}
+      _n(o);
+      /* the page lifts 'inert' from the background one microtask after the panel closes, so the focus goes back one task later */
+      if(was&&!o&&ret){var r=ret;ret=null;if(on())setTimeout(function(){if(W.classList.contains('notesopen'))return;var a=document.activeElement,e=r();if(e&&(!a||a===document.body||$('notes').contains(a)))e.focus({preventScroll:true})},0)}};
+    function openAt(v,el,sel){ret=function(){return el.isConnected?el:document.querySelector(sel)};busy=true;
+      try{if(W.classList.contains('notesopen'))pn(v);else{PV=v;notes(true)}}finally{busy=false}
+      $('notes').scrollTop=0;
+      /* one task later: the page's own modal tracker (R111) notes the opener when the panel opens, and it must find the link, not the tab */
+      setTimeout(function(){if(!W.classList.contains('notesopen'))return;var b=$('pnv').querySelector('button[aria-pressed=true]');if(b&&!$('notes').contains(document.activeElement))b.focus({preventScroll:true})},0)}
+    /* which version a link talks about: [link, version index, selector to find the link again after a repaint] */
+    function target(t){var u=t&&t.closest&&t.closest(SEL);if(!u||!on())return null;sync();
+      /* the bar's own “What’s new” (an update is offered) talks about the newest version, not about the tab that was looked at last */
+      if(u.closest('#psub')){if(!u.parentNode.querySelector('.bg156m'))return [u,0,'#psub u[data-a="notes"]'];
+        var m=/(\d+\.\d+\.\d+)/.exec(u.parentNode.textContent),i=0;if(m)PN.en.v.forEach(function(x,k){if(x.indexOf(m[1]+' ')===0)i=k});return [u,i,'#psub u[data-a="notes"]']}
+      if(u.closest('.ys153'))return [u,0,'.ys153 u[data-g="u"]'];
+      return [u,li(),u.closest('#ribbon')?'#ribbon u':'#ynot u[data-a="relnotes"]']}
+    /* the shipped page's own handler for the launcher notice (prod.js, capture on document: it remembers that this version's notice was read, hides it, then opens the notes) must
+       still run after this one: it finds the panel already open on the launcher tab and leaves it there. Everything else stops here (the mock's browser toast, the plain opener) */
+    function act(e){var t=target(e.target);if(!t)return;e.preventDefault();
+      if(!(window.TD_PROD&&t[0].getAttribute('data-a')==='relnotes')){e.stopPropagation();if(e.stopImmediatePropagation)e.stopImmediatePropagation()}
+      openAt(t[1],t[0],t[2])}
+    /* capture phase: the older handlers (the browser toast, the plain opener) never see the event while the round is on */
+    addEventListener('click',act,true);
+    /* the keyboard takes the same road as the mouse (one click on the link), so the shipped page's handler above sees it too */
+    addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&!e.ctrlKey&&!e.metaKey&&!e.altKey){var t=target(e.target);if(!t)return;e.preventDefault();e.stopPropagation();if(e.stopImmediatePropagation)e.stopImmediatePropagation();t[0].click()}},true);
+    new MutationObserver(function(){if(on()!==has()){var open=W.classList.contains('notesopen');sync();if(open)pn(PV)}}).observe(W,{attributes:true,attributeFilter:['class']});
+  })();
+NOTES[158]='<b>Round 158 · A city in the distance.</b> Behind Omegamon, three rows of building silhouettes with lit windows: the far row is small and hazy, the near row darker and taller, so the room gains depth. It is a still picture, fades out behind the headline and is off during the cinematic.';
+  /* R158 distant city: one static inline SVG, drawn once from a fixed seed (same skyline every time), placed under the floor */
+  (function(){var fl=W.querySelector('.floor');if(!fl)return;var c=document.createElement('div');c.className='city158 px1';c.setAttribute('aria-hidden','true');
+    var s=20261112;function rnd(){s=(s*1664525+1013904223)%4294967296;return s/4294967296}
+    function R(a,b){return a+rnd()*(b-a)}function I(a,b){return Math.floor(R(a,b+1))}
+    /* layer: base line y, height range, width range, fill, window size/gap, lit share, window colours */
+    var L=[{y:452,h:[22,64],w:[14,30],f:'#1d4b5d',o:.7,ww:1.3,wh:1.5,gx:4.2,gy:5.4,lit:.2,a:.4},
+           {y:462,h:[38,104],w:[22,46],f:'#10303f',o:.92,ww:1.8,wh:2.2,gx:5.6,gy:7.2,lit:.25,a:.58},
+           {y:474,h:[56,146],w:[32,66],f:'#071821',o:1,ww:2.4,wh:3,gx:7.4,gy:9.6,lit:.3,a:.82}],
+        COL=['#E3C56E','#E3C56E','#F0DCA0','#F0DCA0','#8FD8EE','#D99A4E'],h='';
+    L.forEach(function(l,li){var x=330+R(0,20),g='',w='';
+      while(x<1300){var bw=R(l.w[0],l.w[1]),bh=R(l.h[0],l.h[1]),t=l.y-bh,k=I(0,6),d;
+        if(rnd()<.12){x+=R(6,22);continue}
+        /* seven roof shapes, so no two neighbours read the same */
+        if(k===0)d='M'+x+' '+l.y+'V'+t+'H'+(x+bw)+'V'+l.y;
+        else if(k===1){var st=bw*R(.22,.38),sh=bh*R(.1,.2);d='M'+x+' '+l.y+'V'+(t+sh)+'H'+(x+st)+'V'+t+'H'+(x+bw-st)+'V'+(t+sh)+'H'+(x+bw)+'V'+l.y}
+        else if(k===2){var ah=bh*R(.14,.3),ax=x+bw*R(.3,.7);d='M'+x+' '+l.y+'V'+t+'H'+(ax-.6)+'V'+(t-ah)+'H'+(ax+.6)+'V'+t+'H'+(x+bw)+'V'+l.y}
+        else if(k===3){var sl=bh*R(.08,.2);d='M'+x+' '+l.y+'V'+t+'L'+(x+bw)+' '+(t+sl)+'V'+l.y}
+        else if(k===4){var sl2=bh*R(.08,.2);d='M'+x+' '+l.y+'V'+(t+sl2)+'L'+(x+bw)+' '+t+'V'+l.y}
+        else if(k===5){var cw=bw*R(.3,.5),ch=bh*R(.06,.12),cx=x+(bw-cw)/2;d='M'+x+' '+l.y+'V'+t+'H'+cx+'V'+(t-ch)+'H'+(cx+cw)+'V'+t+'H'+(x+bw)+'V'+l.y}
+        else{var pk=bh*R(.1,.22);d='M'+x+' '+l.y+'V'+t+'L'+(x+bw/2)+' '+(t-pk)+'L'+(x+bw)+' '+t+'V'+l.y}
+        g+='<path d="'+d.replace(/(\d+\.\d)\d+/g,'$1')+'Z"/>';
+        /* windows: a regular grid inside the body; whole floors sometimes dark, a few lit in a run */
+        var cols=Math.floor((bw-l.gx)/l.gx),rows=Math.floor((bh*.86-l.gy)/l.gy),ox=x+(bw-cols*l.gx)/2+(l.gx-l.ww)/2,dens=l.lit*R(.45,1.5);
+        for(var r=0;r<rows;r++){if(rnd()<.2)continue;for(var q=0;q<cols;q++){if(rnd()<dens)w+='<rect x="'+(ox+q*l.gx).toFixed(1)+'" y="'+(t+bh*.08+r*l.gy).toFixed(1)+'" width="'+l.ww+'" height="'+l.wh+'" fill="'+COL[I(0,5)]+'" opacity="'+(l.a*R(.45,1)).toFixed(2)+'"/>'}}
+        x+=bw+(rnd()<.3?R(2,10):-R(0,4))}
+      h+='<g opacity="'+l.o+'"><g fill="'+l.f+'">'+g+'</g>'+w+'</g>';
+      /* a band of haze between rows: this is what makes the far row read as far */
+      if(li<2)h+='<rect x="0" y="'+(l.y-70)+'" width="1280" height="84" fill="url(#hz158)" opacity="'+(li?'.5':'.8')+'"/>'});
+    c.innerHTML='<svg viewBox="0 0 1280 720" preserveAspectRatio="none"><defs><linearGradient id="hz158" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F8FAE" stop-opacity="0"/><stop offset="1" stop-color="#2a7c96" stop-opacity=".2"/></linearGradient><linearGradient id="gl158" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FB6D8" stop-opacity="0"/><stop offset="1" stop-color="#3aa9c8" stop-opacity=".3"/></linearGradient></defs><rect x="0" y="270" width="1280" height="205" fill="url(#gl158)"/>'+h+'</svg>';
+    function put(){var on=W.classList.contains('r158');if(on&&!c.parentNode)fl.parentNode.insertBefore(c,fl);else if(!on&&c.parentNode)c.remove()}
+    new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class']});put()})();
+NOTES[159]='<b>Round 159 · A road under the city.</b> The dark strip between the city and the floor is now a road, with a pavement at the foot of the buildings and a row of low street lamps standing on it. Each lamp gives a small warm light and a faint pool on the asphalt, kept dim so the scene stays calm. Still picture, off during the cinematic.';
+  /* R159 road: one static inline SVG placed just above the floor layer, under the embers and the character */
+  (function(){var fl=W.querySelector('.floor');if(!fl)return;var c=document.createElement('div');c.className='road159 px1';c.setAttribute('aria-hidden','true');
+    var h='<rect x="0" y="476" width="1280" height="23" fill="#04080c" opacity=".78"/>'+
+          '<rect x="0" y="474.5" width="1280" height="5" fill="#13303d" opacity=".95"/>'+
+          '<rect x="0" y="479.5" width="1280" height="1" fill="#2FB6D8" opacity=".16"/>'+
+          '<path d="M0 488.5H1280" stroke="#E3C56E" stroke-width="1" stroke-dasharray="9 15" opacity=".20"/>',p='',g='';
+    for(var x=404,i=0;x<1290;x+=164,i++){var hx=x+5.5;
+      /* the posts stand on the pavement at the foot of the buildings (the strip y 474.5..479.5), arm out over the road: pool at the kerb, halo round the head, then the post */
+      g+='<ellipse cx="'+hx+'" cy="480.5" rx="17" ry="3.2" fill="url(#pl159)"/><circle cx="'+hx+'" cy="464.6" r="8" fill="url(#hl159)"/>';
+      p+='<path d="M'+x+' 478.5V464.5H'+(x+4)+'" fill="none" stroke="#2a4a5a" stroke-width="1.3"/><rect x="'+(x+3.6)+'" y="464" width="3.8" height="1.5" fill="#F0DCA0" opacity=".85"/>'}
+    c.innerHTML='<svg viewBox="0 0 1280 720" preserveAspectRatio="none"><defs>'+
+      '<radialGradient id="hl159"><stop offset="0" stop-color="#F0DCA0" stop-opacity=".34"/><stop offset=".45" stop-color="#E3C56E" stop-opacity=".10"/><stop offset="1" stop-color="#E3C56E" stop-opacity="0"/></radialGradient>'+
+      '<radialGradient id="pl159"><stop offset="0" stop-color="#E3C56E" stop-opacity=".24"/><stop offset="1" stop-color="#E3C56E" stop-opacity="0"/></radialGradient></defs>'+h+g+p+'</svg>';
+    function put(){var on=W.classList.contains('r159');if(on&&!c.parentNode)fl.parentNode.insertBefore(c,fl.nextSibling);else if(!on&&c.parentNode)c.remove()}
+    new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class']});put()})();
+  /* ==== PROD HOLD (not a round). Only in the shipped page (window.TD_PROD): the rounds below show mock data in the mockup (148 server clock, 149 invented events,
+     153 since-your-last-session counts, 154 play time, 156 background-update row), so each stays OFF until the production layer says its real data exists:
+       window.TD_LIVE={148:true,153:true}             set before or after load (prod.js, once it has the data)
+       window.TD_LIVE_APPLY&&window.TD_LIVE_APPLY()   after changing TD_LIVE later
+     Held = the class rN is taken off #win and kept off; every fragment removes its own nodes and timers when its class goes. The page rewrites the class list in
+     round(): that call is wrapped (the class is gone again before any observer of a fragment runs) and one MutationObserver catches any other writer. No loop:
+     apply() only writes when a class differs from what it should be, so its own mutation finds nothing left to do. ==== */
+  (function(){if(!window.TD_PROD)return;var HOLD=[148,149,153,154,156],_round=round;
+    function live(n){var l=window.TD_LIVE;return !!(l&&l[n])}
+    function apply(){var c=W.classList;HOLD.forEach(function(n){var k='r'+n,want=R>=n&&live(n);if(c.contains(k)!==want)c.toggle(k,want)})}
+    round=function(n,click){_round(n,click);apply()};
+    new MutationObserver(apply).observe(W,{attributes:true,attributeFilter:['class']});
+    window.TD_HOLD=HOLD;window.TD_LIVE_APPLY=apply;apply()})();
   /* R136 proposal: headline cross-fade — keep a ghost of the old story while the new one rises */
   (function () { var _s136 = show; show = function (i) {
     var st = $('story'); if (!W.classList.contains('r136') || !st || !st.firstChild || W.classList.contains('rm') || i === undefined || i === cur) { _s136(i); return }
@@ -3004,6 +3740,6 @@ function pinLoad(f){W.classList.add('cinepin','cineload');W.style.setProperty('-
 window.__SK.pin=pin;window.__SK.unpin=unpin;window.__SK.pinLoad=pinLoad;
 var m=/-sk(\d+)/.exec(location.hash);if(m)still(+m[1]);
 })();
-</script><div id="verTag">build 2026-11-11 UX · R137</div>
+</script><div id="verTag">build 2026-11-11 UX · R159</div>
 </body>
 </html>
