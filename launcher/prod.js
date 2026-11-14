@@ -14,15 +14,22 @@
   function tx(en, pt) { return L() === 'pt' ? pt : en }
   function pick(o) { return o ? (o[L()] || o.en || '') : '' }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] }) }
+  /* the entries of a data list that are objects (a hand-edited file may hold null, numbers or strings): every reader goes through this */
+  function objs(a) { return Array.isArray(a) ? a.filter(function (x) { return x && typeof x === 'object' }) : [] }
+  function pl(o, lg) { return o && typeof o === 'object' ? (o[lg] || o.en || '') : '' }
   function store(k, v) { try { if (v === undefined) return localStorage.getItem('terminus.' + k); localStorage.setItem('terminus.' + k, v) } catch (e) { return null } }
 
   /* ---------- data: inline copy first (works offline / file://), then the live files beside the page ---------- */
   var DATA = { news: { items: [], notes: [], links: {} }, events: { events: [] } };
-  try { var inl = $('tdata'); if (inl) { var j = JSON.parse(inl.textContent); if (j.news) DATA.news = j.news; if (j.events) DATA.events = j.events } } catch (e) {}
+  /* R155: where each zone's data came from (inline = the copy built into the page, net = the live file, null = nothing usable) and which zone is still fetching with nothing to show */
+  var SRC = { news: null, events: null }, LOADING = { news: false, events: false };
+  try { var inl = $('tdata'); if (inl) { var j = JSON.parse(inl.textContent); if (j.news) { DATA.news = j.news; if (Array.isArray(j.news.items)) SRC.news = 'inline' } if (j.events) { DATA.events = j.events; if (Array.isArray(j.events.events)) SRC.events = 'inline' } } } catch (e) {}
   function fetchJson(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json() }) }
+  function takeData(z, j) { if (z === 'news' && j && Array.isArray(j.items)) { DATA.news = j; SRC.news = 'net' } if (z === 'events' && j && Array.isArray(j.events)) { DATA.events = j; SRC.events = 'net' } }
   if (/^https?:/.test(location.protocol)) {
+    LOADING.news = !SRC.news; LOADING.events = !SRC.events;
     Promise.all([fetchJson('data/news.json').catch(function () { return null }), fetchJson('data/events.json').catch(function () { return null })])
-      .then(function (r) { if (r[0] && r[0].items) DATA.news = r[0]; if (r[1] && r[1].events) DATA.events = r[1]; applyData() });
+      .then(function (r) { takeData('news', r[0]); takeData('events', r[1]); LOADING.news = LOADING.events = false; applyData() });
   }
 
   /* ---------- state from the exe ---------- */
@@ -35,6 +42,8 @@
   var CAPS = null, INFO = { launcher: null, game: null }, NET = { server: null, ms: null, status: '', progress: -1 },
       STAT = null, REP = null, GAME = false, PLAYING = false, MSH = [], LASTERR = '';
   function has(c) { return !!(CAPS && CAPS.indexOf(c) >= 0) }
+  /* held rounds (mockup PROD HOLD): a round is released only while its real data exists, and held again when it goes */
+  function liveSet(n, v) { var l = window.TD_LIVE || (window.TD_LIVE = {}); v = !!v; if (!!l[n] === v) return; l[n] = v; if (window.TD_LIVE_APPLY) window.TD_LIVE_APPLY() }
 
   /* ---------- time ---------- */
   var MON = { en: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'], pt: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'] };
@@ -43,7 +52,7 @@
   function hm(d) { return p2(d.getHours()) + ':' + p2(d.getMinutes()) }
   function dShort(iso) { var d = new Date(iso + (iso.length === 10 ? 'T12:00:00' : '')); return isNaN(d) ? '' : p2(d.getDate()) + ' ' + MON[L()][d.getMonth()] }
   function dur(sec) { sec = Math.max(0, Math.floor(sec)); var d = Math.floor(sec / 86400), h = Math.floor(sec / 3600) % 24, m = Math.floor(sec / 60) % 60; return (d ? d + 'D ' : '') + p2(h) + ':' + p2(m) }
-  function evs() { return (DATA.events.events || []).map(function (e) { return { e: e, s: +new Date(e.start), t: +new Date(e.end) } }).filter(function (x) { return !isNaN(x.s) && !isNaN(x.t) && x.t > x.s }) }
+  function evs() { return objs(DATA.events.events).map(function (e) { return { e: e, s: +new Date(e.start), t: +new Date(e.end) } }).filter(function (x) { return !isNaN(x.s) && !isNaN(x.t) && x.t > x.s }) }
   function liveEv(now) { return evs().filter(function (x) { return x.s <= now && now < x.t }).sort(function (a, b) { return a.t - b.t })[0] || null }
   function nextEv(now) { return evs().filter(function (x) { return x.s > now }).sort(function (a, b) { return a.s - b.s })[0] || null }
   function evEnded(id, now) { var x = evs().filter(function (y) { return y.e.id === id })[0]; return !x || x.t <= now }
@@ -52,7 +61,7 @@
   var TAG = { client: ['CLIENT', 'CLIENTE'], server: ['SERVER', 'SERVIDOR'], event: ['EVENT', 'EVENTO'] };
   function newsItems() {
     var now = Date.now();
-    return (DATA.news.items || []).filter(function (n) { return !(n.event && evEnded(n.event, now)) && n.title })
+    return objs(DATA.news.items).filter(function (n) { return !(n.event && evEnded(n.event, now)) && n.title })
       .sort(function (a, b) { return (b.date || '').localeCompare(a.date || '') });
   }
   var NEWSIDS = [];
@@ -74,16 +83,16 @@
   }
   function dShortL(iso, lg) { var d = new Date((iso || '') + 'T12:00:00'); return isNaN(d) ? '' : p2(d.getDate()) + ' ' + MON[lg][d.getMonth()] }
   function applyNotes() {
-    var N = DATA.news.notes || [];
+    var N = objs(DATA.news.notes);
     ['en', 'pt'].forEach(function (lg) {
       var P = T.PN[lg]; P.v.length = 0; P.meta.length = 0; P.g.length = 0;
       N.forEach(function (n) {
         P.v.push(esc(n.version) + ' · ' + dShortL(n.date, lg));
         P.meta.push(esc((n.meta || {})[lg] || (n.meta || {}).en || ''));
-        P.g.push((n.groups || []).map(function (g) { return [esc(g.title[lg] || g.title.en), (g.items || []).map(function (i) { return [esc(i.text[lg] || i.text.en), esc(i.tag || '')] })] }));
+        P.g.push(objs(n.groups).map(function (g) { return [esc(pl(g.title, lg)), objs(g.items).map(function (i) { return [esc(pl(i.text, lg)), esc(i.tag || '')] })] }));
       });
     });
-    T.DIFF.length = 0; N.forEach(function (n) { var m = []; (n.groups || []).forEach(function (g) { (g.items || []).forEach(function (i) { m.push([/^(new|chg|fix|del)$/.test(i.kind) ? i.kind : 'new', '']) }) }); T.DIFF.push(m) });
+    T.DIFF.length = 0; N.forEach(function (n) { var m = []; objs(n.groups).forEach(function (g) { objs(g.items).forEach(function (i) { m.push([/^(new|chg|fix|del)$/.test(i.kind) ? i.kind : 'new', '']) }) }); T.DIFF.push(m) });
   }
 
   /* ---------- the week strip, the event chip and the countdowns ---------- */
@@ -94,13 +103,31 @@
     var nm = STAT && STAT.ok && STAT.nextMaintenance ? new Date(STAT.nextMaintenance) : null;
     function span(d) { if (!show) return null; var a = +d, b = a + 86400000, s = Math.max(a, show.s), t = Math.min(b, show.t); if (t <= s) return null; return [Math.round((s - a) / 864000), Math.max(4, Math.round((t - s) / 864000))] }
     function mt(d) { if (!nm || isNaN(nm)) return null; var a = +d; if (+nm < a || +nm >= a + 86400000) return null; return [Math.round((+nm - a) / 864000), 18] }
+    /* R149: every event of each day (local midnight to midnight), sorted by start; past events of the week stay, marked DONE */
+    function end(i) { return +new Date(days[i].getFullYear(), days[i].getMonth(), days[i].getDate() + 1) }
+    function dayEvs(i) { var a = +days[i], b = end(i); return evs().filter(function (x) { return x.s < b && x.t > a }).sort(function (p, q) { return p.s - q.s }) }
     return {
       dt: days.map(function (d) { return d.getDate() }), mon: days.map(function (d) { return MON[L()][d.getMonth()] }), today: dow,
       ev: days.map(span), mt: days.map(mt),
+      evs: days.map(function (d, i) { var a = +d, b = end(i), w = (b - a) / 100; return dayEvs(i).map(function (x) { var s = Math.max(a, x.s), t = Math.min(b, x.t);
+        return { s: [Math.round((s - a) / w), Math.max(3, Math.round((t - s) / w))], c: x.e.kind === 'maint' ? 'mt' : x.e.kind === 'exp' ? 'x149' : '' } }) }),
+      capAll: function (i) {
+        if (!(i >= 0 && i < 7)) i = dow;
+        var d = days[i], a = +d, b = end(i), n = Date.now(), all = dayEvs(i), parts = [DL2[L()][i] + ' ' + p2(d.getDate()) + ' ' + MON[L()][d.getMonth()]];
+        if (i === dow) parts.push(tx('TODAY', 'HOJE'));
+        if (!all.length) parts.push(tx('NO EVENTS', 'SEM EVENTOS'));
+        var x = all.filter(function (y) { return y.s <= n && n < y.t })[0] || all.filter(function (y) { return y.s > n })[0] || all[all.length - 1];
+        if (x) { var nmx = esc(pick(x.e.short) || pick(x.e.title)), more = all.length > 1 ? '+' + (all.length - 1) : '', st = x.s >= a, en = x.t <= b, hs = hm(new Date(x.s)), he = hm(new Date(x.t));
+          if (nmx || more) parts.push(nmx && more ? nmx + ' ' + more : nmx || more);
+          if (st && en) parts.push(tx(hs + ' TO ' + he, 'DAS ' + hs + ' ÀS ' + he)); else if (st) parts.push(tx('FROM ', 'DESDE AS ') + hs); else if (en) parts.push(tx('ENDS ', 'ACABA ÀS ') + he);
+          if (x.t <= n) parts.push(tx('DONE', 'FEITA')) }
+        if (nm && +nm >= a && +nm < b) parts.push(tx('MAINT. ', 'MANUT. ') + hm(nm));
+        return parts.join(' · ');
+      },
       cap: function (i) {
         var d = days[i], a = +d, b = a + 86400000, parts = [DL2[L()][i] + ' ' + p2(d.getDate()) + ' ' + MON[L()][d.getMonth()]];
         if (i === dow) parts.push(tx('TODAY', 'HOJE'));
-        if (show && show.s < b && show.t > a) { parts.push(esc(pick(show.e.short) || pick(show.e.title))); if (show.s >= a) parts.push(tx('FROM ', 'DESDE AS ') + hm(new Date(show.s))); if (show.t <= b) parts.push(tx('ENDS ', 'ACABA ÀS ') + hm(new Date(show.t))) }
+        if (show && show.s < b && show.t > a) { var sn = esc(pick(show.e.short) || pick(show.e.title)); if (sn) parts.push(sn); if (show.s >= a) parts.push(tx('FROM ', 'DESDE AS ') + hm(new Date(show.s))); if (show.t <= b) parts.push(tx('ENDS ', 'ACABA ÀS ') + hm(new Date(show.t))) }
         else parts.push(tx('NO EVENTS', 'SEM EVENTOS'));
         if (nm && +nm >= a && +nm < b) parts.push(tx('MAINT. ', 'MANUT. ') + hm(nm));
         return parts.join(' · ');
@@ -123,6 +150,54 @@
   }
   setInterval(function () { if (T.R < 81) return; var l = liveEv(Date.now()), k = l ? l.e.id : null; if (k !== lastLive) { lastLive = k; applyEvents(); applyNews(); return } var e = document.querySelector('#ywk .we'); if (e) e.innerHTML = weekModel().head() }, 1000);
   var lastLive = (function () { var l = liveEv(Date.now()); return l ? l.e.id : null })();
+
+  /* ---------- R148: the server's clock. /v1/status sends "at" = the host's own time with its UTC offset (DateTimeOffset.Now); the exe forwards it in
+     {t:"status"}. The clock is the PC's instant (the server's only when the two disagree by more than 90 s) shown at the server's offset. A status
+     with ok:false or with no usable "at" keeps what was known; none known = the round stays held. Every other time on the launcher stays local. ---------- */
+  var SRV = null;
+  function parseAt(a) { if (typeof a !== 'string' || !/^\d{4}-\d\d-\d\dT\d\d:\d\d/.test(a)) return null; var t = Date.parse(a), m = /(?:([+-])(\d\d):?(\d\d)|(Z))$/i.exec(a); if (isNaN(t) || !m) return null;
+    var off = m[4] ? 0 : (m[1] === '-' ? -1 : 1) * (+m[2] * 60 + +m[3]); return Math.abs(off) <= 14 * 60 ? { t: t, off: off } : null }
+  function takeAt(m) { if (m.ok === false) return; var pa = parseAt(m.at); if (!pa) return; var sk = pa.t - Date.now(); SRV = { off: pa.off, skew: Math.abs(sk) > 90000 ? sk : 0 } }
+  window.TD_SRVNOW = function () { return SRV ? Date.now() + SRV.skew + SRV.off * 60000 : NaN };
+  window.TD_SRVOFF = function () { return SRV ? SRV.off : null };
+
+  /* ---------- R153 / R154: the page's own session log (localStorage terminus.play, in the launcher's UserData, which updates never prune).
+     o = start of the game session open now (0 = none, or not seen: a game adopted after a restart), s = counted sessions [start, end] of the last 15 days,
+     t = seconds of every counted session, e = when the last game session ended (game:false after game:true, adopted games included), l = seconds of the
+     last counted session (null = none yet). Under 1 min a session is not counted; an open start whose end was never seen is dropped; a session longer
+     than 24 h (an open start kept by a killed launcher and adopted days later) is not counted, its end still is. Stored values that no real log can hold
+     are discarded on load. ---------- */
+  var MAXS = 86400000;
+  var PLOG = (function () { var d = { o: 0, s: [], t: 0, e: 0, l: null }, n = Date.now(), T0 = Date.UTC(2020, 0, 1);
+    function ok(x, lo, hi) { x = +x; return isFinite(x) && x >= lo && x <= hi ? x : null }
+    try { var j = JSON.parse(store('play') || 'null'); if (j && typeof j === 'object') {
+      d.o = ok(j.o, n - MAXS, n + MAXS) || 0; d.e = ok(j.e, T0, n + 366 * 86400000) || 0;
+      d.t = ok(j.t, 0, (n - T0) / 1000) || 0; d.l = j.l == null ? null : ok(j.l, 60, MAXS / 1000);
+      d.s = Array.isArray(j.s) ? j.s.filter(function (x) { return Array.isArray(x) && ok(x[0], T0, n + MAXS) != null && ok(x[1] - x[0], 60000, MAXS) != null }).map(function (x) { return [+x[0], +x[1]] }) : [] } } catch (e) {}
+    return d })();
+  function psave() { var lim = Date.now() - 15 * 86400000; PLOG.s = PLOG.s.filter(function (x) { return x[1] > lim }); store('play', JSON.stringify(PLOG)) }
+  function sessOpen() { PLOG.o = Date.now(); psave() }
+  function sessClose() { var n = Date.now(), o = PLOG.o; PLOG.e = n; PLOG.o = 0;
+    if (o && n - o >= 60000 && n - o <= MAXS) { var sec = Math.floor((n - o) / 1000); PLOG.s.push([o, n]); PLOG.t += sec; PLOG.l = sec }
+    psave(); sessLive() }
+  function weekSec() { var n = new Date(), m0 = +new Date(n.getFullYear(), n.getMonth(), n.getDate() - (n.getDay() + 6) % 7);
+    return PLOG.s.reduce(function (a, x) { return a + Math.max(0, Math.min(x[1], +n) - Math.max(x[0], m0)) }, 0) / 1000 }
+  function hmm(sec) { var m = Math.max(0, Math.floor(sec / 60)); return Math.floor(m / 60) + ':' + p2(m % 60) }
+  window.__r154data = function () { if (!has('game') || PLOG.l == null) return null; return { s: hmm(PLOG.l), w: hmm(weekSec()), t: PLOG.t < 3600 ? '&lt;1' : String(Math.floor(PLOG.t / 3600)) } };
+  window.__since = function () { if (!has('game') || !PLOG.e) return null;
+    return { last: PLOG.e, notes: objs(DATA.news.notes).map(function (x) { return String(x.date || '') }), news: newsItems().map(function (x) { return String(x.date || '') }), ev: evs().map(function (x) { return x.s }) } };
+  function sessLive() { var g = has('game'); liveSet(153, g && PLOG.e > 0); liveSet(154, g && PLOG.l != null);
+    try { if (window.__r153) window.__r153() } catch (e) {} try { if (window.__r154) window.__r154() } catch (e) {} }
+
+  /* ---------- R155: the news and week zones say loading / empty / could not load; RETRY runs the real fetch. The week is never "empty": its strip says NO EVENTS ---------- */
+  function r155mode(z) { if (LOADING[z]) return 'loading'; if (z === 'news') return newsItems().length ? 'ok' : SRC.news ? 'empty' : 'fail'; return SRC.events ? 'ok' : 'fail' }
+  var R155Q = false;
+  function r155sync() { if (R155Q || typeof window.__r155 !== 'function') return; var c = window.__r155(); if (!c) return;
+    ['news', 'events'].forEach(function (z) { var m = r155mode(z); if (c[z] !== m) window.__r155(z, m) }) }
+  window.__r155load = function (z, cb) { if (z !== 'news' && z !== 'events') return; LOADING[z] = true;
+    fetchJson('data/' + z + '.json').then(function (j) { takeData(z, j) }, function () {}).then(function () {
+      LOADING[z] = false; R155Q = true; try { applyData() } finally { R155Q = false }
+      var m = r155mode(z); if (cb) cb(m); r155sync() }) };
 
   /* ---------- texts that used to be fiction ---------- */
   function fmtGame(g) { g = String(g || ''); return /^\d{10}$/.test(g) ? g.slice(0, 4) + '.' + g.slice(4, 6) + '.' + g.slice(6, 8) + '-' + g.slice(8) : g }
@@ -230,7 +305,10 @@
       soon();
     } else if (m.t === 'caps') {
       CAPS = Array.isArray(m.caps) ? m.caps : []; INFO.launcher = m.launcher || INFO.launcher; INFO.game = m.game || null;
-      if (typeof m.running === 'boolean') GAME = m.running;
+      /* a game that ended while this page watched closes the session; one that ended unseen (launcher killed, closed on start) drops its open start */
+      if (typeof m.running === 'boolean') { var wasG = GAME; GAME = m.running; if (!GAME && wasG) sessClose(); else if (!GAME && PLOG.o) { PLOG.o = 0; psave() } }
+      if (has('bgupdate')) post('bgupdate:get'); else liveSet(156, false);
+      sessLive();
       W.classList.add('caps2'); W.classList.toggle('capcompact', has('compact'));
       if (has('overlays')) post('overlays:html');
       if (has('size')) post('size:1280x720');
@@ -238,7 +316,7 @@
       if (has('tray')) post('lang:' + L());
       lverNotice(); soon();
     } else if (m.t === 'status') {
-      STAT = m; soon(); T.wk(weekModel());
+      STAT = m; takeAt(m); liveSet(148, !!SRV); soon(); T.wk(weekModel());
     } else if (m.t === 'repair') {
       REP = m.phase === 'done' || m.phase === 'error' ? null : m;
       if (m.phase === 'done') try { T.Y.chime && T.Y.chime('done') } catch (x) {}
@@ -251,9 +329,16 @@
       /* the exe checks (and if needed downloads) files before the game starts: real progress, a sign of life */
       PLAYP = m; sigAt = Date.now(); if (!PLAYING) PLAYING = true; soon();
     } else if (m.t === 'game') {
-      GAME = !!m.running; PLAYING = false; PLAYP = null;
+      var wasR = GAME; GAME = !!m.running; PLAYING = false; PLAYP = null;
+      if (GAME && !wasR) sessOpen(); else if (!GAME && wasR) sessClose();
       if (GAME) { T.setSess(0); store('last', String(Date.now())); lastPlayed(); var cl = closeOnStart(); if (cl) setTimeout(function () { post(has('quit') ? 'quit' : 'close') }, 400) }
       soon();
+    } else if (m.t === 'bgupdate') {
+      /* R156 page part: inert until an exe that sends the bgupdate cap reports its mode and last result (no exe does yet) */
+      if (!has('bgupdate')) return;
+      var la = m.last && typeof m.last === 'object' ? m.last : null;
+      liveSet(156, true);
+      try { if (window.__r156msg) window.__r156msg({ mode: /^(off|on|night)$/.test(m.mode) ? m.mode : 'off', last: la ? { result: String(la.result || ''), to: esc(fmtGame(la.to)), nv: /^\d{10}$/.test(String(la.to)) ? String(la.to).slice(6) : '', seen: !!la.seen } : null }) } catch (e) {}
     }
   });
 
@@ -455,7 +540,7 @@
     [].forEach.call(sidx.querySelectorAll('button[data-g]'), function (b) { var g = G[+b.dataset.g], n = b.querySelector('b'); if (!g || !n) return;
       var c = [].filter.call(g.querySelectorAll('.sh-o'), function (o) { return !o.classList.contains('prod-off') }).length; if (n.textContent !== String(c)) n.textContent = c }) }).observe(sidx, { childList: true, subtree: true, characterData: true });
 
-  function applyData() { applyNotes(); applyNews(); applyEvents(); var d = (DATA.news.links || {}).discord; W.classList.toggle('nodiscord', !d); render() }
+  function applyData() { try { applyNotes(); applyNews(); applyEvents(); var d = (DATA.news.links || {}).discord; W.classList.toggle('nodiscord', !d); render(); liveSet(149, true) } finally { r155sync(); sessLive() } }
 
   /* warm the settings sheet once, invisibly, so its first open slides at once (it stalled ~460 ms) */
   (window.requestIdleCallback || function (f) { setTimeout(f, 1200) })(function () {
@@ -479,5 +564,5 @@
     setTimeout(go, 2500);
   })();
   if (!host) { NET.server = true; render() }
-  window.__prod = { get caps() { return CAPS }, get net() { return NET }, get stat() { return STAT }, get rep() { return REP }, get game() { return GAME }, data: DATA, render: render, weekModel: weekModel, apply: function () { applyData() } };
+  window.__prod = { get caps() { return CAPS }, get net() { return NET }, get stat() { return STAT }, get rep() { return REP }, get game() { return GAME }, data: DATA, render: render, weekModel: weekModel, apply: function () { applyData() }, get plog() { return PLOG }, get srv() { return SRV }, get src() { return SRC } };
 })();

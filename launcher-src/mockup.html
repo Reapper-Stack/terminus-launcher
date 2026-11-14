@@ -2843,38 +2843,56 @@ NOTES[147]='<b>Round 147 · The scene goes quiet.</b> When the server is offline
     function arm(){t0=performance.now();W.classList.remove('q147');setTimeout(sync,1300)}
     new MutationObserver(function(ms){ms.forEach(function(m){if(W.classList.contains('open')&&(' '+(m.oldValue||'')+' ').indexOf(' open ')<0)arm()});sync()}).observe(W,{attributes:true,attributeFilter:['class'],attributeOldValue:true});
     if(W.classList.contains('open'))arm()})();
-NOTES[148]='<b>Round 148 · Server time.</b> A small clock on the week card shows the server’s time (hours and minutes). Events are given in server time, so there is nothing to convert.';
+NOTES[148]='<b>Round 148 · Server time.</b> A small clock on the week card shows the server’s time (hours and minutes). When the server’s UTC offset is not yours, the clock names it (UTC+0); every other time on the launcher stays in your own time.';
   /* R148 server clock: one timeout per minute, aligned to the minute; the node lives in the week card only while the round is on */
   (function(){var MT_START=18*3600, /* mock: the demo's server "now" is the 18:00 maintenance start minus the page's own maintenance countdown (mleft), so the clock agrees with STARTS IN and the week strip. The real launcher gets the time from the server. */
-      w=document.getElementById('ywk'),el=null,tm=0;if(!w)return;
+      P=!!window.TD_PROD,w=document.getElementById('ywk'),el=null,tm=0;if(!w)return;
     Y.D({'sc148.l':['SERVER TIME','HORA DO SERVIDOR']});
-    function hhmm(){var t=((MT_START-mleft)%86400+86400)%86400,h=Math.floor(t/3600),m=Math.floor(t/60)%60;return(h<10?'0':'')+h+':'+(m<10?'0':'')+m}
+    /* prod: prod.js TD_SRVNOW() = the server's wall clock as an instant read with getUTC* (from the status "at": its offset, the PC's instant unless the two disagree by more than 90 s), TD_SRVOFF() = that offset in minutes */
+    function srv(){return P&&typeof window.TD_SRVNOW==='function'?window.TD_SRVNOW():NaN}
+    function two(n){return(n<10?'0':'')+n}
+    function hhmm(){if(P){var s=srv();if(isNaN(s))return '--:--';var d=new Date(s);return two(d.getUTCHours())+':'+two(d.getUTCMinutes())}
+      var t=((MT_START-mleft)%86400+86400)%86400,h=Math.floor(t/3600),m=Math.floor(t/60)%60;return(h<10?'0':'')+h+':'+(m<10?'0':'')+m}
+    /* the offset is named only when it is not the player's own */
+    function off(){var o=P&&typeof window.TD_SRVOFF==='function'?window.TD_SRVOFF():null;if(o==null||o===-new Date().getTimezoneOffset())return '';var a=Math.abs(o);return 'UTC'+(o<0?'-':'+')+Math.floor(a/60)+(a%60?':'+two(a%60):'')}
+    function wait(){if(!P)return(mleft%60||60)*1000+80;var s=srv();return isNaN(s)?60000:60000-((s%60000)+60000)%60000+80}
     function put(){if(!W.classList.contains('r148')){clearTimeout(tm);tm=0;if(el){el.remove();el=null}return}
       if(!el){el=document.createElement('div');el.className='sc148';el.setAttribute('role','timer')}
-      var h='<span>'+Y.t('sc148.l')+'</span> <b>'+hhmm()+'</b>';if(el.innerHTML!==h)el.innerHTML=h;
+      var o=off(),h='<span>'+Y.t('sc148.l')+'</span> <b>'+hhmm()+'</b>'+(o?' <span>'+o+'</span>':'');if(el.innerHTML!==h)el.innerHTML=h;
       if(el.parentNode!==w)w.appendChild(el);
-      if(!tm&&!document.hidden&&W.dataset.st!=='running')tm=setTimeout(function(){tm=0;put()},(mleft%60||60)*1000+80)}
+      if(!tm&&!document.hidden&&W.dataset.st!=='running')tm=setTimeout(function(){tm=0;put()},wait())}
     /* the strip redraws itself (state, language, a pressed day): the clock is put back each time */
     new MutationObserver(put).observe(w,{childList:true});
     new MutationObserver(put).observe(W,{attributes:true,attributeFilter:['class','data-st']});document.addEventListener('visibilitychange',put);put()})();
 NOTES[149]='<b>Round 149 · Pick a day.</b> Press a day in the week strip and the line under it shows that day’s events (two more days have one now: a past maintenance and an EXP evening) (a day with nothing says NO EVENTS). Today keeps its gold initial, the picked day has the teal box, focus stays on the day you pressed, and pressing today or Esc goes back.';
-  /* R149 pick a day. The strip already selects (wkSel) and redraws itself; this round adds the other days' events, keeps the focus through the redraw, and Esc. */
-  (function(){var w=document.getElementById('ywk'),foc=-1;if(!w)return;
+  /* R149 pick a day. The strip already selects (wkSel) and redraws itself; this round adds the other days' events, keeps the focus through the redraw, and Esc.
+     In the shipped page the week comes from prod.js (WK): every event of data/events.json per day (WK.evs: [start %, width %] and a kind class) and the caption of a day (WK.capAll). */
+  (function(){var w=document.getElementById('ywk'),foc=-1,tdW=-1;if(!w)return;
     /* mock: what the real launcher reads from data/events.json (short, start, end), here for WED and THU. s = [start %, width %] of the day */
     var EV149={2:{k:'e149.mt',c:'mt',s:[25,5]},3:{k:'e149.exp',c:'x149',s:[83,9]}};
     Y.D({'e149.mt':['MAINT. 06:00 TO 07:00 · DONE','MANUT. 06:00 ÀS 07:00 · FEITA'],'e149.exp':['EXP ×2 · 20:00 TO 22:00','EXP ×2 · DAS 20:00 ÀS 22:00']});
-    function on(){return W.classList.contains('r149')&&!WK}
-    function deco(){if(!on()){w.classList.remove('sel149');foc=-1;return}
-      for(var i in EV149){var b=w.querySelector('.dy[data-i="'+i+'"]'),tr=b&&b.querySelector('.tr');if(tr&&!tr.querySelector('.e149')){var s=document.createElement('s');s.className=EV149[i].c+' e149';s.style.cssText='margin-left:'+EV149[i].s[0]+'%;width:'+EV149[i].s[1]+'%';tr.appendChild(s);b.classList.add('ev')}}
-      var cap=w.querySelector('.wcap'),e=EV149[wkSel],day=DL2[L][wkSel]+' 0'+DT[wkSel]+' '+Y.t('wk.nov')+' · ';
-      if(cap&&e)cap.textContent=day+Y.t(e.k);
-      w.classList.toggle('sel149',wkSel!==TODAY);
+    function on(){return W.classList.contains('r149')}
+    function td(){return WK?WK.today:TODAY}
+    /* the real week starts on the real today (the strip's own first pick is the mock's SAT) and goes back to today when the day rolls over; a status redraw keeps a pick */
+    /* any redraw (a status, a live event starting) rebuilds the buttons: a day that had the focus gets it back */
+    var _wd=wkDraw;wkDraw=function(){if(WK){if(WK.today!==tdW||!(wkSel>=0&&wkSel<7))wkSel=WK.today;tdW=WK.today}var a=document.activeElement;if(foc<0&&on()&&a&&a.classList&&a.classList.contains('dy')&&w.contains(a))foc=+a.dataset.i;_wd()};
+    function real(){for(var i=0;i<7;i++){var b=w.querySelector('.dy[data-i="'+i+'"]'),tr=b&&b.querySelector('.tr'),E=WK.evs&&WK.evs[i]||[];if(!tr||tr.querySelector('.e149'))continue;
+        [].forEach.call(tr.querySelectorAll('s:not(.mt)'),function(s){s.remove()});
+        for(var k=E.length-1;k>=0;k--){var s=document.createElement('s');s.className=(E[k].c?E[k].c+' ':'')+'e149';s.style.cssText='margin-left:'+E[k].s[0]+'%;width:'+E[k].s[1]+'%';tr.insertBefore(s,tr.firstChild)}
+        if(b.classList.contains('ev')!==E.length>0)b.classList.toggle('ev',E.length>0)}
+      var cap=w.querySelector('.wcap'),h=WK.capAll?WK.capAll(wkSel):'';if(cap&&h&&cap.innerHTML!==h)cap.innerHTML=h}
+    function deco(){if(!on()){w.classList.remove('sel149');foc=-1;if(WK&&w.querySelector('.e149'))wkDraw();return}
+      if(WK)real();
+      else{for(var i in EV149){var b=w.querySelector('.dy[data-i="'+i+'"]'),tr=b&&b.querySelector('.tr');if(tr&&!tr.querySelector('.e149')){var s=document.createElement('s');s.className=EV149[i].c+' e149';s.style.cssText='margin-left:'+EV149[i].s[0]+'%;width:'+EV149[i].s[1]+'%';tr.appendChild(s);b.classList.add('ev')}}
+        var cap=w.querySelector('.wcap'),e=EV149[wkSel],day=DL2[L][wkSel]+' 0'+DT[wkSel]+' '+Y.t('wk.nov')+' · ';
+        if(cap&&e)cap.textContent=day+Y.t(e.k)}
+      w.classList.toggle('sel149',wkSel!==td());
       if(foc>=0){var f=w.querySelector('.dy[data-i="'+foc+'"]');foc=-1;if(f)f.focus()}}
     /* the strip rebuilds its buttons on every press: remember which day was pressed and give it the focus back */
     w.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.dy');if(b&&on())foc=+b.dataset.i},true);
-    w.addEventListener('keydown',function(e){if(e.key==='Escape'&&on()&&wkSel!==TODAY){e.preventDefault();e.stopPropagation();foc=TODAY;wkSel=TODAY;wkDraw()}});
+    w.addEventListener('keydown',function(e){if(e.key==='Escape'&&on()&&wkSel!==td()){e.preventDefault();e.stopPropagation();foc=td();wkSel=td();wkDraw()}});
     new MutationObserver(deco).observe(w,{childList:true});
-    new MutationObserver(function(){if(w.classList.contains('sel149')!==(on()&&wkSel!==TODAY)||(on()&&!w.querySelector('.e149')))deco()}).observe(W,{attributes:true,attributeFilter:['class']});deco()})();
+    new MutationObserver(function(){if(w.classList.contains('sel149')!==(on()&&wkSel!==td())||(on()&&!w.querySelector('.e149'))||(!on()&&WK&&w.querySelector('.e149')))deco()}).observe(W,{attributes:true,attributeFilter:['class']});deco()})();
 NOTES[150]='<b>Round 150 · The headline moves on.</b> The big news changes by itself every 8 seconds, and a thin gold line on the open card’s picture shows how long is left. It waits while you point at the news, tab into it, open a panel, hide the window or start the game; choosing a card starts the count again. Reduced motion: no auto-advance, no line.';
   /* R150 one clock for the headline: el (ms) is the truth, the line is a WAAPI scaleX kept on that same time; the old 300 ms stepper stands down while the round is on */
   (function(){var D=8000,el=0,last=performance.now(),ln=document.createElement('i'),fl=document.createElement('b'),an=null,_nh=newsHeld,_s=show;
@@ -2942,24 +2960,32 @@ NOTES[152]='<b>Round 152 · The headline changes softly.</b> When the big news c
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(again)})();
 NOTES[153]='<b>Round 153 · Since your last session.</b> A small block under the notices tells a returning player what is new since they last played: how many updates, how many news and whether an event started, each one a link to its place (patch notes, the news list, the week). Close it and it stays closed until something new arrives; when nothing changed it is not there at all.';
   /* R153 since-last-session. MOCK: LAST = when the last game session ended, NOW = the demo's "today" (SAT 07 NOV, as the week strip),
-     EV = event starts (the week strip's DROPS x2, FRI 18:00). Updates come from the patch-note versions (PN), news from NEWS. */
-  (function(){var LAST=new Date(2026,9,27,21,42),NOW=new Date(2026,10,7,16,18),EV=[new Date(2026,10,6,18,0)],KEY='terminus.since153',el=null,drawn='';
+     EV = event starts (the week strip's DROPS x2, FRI 18:00). Updates come from the patch-note versions (PN), news from NEWS.
+     The shipped page reads prod.js __since(): {last: when the last game session ended (ms), notes / news: their dates (ISO, day only), ev: event starts (ms)};
+     null (no session end recorded) = nothing is shown. A dated item counts from the day after the session ended up to today. */
+  (function(){var LAST=new Date(2026,9,27,21,42),NOW=new Date(2026,10,7,16,18),EV=[new Date(2026,10,6,18,0)],KEY='terminus.since153',el=null,drawn='',P=!!window.TD_PROD,SN=null;
     var MO={JAN:0,FEB:1,MAR:2,APR:3,MAY:4,JUN:5,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11};
     function dt(s){var m=/(\d\d) ([A-Z]{3})/.exec(s||'');return m&&MO[m[2]]!==undefined?new Date(2026,MO[m[2]],+m[1],12):null}
     function since(d){return !!d&&d>LAST&&d<=NOW}
-    function count(){return{u:PN.en.v.filter(function(v){return since(dt(v))}).length,n:NEWS.en.filter(function(n){return since(dt(n.d))}).length,e:EV.filter(since).length}}
+    function real(){SN=typeof window.__since==='function'?window.__since():null;if(!SN||!SN.last)return false;LAST=new Date(SN.last);NOW=new Date();EV=(SN.ev||[]).map(function(t){return new Date(t)});return true}
+    function ymd(d){var m=d.getMonth()+1,a=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(a<10?'0':'')+a}
+    function day(x){x=String(x||'').slice(0,10);return /^\d{4}-\d\d-\d\d$/.test(x)&&x>ymd(LAST)&&x<=ymd(NOW)}
+    function count(){if(P)return{u:(SN.notes||[]).filter(day).length,n:(SN.news||[]).filter(day).length,e:EV.filter(since).length};
+      return{u:PN.en.v.filter(function(v){return since(dt(v))}).length,n:NEWS.en.filter(function(n){return since(dt(n.d))}).length,e:EV.filter(since).length}}
     function sig(c){return LAST.getTime()+'|'+c.u+'|'+c.n+'|'+c.e}
     function gone(c){try{return localStorage.getItem(KEY)===sig(c)}catch(e){return false}}
     function word(k,n){var pt=L==='pt';return k==='u'?(pt?(n===1?'atualização':'atualizações'):(n===1?'update':'updates')):k==='n'?(pt?(n===1?'notícia':'notícias'):'news'):(pt?(n===1?'evento novo':'eventos novos'):(n===1?'event started':'events started'))}
+    /* the week day of the newest event that started; one from an earlier week lands on today */
+    function evDay(){if(!P)return(EV[0].getDay()+6)%7;var d=(NOW.getDay()+6)%7,m0=new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()-d),e=EV.filter(since).sort(function(a,b){return b-a})[0],i=e?Math.round((new Date(e.getFullYear(),e.getMonth(),e.getDate())-m0)/864e5):d;return i>=0&&i<7?i:d}
     function go(k){if(k==='u'){notes(true)}
       else if(k==='n'){var b=$('cats').querySelector('button');if(b){b.click();b=$('cats').querySelector('button');if(b)b.focus()}}
-      else{var w=$('ywk'),i=(EV[0].getDay()+6)%7;if(w){var d=w.querySelector('.dy[data-i="'+i+'"]');if(d){d.click();d=w.querySelector('.dy[data-i="'+i+'"]');if(d)d.focus()}}}}
+      else{var w=$('ywk'),i=evDay();if(w){var d=w.querySelector('.dy[data-i="'+i+'"]');if(d){d.click();d=w.querySelector('.dy[data-i="'+i+'"]');if(d)d.focus()}}}}
     function draw(c){var k=L+'|'+sig(c);if(drawn===k)return;drawn=k;var p=[];['u','n','e'].forEach(function(g){if(c[g])p.push('<u role="button" tabindex="0" data-g="'+g+'"><b>'+c[g]+'</b> '+word(g,c[g])+'</u>')});
       el.setAttribute('aria-label',L==='pt'?'Desde a tua última sessão':'Since your last session');
       el.innerHTML='<div class="nk"><span class="k153">'+(L==='pt'?'DESDE A TUA ÚLTIMA SESSÃO':'SINCE YOUR LAST SESSION')+'</span><button class="x2" aria-label="'+(L==='pt'?'Dispensar':'Dismiss')+'">✕</button></div><div class="l153">'+p.join('<i>·</i>')+'</div>';
       el.querySelector('.x2').onclick=function(){try{localStorage.setItem(KEY,sig(c))}catch(e){}sync()};
       [].forEach.call(el.querySelectorAll('u'),function(u){u.onclick=function(){go(u.dataset.g)};u.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(u.dataset.g)}}})}
-    function sync(){var yn=$('ynot'),c=count(),on=W.classList.contains('r153')&&!!yn&&(c.u+c.n+c.e)>0&&!gone(c);
+    function sync(){var yn=$('ynot'),ok=W.classList.contains('r153')&&(!P||real()),c=ok?count():{u:0,n:0,e:0},on=ok&&!!yn&&(c.u+c.n+c.e)>0&&!gone(c);
       if(!on){if(el){el.remove();el=null;drawn=''}return}
       if(!el){el=document.createElement('div');el.className='ynot ys153';el.setAttribute('role','group');yn.parentNode.insertBefore(el,yn.nextSibling)}
       draw(c);var t=getComputedStyle(yn).display!=='none'&&yn.offsetHeight?(yn.offsetTop+yn.offsetHeight+11)+'px':'';if(el.style.top!==t)el.style.top=t}
@@ -2967,22 +2993,31 @@ NOTES[153]='<b>Round 153 · Since your last session.</b> A small block under the
     new MutationObserver(sync).observe(W,{attributes:true,attributeFilter:['class','data-st']});
     new MutationObserver(function(){drawn='';sync()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     if($('ynot'))hook();else setTimeout(hook,0);
+    /* prod.js calls this when a session ends or the data arrives */
+    window.__r153=function(){drawn='';sync()};
   })();
 NOTES[154]='<b>Round 154 · Play time.</b> Point at LAST PLAYED (or reach it with Tab) and a small card under it shows how long that session was, your hours this week and your total. It is counted on this PC only, no account. The session length also joins the line itself whenever there is room for it beside OPTIONS; PLAY and the row under it do not move.';
-  /* R154 play-time. MOCK values: s = length of the last session, w = this week, t = total hours (all local, from the exe) */
-  (function(){var l=$('ylp');if(!l)return;var row=l.parentNode,card=null,MOCK={s:'0:48',w:'6:20',t:142};
-    function fill(){if(card.dataset.l===L)return;card.dataset.l=L;var pt=L==='pt';card.innerHTML='<span>'+(pt?'SESSÃO':'SESSION')+' <b>'+MOCK.s+'</b></span><i>·</i><span>'+(pt?'SEMANA':'WEEK')+' <b>'+MOCK.w+'</b></span><i>·</i><span>TOTAL <b>'+MOCK.t+' H</b></span>'}
-    function sync(){var on=W.classList.contains('r154'),s=l.querySelector('.s154');
+  /* R154 play-time. MOCK values: s = length of the last session, w = this week, t = total hours (all local, from the exe).
+     The shipped page reads prod.js __r154data(): {s: the last counted session H:MM, w: this week from Monday 00:00 H:MM, t: whole hours or '&lt;1'};
+     null (nothing counted yet) = no card, no length on the line. */
+  (function(){var l=$('ylp');if(!l)return;var row=l.parentNode,card=null,P=!!window.TD_PROD,MOCK={s:'0:48',w:'6:20',t:142};
+    function dat(){if(!P)return MOCK;var d=typeof window.__r154data==='function'?window.__r154data():null;return d&&d.s?d:null}
+    function fill(D){var k=L+'|'+D.s+'|'+D.w+'|'+D.t;if(card.dataset.l===k)return;card.dataset.l=k;var pt=L==='pt';card.innerHTML='<span>'+(pt?'SESSÃO':'SESSION')+' <b>'+D.s+'</b></span><i>·</i><span>'+(pt?'SEMANA':'WEEK')+' <b>'+D.w+'</b></span><i>·</i><span>TOTAL <b>'+D.t+' H</b></span>'}
+    function sync(){var D=dat(),on=W.classList.contains('r154')&&!!D,s=l.querySelector('.s154');
       if(!on){if(s)s.remove();if(card){card.remove();card=null;l.removeAttribute('tabindex');l.removeAttribute('aria-describedby');delete l.dataset.nf154}return}
       if(!card){card=document.createElement('span');card.className='tp154';card.id='tp154';card.setAttribute('role','tooltip');row.appendChild(card);l.tabIndex=0;l.setAttribute('aria-describedby','tp154')}
-      fill();
+      fill(D);
+      /* a new session length is measured again */
+      if(s&&s.dataset.v!==D.s){s.remove();s=null}
       /* the session length on the line: only if the line still ends 4 px (the row's gap) before OPTIONS; never wrap, never shrink */
-      if(s||!l.querySelector('.v141')||!row.offsetWidth||l.dataset.nf154===l.textContent)return;
-      var b=$('ylb'),key=l.textContent;s=document.createElement('span');s.className='s154';s.innerHTML=' <i>·</i> '+MOCK.s;l.appendChild(s);
+      if(s||!l.querySelector('.v141')||!row.offsetWidth||l.dataset.nf154===l.textContent+'|'+D.s)return;
+      var b=$('ylb'),key=l.textContent+'|'+D.s;s=document.createElement('span');s.className='s154';s.dataset.v=D.s;s.innerHTML=' <i>·</i> '+D.s;l.appendChild(s);
       var sc=row.getBoundingClientRect().width/row.offsetWidth||1;
       if(b&&l.getBoundingClientRect().right+4*sc+b.getBoundingClientRect().width>row.getBoundingClientRect().right+.5){s.remove();l.dataset.nf154=key}}
     new MutationObserver(sync).observe(l,{childList:true});
     new MutationObserver(sync).observe(W,{attributes:true,attributeFilter:['class','data-st']});sync();
+    /* prod.js calls this when a session is counted */
+    window.__r154=function(){sync()};
   })();
 NOTES[155]='<b>Round 155 · Empty and failure states.</b> When the news or the week have nothing to show, their place is no longer blank: quiet blocks while they load, one calm line when there is nothing, and one line with a RETRY button when they could not load. With data the page is exactly Round 154.';
   /* R155 empty and failure states. M = the mode of each zone ('ok' | 'loading' | 'empty' | 'fail'). In a forced mode the real nodes stay laid out
@@ -3057,8 +3092,8 @@ NOTES[155]='<b>Round 155 · Empty and failure states.</b> When the news or the w
     function set(zone,mode){clearTimeout(tm[zone]);tm[zone]=0;M[zone]=mode;apply();
       /* a retry made from the keyboard keeps its place: back on the zone when the data is there, or on RETRY when it failed again */
       if(kb[zone]&&mode!=='loading'){kb[zone]=false;var f=mode==='ok'?(zone==='news'?$('rail').querySelector('.ri.on,.ri'):$('ywk')&&$('ywk').querySelector('.dy.td')):(zone==='news'?nd:ed)&&(zone==='news'?nd:ed).querySelector('.rt155');if(f&&f.focus)f.focus({focusVisible:true})}}
-    /* the loader. MOCK: one second, then the data is there */
-    function load(zone){set(zone,'loading');tm[zone]=setTimeout(function(){set(zone,'ok')},1000)}
+    /* the loader. MOCK: one second, then the data is there. The shipped page fetches the zone's file again (prod.js __r155load) and answers ok / empty / fail */
+    function load(zone){set(zone,'loading');if(window.TD_PROD&&typeof window.__r155load==='function'){window.__r155load(zone,function(m){if(MODES.indexOf(m)>=0)set(zone,m)});return}tm[zone]=setTimeout(function(){set(zone,'ok')},1000)}
     W.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;
       var b=t.closest('.rt155');if(b&&on()){e.preventDefault();e.stopPropagation();kb[b.dataset.z]=e.detail===0;load(b.dataset.z);return}
       if(em()!=='ok'&&t.closest('#ywk .dy')){e.preventDefault();e.stopPropagation()}},true);
@@ -3077,8 +3112,10 @@ NOTES[155]='<b>Round 155 · Empty and failure states.</b> When the news or the w
   })();
 NOTES[156]='<b>Round 156 · Update in the background.</b> Settings › LAUNCHER gets one row: OFF, ON or AT NIGHT (02:00–07:00). The launcher downloads while it sits in the tray, never while the game is running, and when you come back the bar says once that it updated, with a link to what changed.';
   /* R156 background updates: the row lives in the page only while the round is on; the choice keeps its own key (terminus.bgupd), like the cinematic.
-     Mocked here; the real launcher gets the mode and the last result from the exe (see bg_update_spec.md). */
-  (function(){var KEY='terminus.bgupd',MODES=['off','on','night'],
+     Mocked here; the real launcher gets the mode and the last result from the exe (see bg_update_spec.md).
+     The shipped page never reads the key: prod.js hands over each {t:"bgupdate"} from the exe through __r156msg({mode, last:{result, to (formatted), nv, seen}})
+     (the round is held until the exe sends the bgupdate cap); a choice goes to the exe as bgupdate:<mode>, OFF by default; the line, once shown, posts bgupdate:seen. */
+  (function(){var KEY='terminus.bgupd',MODES=['off','on','night'],P=!!window.TD_PROD,BG={mode:'off',to:'',nv:'',done:false},
     BT=[['OFF','NÃO'],['ON','SIM'],['AT NIGHT','À NOITE']],
     HT={off:['The launcher only updates when you open it.','O launcher só atualiza quando o abres.'],
         on:['Downloads from the tray, never while the game is running.','Transfere na área de notificação, nunca com o jogo aberto.'],
@@ -3087,8 +3124,12 @@ NOTES[156]='<b>Round 156 · Update in the background.</b> Settings › LAUNCHER 
     row=null,applied=false,ps=document.getElementById('psub');
     function pt(){return document.documentElement.lang==='pt'}
     function on(){return W.classList.contains('r156')}
-    function get(){var v='';try{v=localStorage.getItem(KEY)||''}catch(e){}return MODES.indexOf(v)>=0?v:'on'}
-    function set(v){if(MODES.indexOf(v)<0)v='on';try{localStorage.setItem(KEY,v)}catch(e){}paint()}
+    function send(m){try{window.chrome.webview.postMessage(m)}catch(e){}}
+    function get(){if(P)return MODES.indexOf(BG.mode)>=0?BG.mode:'off';var v='';try{v=localStorage.getItem(KEY)||''}catch(e){}return MODES.indexOf(v)>=0?v:'on'}
+    function set(v){if(P){if(MODES.indexOf(v)<0)v='off';if(BG.mode!==v){BG.mode=v;send('bgupdate:'+v)}paint();return}
+      if(MODES.indexOf(v)<0)v='on';try{localStorage.setItem(KEY,v)}catch(e){}paint()}
+    function msg(){if(!P)return MSG[pt()?1:0];var nv=BG.nv?' data-v="'+BG.nv+'"':'';
+      return pt()?'<span class="bg156m">Atualizado para a <b>'+BG.to+'</b> enquanto estiveste fora · </span><u data-a="notes"'+nv+' role="button" tabindex="0">o que mudou</u>':'<span class="bg156m">Updated to <b>'+BG.to+'</b> while you were away · </span><u data-a="notes"'+nv+' role="button" tabindex="0">what changed</u>'}
     function tx(e,p){e.setAttribute('data-en',p[0]);e.setAttribute('data-pt',p[1]);e.innerHTML=p[pt()?1:0]}
     function paint(){if(!row)return;var m=get();[].forEach.call(row.querySelectorAll('.seg button'),function(b){b.setAttribute('aria-pressed',b.dataset.m===m);tx(b,BT[MODES.indexOf(b.dataset.m)])});
       tx(row.querySelector('.l'),['Update in the background','Atualizar em segundo plano']);row.querySelector('.seg').setAttribute('aria-label',pt()?'Atualizar em segundo plano':'Update in the background');tx(row.querySelector('small'),HT[m])}
@@ -3099,19 +3140,22 @@ NOTES[156]='<b>Round 156 · Update in the background.</b> Settings › LAUNCHER 
     function put(){if(on()){if(!row)row=make();if(!row.parentNode){var a=anchor();if(!a)return;a.parentNode.insertBefore(row,a.nextSibling)}paint()}
       else{if(row&&row.parentNode)row.remove();applied=false}}
     /* the once-only line: it stays while the bar is at rest in READY (language switches repaint it) and goes with the first change of state */
-    function line(){if(!applied||!on()||!ps||W.dataset.st!=='ready'||ps.querySelector('.bg156m'))return;ps.innerHTML=MSG[pt()?1:0]}
+    function line(){if(!applied||!on()||!ps||W.dataset.st!=='ready'||ps.querySelector('.bg156m'))return;ps.innerHTML=msg();if(P&&!BG.seen){BG.seen=true;send('bgupdate:seen')}}
     if(ps)new MutationObserver(line).observe(ps,{childList:true});
     new MutationObserver(function(ms){ms.forEach(function(m){if(m.attributeName==='data-st'){if(W.dataset.st!=='ready')applied=false}else put()})}).observe(W,{attributes:true,attributeFilter:['class','data-st']});
     setTimeout(put,0);
-    /* RESET (its confirm button) in the sheet's footer also puts this row back to ON (capture phase, round on only); a language switch repaints the label */
-    document.getElementById('sheet').addEventListener('click',function(e){if(on()&&e.target.closest&&e.target.closest('#sfy'))set('on')},true);
+    /* RESET (its confirm button) in the sheet's footer also puts this row back to its default (ON in the mock, OFF in the shipped page) (capture phase, round on only); a language switch repaints the label */
+    document.getElementById('sheet').addEventListener('click',function(e){if(on()&&e.target.closest&&e.target.closest('#sfy'))set(P?'off':'on')},true);
     new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     /* review hook: 'applied' shows the bar as the player finds it after a background update; 'clear' takes the line away; 'off'/'on'/'night' set the mode; no argument reads it */
     window.__r156=function(a){if(!on())return null;
-      if(a==='applied'){BUILD='0.9.1';applied=true;state('ready');line()}
+      if(a==='applied'){if(!P){BUILD='0.9.1';applied=true;state('ready');line()}}
       else if(a==='clear'){applied=false;state(S)}
       else if(MODES.indexOf(a)>=0)set(a);
       return {mode:get(),applied:applied}};
+    /* the exe's report (shipped page only): the mode, and once per applied update the line */
+    window.__r156msg=function(m){if(!P||!m)return;BG.mode=MODES.indexOf(m.mode)>=0?m.mode:'off';paint();var la=m.last;
+      if(la&&la.result==='applied'&&!la.seen&&la.to&&!BG.done){BG.done=true;BG.to=la.to;BG.nv=/^\d{4}$/.test(la.nv||'')?la.nv:'';BG.seen=false;applied=true;line()}};
   })();
 NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “what changed” link now opens the patch notes inside the launcher, on the exact version it talks about, and never the browser. The launcher notice opens a new LAUNCHER tab, set apart from the game versions and headed LAUNCHER with the launcher’s own version (no invented “from” version or date); the “updated while you were away” line opens 0.9.1; the “updates” link opens the newest version. Enter and Space work too, and closing the notes puts you back on the link you came from.';
   /* R157 what-changed links stay in the launcher.
@@ -3121,22 +3165,24 @@ NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “wha
      RELEASE (R159 package): the rows say only what players really get in this release; no date, no "from" version (none is measured), and the
      number on the chip is the page's launcher version (LVER) only once it is real: see ver(). */
   (function(){var LV={en:{v:'LAUNCHER',meta:'4 CHANGES · NOT A GAME UPDATE',g:[['LAUNCHER',[
-        ['The headline news moves on by itself, with a thin line that shows the time left, and the news cards react to the pointer.','NEWS'],
-        ['A city and a road with street lamps stand in the distance behind Omegamon.','SCENE'],
-        ['The bottom bar no longer flickers when its state changes, and PLAY keeps its size.','BAR'],
-        ['The link on the “launcher updated” notice now opens these notes, the launcher’s own.','NOTES']]]]},
+        ['The week card shows the server time, with its time zone when it differs from yours.','SERVER TIME'],
+        ['The week strip shows each day’s events; pick a day to see them.','EVENTS'],
+        ['News and events say when they are loading or could not load, and you can try again from there.','NEWS'],
+        ['These notes show the version of the launcher you have.','NOTES']]]]},
       pt:{v:'LAUNCHER',meta:'4 ALTERAÇÕES · O JOGO NÃO MUDA',g:[['LAUNCHER',[
-        ['As notícias avançam sozinhas, com uma linha fina que mostra o tempo que falta, e os cartões das notícias reagem ao rato.','NOTÍCIAS'],
-        ['Uma cidade e uma estrada com candeeiros ao longe, atrás do Omegamon.','CENÁRIO'],
-        ['A barra de baixo já não pisca quando muda de estado, e o botão JOGAR mantém o tamanho.','BARRA'],
-        ['A ligação do aviso «launcher atualizado» abre agora estas notas, as do próprio launcher.','NOTAS']]]]}},
-      LD=[['new',''],['new',''],['fix',''],['chg','']],known=!window.TD_PROD,hooked=false,
+        ['O cartão da semana mostra a hora do servidor, com o fuso horário quando é diferente do teu.','HORA'],
+        ['A faixa da semana mostra os eventos de cada dia; escolhe um dia para os veres.','EVENTOS'],
+        ['As notícias e os eventos dizem quando estão a carregar ou não carregaram, e podes tentar outra vez dali.','NOTÍCIAS'],
+        ['Estas notas mostram a versão do launcher que tens.','NOTAS']]]]}},
+      LD=[['new',''],['new',''],['chg',''],['fix','']],known=!window.TD_PROD,hooked=false,
       SEL='#ynot u[data-a="relnotes"],#ribbon u,#psub u[data-a="notes"],.ys153 u[data-g="u"]',ret=null,busy=false;
     function on(){return W.classList.contains('r157')}
     /* the number on the chip. The mockup shows its own sample LVER. The shipped page (TD_PROD) starts with that same sample in LVER and gets the real
        version only when the exe reports it (prod.js: setLver on caps): until that call is SEEN here the chip says LAUNCHER alone, never a number nobody measured */
     function hook(){var t=window.__TERM;if(hooked||known||!t||!t.setLver)return;hooked=true;var s=t.setLver;t.setLver=function(x){s(x);known=!!x;if(on()&&W.classList.contains('notesopen'))pn(PV)}}
     function ver(){hook();return known&&typeof LVER!=='undefined'&&LVER?String(LVER):''}
+    /* the shipped page drops the mockup's sample version (2.1.0): LVER stays empty until the exe reports the real one */
+    if(window.TD_PROD&&!known)LVER='';
     setTimeout(hook,0);
     function has(){var v=PN.en.v;return v[v.length-1]===LV.en.v}
     function li(){return PN.en.v.length-1}
@@ -3163,7 +3209,8 @@ NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “wha
     function target(t){var u=t&&t.closest&&t.closest(SEL);if(!u||!on())return null;sync();
       /* the bar's own “What’s new” (an update is offered) talks about the newest version, not about the tab that was looked at last */
       if(u.closest('#psub')){if(!u.parentNode.querySelector('.bg156m'))return [u,0,'#psub u[data-a="notes"]'];
-        var m=/(\d+\.\d+\.\d+)/.exec(u.parentNode.textContent),i=0;if(m)PN.en.v.forEach(function(x,k){if(x.indexOf(m[1]+' ')===0)i=k});return [u,i,'#psub u[data-a="notes"]']}
+        /* the shipped page names the notes entry of the game version it updated to (data-v, e.g. 0906); the mockup reads x.y.z from the line */
+        var dv=u.getAttribute('data-v'),m=dv?[0,dv]:/(\d+\.\d+\.\d+)/.exec(u.parentNode.textContent),i=0;if(m)PN.en.v.forEach(function(x,k){if(x.indexOf(m[1]+' ')===0)i=k});return [u,i,'#psub u[data-a="notes"]']}
       if(u.closest('.ys153'))return [u,0,'.ys153 u[data-g="u"]'];
       return [u,li(),u.closest('#ribbon')?'#ribbon u':'#ynot u[data-a="relnotes"]']}
     /* the shipped page's own handler for the launcher notice (prod.js, capture on document: it remembers that this version's notice was read, hides it, then opens the notes) must
