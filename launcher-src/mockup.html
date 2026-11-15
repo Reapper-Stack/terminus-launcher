@@ -758,7 +758,8 @@
   .sfade::after{content:attr(data-t);position:absolute;left:0;top:-6px;white-space:nowrap;font:400 18px Georgia,serif;color:var(--gl);opacity:0;transition:opacity .15s}
   .scrolled>.stk .sfade::before,.scrolled>.stk .sfade::after{opacity:1}
   #win.r52 .sfade::before{left:-176px} #win.r52 .sfade::after{left:-146px}
-  .notes .sfade::before{left:-36px;width:560px;top:-28px} .notes .sfade::after{left:0}
+  .notes .sfade::before{left:-36px;width:559px;top:-28px} .notes .sfade::after{left:0}
+  .sheet .sfade::before{width:559px} /* = the panel's padding box (560 border-box - 1 px border): at 560 it overhung by 1 px and #notes/#sheet scrolled sideways */
   .stk .x{top:-10px;right:-14px} .notes .stk .x{right:-20px}
   .smark{position:absolute;right:-25px;top:76px;width:4px;display:flex;flex-direction:column;gap:3px}
   .notes .smark{right:-30px}
