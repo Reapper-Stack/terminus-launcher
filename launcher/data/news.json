@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026111501",
+      "date": "2026-11-15",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Launcher: background updates",
+        "pt": "Launcher: atualizações em segundo plano"
+      },
+      "body": {
+        "en": "New optional setting, Update in the background: OFF (default), ON or AT NIGHT (02:00-07:00 only). With the launcher left in the tray, it downloads game updates by itself and installs them only while the game is closed. Each update is checked with the same signature as PLAY and rolled back if anything fails. Also fixed: the news and patch-notes panels no longer scroll sideways by 1 pixel.",
+        "pt": "Nova opção, Atualizar em segundo plano: NÃO (por defeito), SIM ou À NOITE (só das 02:00 às 07:00). Com o launcher na área de notificação, descarrega sozinho as atualizações do jogo e só as instala com o jogo fechado. Cada atualização é verificada com a mesma assinatura do JOGAR e desfeita se alguma coisa falhar. Também corrigido: os painéis das notícias e das notas já não deslizam 1 píxel para o lado."
+      }
+    },
+    {
       "id": "update-2026110906",
       "date": "2026-11-12",
       "tag": "client",
@@ -104,6 +118,41 @@
     }
   ],
   "notes": [
+    {
+      "id": "update-2026111501",
+      "version": "1501",
+      "date": "2026-11-15",
+      "meta": {
+        "en": "2 CHANGES · GAME UPDATE 2026111501",
+        "pt": "2 ALTERAÇÕES · ATUALIZAÇÃO 2026111501"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "LAUNCHER",
+            "pt": "LAUNCHER"
+          },
+          "items": [
+            {
+              "tag": "BACKGROUND",
+              "kind": "new",
+              "text": {
+                "en": "New optional setting, Update in the background: OFF (default), ON or AT NIGHT (02:00-07:00 only). With the launcher left in the tray, it downloads game updates by itself and installs them only while the game is closed, checked with the same signature as PLAY and rolled back if anything fails.",
+                "pt": "Nova opção, Atualizar em segundo plano: NÃO (por defeito), SIM ou À NOITE (só das 02:00 às 07:00). Com o launcher na área de notificação, descarrega sozinho as atualizações do jogo e só as instala com o jogo fechado, verificadas com a mesma assinatura do JOGAR e desfeitas se alguma coisa falhar."
+              }
+            },
+            {
+              "tag": "PANELS",
+              "kind": "fix",
+              "text": {
+                "en": "The news and patch-notes panels no longer scroll sideways by 1 pixel.",
+                "pt": "Os painéis das notícias e das notas já não deslizam 1 píxel para o lado."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "update-2026110906",
       "version": "0906",
@@ -272,73 +321,6 @@
               "text": {
                 "en": "The launcher protects your install folder better.",
                 "pt": "O launcher protege melhor a pasta do jogo."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026110904",
-      "version": "0904",
-      "date": "2026-11-10",
-      "meta": {
-        "en": "5 CHANGES · GAME UPDATE 2026110904",
-        "pt": "5 ALTERAÇÕES · ATUALIZAÇÃO 2026110904"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "GUILDS",
-              "kind": "new",
-              "text": {
-                "en": "Guilds now show new members joining and who is online or offline.",
-                "pt": "As guildas mostram agora a entrada de novos membros e quem está online ou offline."
-              }
-            },
-            {
-              "tag": "PARTY",
-              "kind": "new",
-              "text": {
-                "en": "Your party is told when a member disconnects.",
-                "pt": "A tua party é avisada quando um membro se desliga."
-              }
-            },
-            {
-              "tag": "EFFECTS",
-              "kind": "new",
-              "text": {
-                "en": "HP/DS absorb effects and auras now appear in game.",
-                "pt": "Os efeitos de absorção de HP/DS e as auras aparecem no jogo."
-              }
-            },
-            {
-              "tag": "SHOPS",
-              "kind": "chg",
-              "text": {
-                "en": "Personal shops explain why a listing was refused.",
-                "pt": "As lojas pessoais explicam porque é que um item foi recusado."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "LAUNCHER",
-            "pt": "LAUNCHER"
-          },
-          "items": [
-            {
-              "tag": "LAUNCHER",
-              "kind": "chg",
-              "text": {
-                "en": "The launcher retries a failed update check, cleans up old files and can save a crash report for you to send us.",
-                "pt": "O launcher volta a tentar quando a verificação de update falha, limpa ficheiros antigos e pode guardar um relatório de erro para nos enviares."
               }
             }
           ]
