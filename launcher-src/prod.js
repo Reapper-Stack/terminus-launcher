@@ -301,7 +301,10 @@
       NET.server = m.server; NET.status = nst; NET.progress = npr;
       if (typeof m.ms === 'number') { NET.ms = m.ms; MSH.push(m.ms); if (MSH.length > 24) MSH.shift() } else if (m.server === false) NET.ms = null;
       if (!CAPS && m.build) INFO.launcher = m.build;
-      if (/fail|error|refused|could not|não/i.test(NET.status)) { LASTERR = NET.status; if (PLAYING && NET.progress < 0) { PLAYING = false; DONE = NET.status } }
+      /* an exe that sends hud.err says explicitly whether the status is a failure (its texts are pt/en player messages now);
+         only an older exe without the flag is still guessed from its English text */
+      var bad = typeof m.err === 'boolean' ? m.err : /fail|error|refused|could not|não/i.test(NET.status);
+      if (bad && NET.status) { LASTERR = NET.status; if (PLAYING && NET.progress < 0) { PLAYING = false; DONE = NET.status } }
       soon();
     } else if (m.t === 'caps') {
       CAPS = Array.isArray(m.caps) ? m.caps : []; INFO.launcher = m.launcher || INFO.launcher; INFO.game = m.game || null;
@@ -323,7 +326,7 @@
       if (m.phase === 'done') DONE = (m.bad || 0) === 0 ? tx('Repair finished: every file is intact.', 'Reparação concluída: todos os ficheiros estão bem.') :
         (m.failed ? tx(m.fixed + ' repaired, ' + m.failed + ' still fail. Try again.', m.fixed + ' reparados, ' + m.failed + ' ainda falham. Tenta de novo.') :
           tx(m.fixed + ' files repaired. Ready to play.', m.fixed + ' ficheiros reparados. Pronto a jogar.'));
-      if (m.phase === 'error') { DONE = tx('Repair could not run. Details in Settings › Support.', 'A reparação não correu. Detalhes em Definições › Suporte.'); LASTERR = 'repair: ' + (m.msg || 'unknown'); var dg0 = $('diag'); if (dg0) dg0.textContent = diagText(); }
+      if (m.phase === 'error') { /* m.msg is player text only from an exe that sends m.code; an older exe's msg is its raw English log line */ DONE = (m.code && m.msg) || tx('Repair could not run. Details in Settings › Support.', 'A reparação não correu. Detalhes em Definições › Suporte.'); LASTERR = 'repair: ' + (m.msg || 'unknown'); var dg0 = $('diag'); if (dg0) dg0.textContent = diagText(); }
       soon();
     } else if (m.t === 'play') {
       /* the exe checks (and if needed downloads) files before the game starts: real progress, a sign of life */
