@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026111901",
+      "date": "2026-11-19",
+      "tag": "client",
+      "thumb": "img/thumbs/n4.png",
+      "title": {
+        "en": "Livelier maps, quest fixes and a safer launcher",
+        "pt": "Mapas mais vivos, quests corrigidas e um launcher mais seguro"
+      },
+      "body": {
+        "en": "Many areas now move more like the original: the giant spiders' legs move, doors and portals open and close as they should, and portals take you where they are meant to. Ground, effect and sky textures are refreshed on 31 maps, and smoke, fog and other effects now appear on 28 maps. On the server, quests that would not start or whose item never dropped now work. The launcher explains errors in plain words and never lets an update touch your settings. This update is large (about 4.8 GB; keep about 10 GB free): let the launcher finish before you press PLAY.",
+        "pt": "Muitas zonas mexem-se mais como no original: as pernas das aranhas mexem-se, portas e portais abrem e fecham como devem e os portais levam-te ao sítio certo. Texturas do chão, dos efeitos e do céu atualizadas em 31 mapas, e fumo, nevoeiro e outros efeitos surgem em 28 mapas. No servidor, quests que não começavam ou cujo item nunca caía já funcionam. O launcher explica os erros em palavras simples e nunca deixa uma atualização mexer nas tuas definições. Esta atualização é grande (cerca de 4,8 GB; guarda cerca de 10 GB livres): deixa o launcher terminar antes de carregar em JOGAR."
+      }
+    },
+    {
       "id": "update-2026111501",
       "date": "2026-11-15",
       "tag": "client",
@@ -119,6 +133,161 @@
   ],
   "notes": [
     {
+      "id": "update-2026111901",
+      "version": "1901",
+      "date": "2026-11-19",
+      "meta": {
+        "en": "15 CHANGES · GAME UPDATE 2026111901",
+        "pt": "15 ALTERAÇÕES · ATUALIZAÇÃO 2026111901"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "MAPS",
+              "kind": "chg",
+              "text": {
+                "en": "23 maps rebuilt and checked by entering each one in the new client: Shinjuku West and East (day and night), Stadium, Road, Rainbow Bridge, Miso Village, Forest of the Beginning, Marine Dragon Domain, Wasteland Area (day and night), Forest Area, Ocean Area, Four Holy Beast Area, Four Holy Beast Area (D-Reaper), Collapsed Four Holy Beast Area, Cloud Area, Zhuqiaomon's Resting Area, Chaotic Battlefield, Final Battle, Battle with Demon and Battle with Belphemon.",
+                "pt": "23 mapas refeitos e verificados, entrando em cada um no novo cliente: Shinjuku West e East (dia e noite), Stadium, Road, Rainbow Bridge, Miso Village, Forest of the Beginning, Marine Dragon Domain, Wasteland Area (dia e noite), Forest Area, Ocean Area, Four Holy Beast Area, Four Holy Beast Area (D-Reaper), Collapsed Four Holy Beast Area, Cloud Area, Zhuqiaomon's Resting Area, Chaotic Battlefield, Final Battle, Battle with Demon e Battle with Belphemon."
+              }
+            },
+            {
+              "tag": "SCENERY",
+              "kind": "fix",
+              "text": {
+                "en": "Moving scenery fixed: the giant spiders' legs move again and stay attached to the body, and a portal ring that sat at the wrong height is back in place.",
+                "pt": "Cenário animado corrigido: as pernas das aranhas gigantes voltam a mexer-se e ficam presas ao corpo, e um anel de portal que estava à altura errada voltou ao lugar."
+              }
+            },
+            {
+              "tag": "DOORS",
+              "kind": "fix",
+              "text": {
+                "en": "Dungeon doors and portals open and close with their own animation, and a portal only lets you through while it is open.",
+                "pt": "As portas e os portais das dungeons abrem e fecham com a sua própria animação, e um portal só te deixa passar enquanto está aberto."
+              }
+            },
+            {
+              "tag": "PORTALS",
+              "kind": "fix",
+              "text": {
+                "en": "Walking into a portal takes you to the destination it is meant to, not to another map.",
+                "pt": "Entrar num portal leva-te ao destino certo, e não a outro mapa."
+              }
+            },
+            {
+              "tag": "TEXTURES",
+              "kind": "chg",
+              "text": {
+                "en": "Ground, effect and sky textures refreshed on 31 maps.",
+                "pt": "Texturas do chão, dos efeitos e do céu atualizadas em 31 mapas."
+              }
+            },
+            {
+              "tag": "EFFECTS",
+              "kind": "new",
+              "text": {
+                "en": "Smoke, fog and other particle effects now appear on 28 maps. On a few of them these effects stand still and do not move.",
+                "pt": "Fumo, nevoeiro e outros efeitos de partículas passam a aparecer em 28 mapas. Em alguns deles estes efeitos ficam parados."
+              }
+            },
+            {
+              "tag": "EVOLUTION FX",
+              "kind": "fix",
+              "text": {
+                "en": "Level-up and evolution effects fixed: no more white squares.",
+                "pt": "Efeitos de subida de nível e de evolução corrigidos: acabaram os quadrados brancos."
+              }
+            },
+            {
+              "tag": "DIGIVOLUTION",
+              "kind": "fix",
+              "text": {
+                "en": "Digivolution now happens in place, where your partner stands.",
+                "pt": "A digievolução passa a acontecer no mesmo sítio, onde o teu parceiro está."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "QUEST ITEMS",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: in 23 quests the item you need never dropped. It now drops from the right monster while the quest is active.",
+                "pt": "Já ativo: em 23 quests o item de que precisas nunca caía. Agora cai do monstro certo enquanto a quest está ativa."
+              }
+            },
+            {
+              "tag": "QUEST START",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: 33 quests that refused to start when you accepted them now start, which opens the quests that follow them. 11 story quests no longer give you an unrelated item when you accept them.",
+                "pt": "Já ativo: 33 quests que não começavam quando as aceitavas passam a começar, o que abre as quests que vêm a seguir. 11 quests da história já não te dão um item sem relação quando as aceitas."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "LAUNCHER",
+            "pt": "LAUNCHER"
+          },
+          "items": [
+            {
+              "tag": "ERRORS",
+              "kind": "new",
+              "text": {
+                "en": "Errors now say in plain words what happened and what you can do, with no technical text. They follow the launcher's language, Portuguese or English.",
+                "pt": "Os erros passam a dizer, em palavras simples, o que aconteceu e o que podes fazer, sem texto técnico. Seguem a língua do launcher, português ou inglês."
+              }
+            },
+            {
+              "tag": "SETTINGS",
+              "kind": "new",
+              "text": {
+                "en": "An update can no longer overwrite your own files: the server address, the saved login, your background-update choice and the last error report are never written by an update.",
+                "pt": "Uma atualização já não pode escrever por cima dos teus ficheiros: o endereço do servidor, o login guardado, a tua escolha de atualização em segundo plano e o último relatório de erro ficam sempre como estão."
+              }
+            },
+            {
+              "tag": "SAFER UPDATES",
+              "kind": "chg",
+              "text": {
+                "en": "Only files signed as part of the launcher can replace the launcher itself.",
+                "pt": "Só ficheiros assinados como parte do launcher podem substituir o próprio launcher."
+              }
+            },
+            {
+              "tag": "OLD INSTALLS",
+              "kind": "new",
+              "text": {
+                "en": "If your install is too old to be patched, the launcher checks every file again or asks you to extract the full client into a new, empty folder, instead of failing halfway.",
+                "pt": "Se a tua instalação for antiga demais para ser atualizada, o launcher volta a verificar todos os ficheiros ou pede-te para extraíres o cliente completo numa pasta nova e vazia, em vez de falhar a meio."
+              }
+            },
+            {
+              "tag": "SELF-UPDATE",
+              "kind": "fix",
+              "text": {
+                "en": "When the launcher updates itself it restarts at most once, so it can no longer get stuck restarting.",
+                "pt": "Quando o launcher se atualiza a si próprio reinicia no máximo uma vez, por isso já não fica preso a reiniciar."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "update-2026111501",
       "version": "1501",
       "date": "2026-11-15",
@@ -222,105 +391,6 @@
               "text": {
                 "en": "Other tamers' absorb effects now have sound.",
                 "pt": "A absorção dos outros tamers passa a ter som."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026110905",
-      "version": "0905",
-      "date": "2026-11-11",
-      "meta": {
-        "en": "8 CHANGES · GAME UPDATE 2026110905",
-        "pt": "8 ALTERAÇÕES · ATUALIZAÇÃO 2026110905"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "SHOPS",
-              "kind": "new",
-              "text": {
-                "en": "NPC shops now let you buy back the last items you sold.",
-                "pt": "As lojas dos NPC deixam-te recomprar os últimos itens que vendeste."
-              }
-            },
-            {
-              "tag": "HUD",
-              "kind": "chg",
-              "text": {
-                "en": "The target window shows attributes and more tooltips, and buffs explain themselves.",
-                "pt": "A janela do alvo mostra atributos e mais tooltips, e os buffs explicam-se."
-              }
-            },
-            {
-              "tag": "CAMERA",
-              "kind": "new",
-              "text": {
-                "en": "Middle-click resets the camera.",
-                "pt": "O botão do meio do rato repõe a câmara."
-              }
-            },
-            {
-              "tag": "CHAT",
-              "kind": "fix",
-              "text": {
-                "en": "Chat colours survive line breaks.",
-                "pt": "As cores do chat mantêm-se nas quebras de linha."
-              }
-            },
-            {
-              "tag": "SOUND",
-              "kind": "new",
-              "text": {
-                "en": "Tamers and Digimon now sound when they appear and leave.",
-                "pt": "Tamers e Digimon passam a ter som ao aparecer e ao sair."
-              }
-            },
-            {
-              "tag": "ITEMS",
-              "kind": "chg",
-              "text": {
-                "en": "Using an item on cool-down tells you why.",
-                "pt": "Usar um item em cooldown diz-te porquê."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "SERVER",
-            "pt": "SERVIDOR"
-          },
-          "items": [
-            {
-              "tag": "GUILDS",
-              "kind": "fix",
-              "text": {
-                "en": "Guilds need a real Guild Permit.",
-                "pt": "Criar uma guilda exige uma Licença de Guilda verdadeira."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "LAUNCHER",
-            "pt": "LAUNCHER"
-          },
-          "items": [
-            {
-              "tag": "LAUNCHER",
-              "kind": "chg",
-              "text": {
-                "en": "The launcher protects your install folder better.",
-                "pt": "O launcher protege melhor a pasta do jogo."
               }
             }
           ]
