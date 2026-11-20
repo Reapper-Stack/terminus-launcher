@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026112001",
+      "date": "2026-11-20",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "43 new models and dungeon doors",
+        "pt": "43 novos modelos e portas das dungeons"
+      },
+      "body": {
+        "en": "43 models that were missing from the game, most of them Digimon, are now in it, among them Gammamon, Aegisdramon and Siriusmon. Digimon now step at their original walking and running pace. A stunned monster stays frozen until the stun ends. On the server, the dungeon exits on maps 1702 to 1706 now start closed. This update is about 4.4 GB (keep about 10 GB free): let the launcher finish before you press PLAY.",
+        "pt": "43 modelos que faltavam no jogo, a maioria Digimon, já lá estão, entre eles Gammamon, Aegisdramon e Siriusmon. Os Digimon andam e correm agora ao ritmo original. Um monstro atordoado fica parado até o atordoamento acabar. No servidor, as saídas das dungeons dos mapas 1702 a 1706 começam agora fechadas. Esta atualização tem cerca de 4,4 GB (guarda cerca de 10 GB livres): deixa o launcher terminar antes de carregar em JOGAR."
+      }
+    },
+    {
       "id": "update-2026111901",
       "date": "2026-11-19",
       "tag": "client",
@@ -132,6 +146,89 @@
     }
   ],
   "notes": [
+    {
+      "id": "update-2026112001",
+      "version": "2001",
+      "date": "2026-11-20",
+      "meta": {
+        "en": "7 CHANGES · GAME UPDATE 2026112001",
+        "pt": "7 ALTERAÇÕES · ATUALIZAÇÃO 2026112001"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "MODELS",
+              "kind": "new",
+              "text": {
+                "en": "43 models that were missing from the game are now included, most of them Digimon: among them Gammamon, Betelgammamon, Aegisdramon, Siriusmon, Lotusmon, Medievaldukemon and Shoutmon X4 and X5.",
+                "pt": "Foram incluídos 43 modelos que faltavam no jogo, a maioria Digimon: entre eles Gammamon, Betelgammamon, Aegisdramon, Siriusmon, Lotusmon, Medievaldukemon e Shoutmon X4 e X5."
+              }
+            },
+            {
+              "tag": "MOVEMENT",
+              "kind": "fix",
+              "text": {
+                "en": "Digimon move their legs at the original walking and running pace for their size.",
+                "pt": "Os Digimon mexem as pernas ao ritmo original de andar e de correr para o seu tamanho."
+              }
+            },
+            {
+              "tag": "STUN",
+              "kind": "fix",
+              "text": {
+                "en": "A stunned monster now freezes in place until the stun ends.",
+                "pt": "Um monstro atordoado fica agora parado até o atordoamento acabar."
+              }
+            },
+            {
+              "tag": "NPCS",
+              "kind": "fix",
+              "text": {
+                "en": "An NPC no longer turns bright pink if your mouse rests on it while it fades in.",
+                "pt": "Um NPC já não fica cor-de-rosa forte se o rato estiver em cima dele enquanto aparece."
+              }
+            },
+            {
+              "tag": "TARGET",
+              "kind": "fix",
+              "text": {
+                "en": "The element and attribute tips in the target window show up again when you point at them.",
+                "pt": "As dicas de elemento e de atributo na janela do alvo voltam a aparecer quando lhes apontas."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "DUNGEON DOORS",
+              "kind": "new",
+              "text": {
+                "en": "Already live: the dungeon exits on maps 1702 to 1706 start closed. In the dungeon on map 1702, defeating its guards and then its boss opens the doors one after another.",
+                "pt": "Já ativo: as saídas das dungeons dos mapas 1702 a 1706 começam fechadas. Na dungeon do mapa 1702, derrotar os guardas e depois o chefe abre as portas uma a uma."
+              }
+            },
+            {
+              "tag": "BAG",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: moving an item into some bag slots no longer gets stuck. A bag with gaps between its slots is tidied when you enter a map.",
+                "pt": "Já ativo: mover um objeto para certas posições da mochila já não fica preso. Uma mochila com espaços em falta é arrumada quando entras num mapa."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "update-2026111901",
       "version": "1901",
@@ -316,81 +413,6 @@
               "text": {
                 "en": "The news and patch-notes panels no longer scroll sideways by 1 pixel.",
                 "pt": "Os painéis das notícias e das notas já não deslizam 1 píxel para o lado."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026110906",
-      "version": "0906",
-      "date": "2026-11-12",
-      "meta": {
-        "en": "7 CHANGES · GAME UPDATE 2026110906",
-        "pt": "7 ALTERAÇÕES · ATUALIZAÇÃO 2026110906"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "DETAILS",
-              "kind": "new",
-              "text": {
-                "en": "Hover over a tamer, Digimon, monster, item or NPC to see its details in the bottom-right corner (you can turn it off in Options); more NPCs now show their name.",
-                "pt": "Passa o rato por cima de um tamer, Digimon, monstro, item ou NPC para veres os detalhes no canto inferior direito (podes desligar nas Opções); mais NPC mostram agora o nome."
-              }
-            },
-            {
-              "tag": "MASTERS MATCH",
-              "kind": "new",
-              "text": {
-                "en": "New: the Masters Match window.",
-                "pt": "Novo: a janela do Masters Match."
-              }
-            },
-            {
-              "tag": "DATS CARDS",
-              "kind": "new",
-              "text": {
-                "en": "New: the DATS card game when enchanting.",
-                "pt": "Novo: o jogo de cartas DATS ao fazer enchant."
-              }
-            },
-            {
-              "tag": "DATA TRADE",
-              "kind": "new",
-              "text": {
-                "en": "New: data trade at the NPC.",
-                "pt": "Novo: a troca de dados no NPC."
-              }
-            },
-            {
-              "tag": "JOGRESS",
-              "kind": "chg",
-              "text": {
-                "en": "Jogress tells you why it cannot happen.",
-                "pt": "A jogress diz-te porque não pode acontecer."
-              }
-            },
-            {
-              "tag": "OPTIONS",
-              "kind": "fix",
-              "text": {
-                "en": "Option sliders behave like the original game.",
-                "pt": "Os sliders das opções comportam-se como no jogo original."
-              }
-            },
-            {
-              "tag": "SOUND",
-              "kind": "new",
-              "text": {
-                "en": "Other tamers' absorb effects now have sound.",
-                "pt": "A absorção dos outros tamers passa a ter som."
               }
             }
           ]
