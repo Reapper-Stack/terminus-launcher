@@ -1,6 +1,6 @@
 {
  "counts": {
-  "bytes": 7113859219,
+  "bytes": 7112640214,
   "files": 14228
  },
  "files": [
@@ -29,9 +29,9 @@
   },
   {
    "path": "DigimonTerminus_Data/Managed/Assembly-CSharp.dll",
-   "sha256": "d985e0eb9ce479018d759a9cd76e62f84f1f581f81253562e9010ae7e45846d3",
-   "size": 4459520,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112001/d985e0eb9ce47901_Assembly-CSharp.dll"
+   "sha256": "e6b9e5797921258f8c996cc84fe8a3cf10e1870051b5bb98bc17b3204bc7427d",
+   "size": 4577280,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/e6b9e5797921258f_Assembly-CSharp.dll"
   },
   {
    "path": "DigimonTerminus_Data/Managed/Mono.Security.dll",
@@ -51596,15 +51596,15 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1800/anim.json",
-   "sha256": "b222ab040030fdb58aadfaaa28269a9c2a9b0870d2f754977958df1680c6aaa9",
-   "size": 14740,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/b222ab040030fdb5_anim.json"
+   "sha256": "354f87ce5fcc2a7fc9fa2adede53ea6a71328bff08fa90ae1e74bfd7e9726f26",
+   "size": 900,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/354f87ce5fcc2a7f_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1800/mapparticles.json",
-   "sha256": "031b137479bdeec46e3b4b371f4df77137a450102197eded3adb2a4a4d3b105d",
-   "size": 61870,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/031b137479bdeec4_mapparticles.json"
+   "sha256": "9793b60ef9b555322ba192accdce2583fee9fe01ce4fac3f79a5554983dfc665",
+   "size": 71812,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/9793b60ef9b55532_mapparticles.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1800/ptex/256_fog_dark.png",
@@ -51668,15 +51668,15 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1801/anim.json",
-   "sha256": "30f96f3ac81a1d94ddd83cbb92b29d9f245d76f5e8eabc67f504a0663d266c17",
-   "size": 8570,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/30f96f3ac81a1d94_anim.json"
+   "sha256": "07a323bfe6e89d59798371abd89799a1ca37835eda23afafe4748653f52593ed",
+   "size": 1650,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/07a323bfe6e89d59_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1801/mapparticles.json",
-   "sha256": "54ac6fb9534cceeaf1f2e56301ca11d079623b2a9f8c7296b5a4e9af2eb8e86e",
-   "size": 34549,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/54ac6fb9534cceea_mapparticles.json"
+   "sha256": "766fe9226c092ccbbca4295a019ba3431986f5602c0df74307d4cf4970cf2d18",
+   "size": 39520,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/766fe9226c092ccb_mapparticles.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1801/ptex/256_fog_dark.png",
@@ -51776,15 +51776,15 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1803/anim.json",
-   "sha256": "7c3206925afe1923c129ed0d12f9bcce4acff3bd121af9805afd1e9de71e40e8",
-   "size": 6217,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/7c3206925afe1923_anim.json"
+   "sha256": "91d60b551d2fbd98b82cf7912423d23cb3c22b9858def6af863c85213f26eca7",
+   "size": 5003,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/91d60b551d2fbd98_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1803/mapparticles.json",
-   "sha256": "f833fb44561cc3e462ca6618b950369c5439409153d69f7f0861d1aa39a9e588",
-   "size": 53632,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/f833fb44561cc3e4_mapparticles.json"
+   "sha256": "b87234606a94d91a9313073ef59ef68f4e09c71bf37bf6f71210b57fac8c9d4a",
+   "size": 54812,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/b87234606a94d91a_mapparticles.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1803/ptex/259_fish_effect01_18.png",
@@ -51926,15 +51926,15 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1808/anim.json",
-   "sha256": "c8c89ce10e46bbd965cce9101536b3f9b4dddd515b0880f50b064e1ee6a11fa5",
-   "size": 1106,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/c8c89ce10e46bbd9_anim.json"
+   "sha256": "ff7b3105144b0741f511ea9a92510d8672826449e069b51ef61959c6ae1bcaab",
+   "size": 728,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/ff7b3105144b0741_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1808/mapparticles.json",
-   "sha256": "9fc4c1cf462a2df3a5c581aac1b9a936931a1ac4646f84e6ddda7840a5b2e091",
-   "size": 46551,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/9fc4c1cf462a2df3_mapparticles.json"
+   "sha256": "6ce7c08efa804ae872c75a16a5897de14dd665fd128ea75eb518ea36a9766999",
+   "size": 46902,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/6ce7c08efa804ae8_mapparticles.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/1808/ptex/256_fog_dark.png",
@@ -53169,8 +53169,9 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/Map_Data_105/anim.json",
-   "sha256": "321c0c9de3f69be837d5dd50eb97b955638e621ea3141d34300f01f54ea1e6e8",
-   "size": 2693
+   "sha256": "90ea6475daaaee2ea34fbc3260fcea7d8602c8ff3274557ef072dc22cabe78a6",
+   "size": 2178,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/90ea6475daaaee2e_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/Map_Data_105/mapparticles.json",
@@ -53579,8 +53580,9 @@
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/Map_Data_208/anim.json",
-   "sha256": "aa966b304d797892bdf5740228085fc2e5751248b8c0e4da3b8225d6d5966af0",
-   "size": 1219
+   "sha256": "66012920b9810b13aa48cdb463fe61a66576ef923054513d02a7498299a7d3c4",
+   "size": 966,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/66012920b9810b13_anim.json"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Statics/Map_Data_208/mapparticles.json",
@@ -71128,26 +71130,26 @@
   },
   {
    "path": "DigimonTerminus_Data/boot.config",
-   "sha256": "1a6d34c800e55969c55b62facceef0ad8132bedb4c77fa03fadac8bc05b1c73f",
+   "sha256": "a438e07235cd4cd1ebff10a3ab78f710b86284864e0d6ceb6c1e7813b8e03bb9",
    "size": 156,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112001/1a6d34c800e55969_boot.config"
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/a438e07235cd4cd1_boot.config"
   },
   {
    "parts": [
     {
-     "sha256": "2308aba7431543176c18cccf2f191123f07788737168aa39468a3ecdc49a97ca",
+     "sha256": "f101d43f9371107c3d3a816e93f9826bd05e9512849f46baa178d5808d157658",
      "size": 2040109465,
-     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112001/2308aba743154317_data.unity3d.p000"
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/f101d43f9371107c_data.unity3d.p000"
     },
     {
-     "sha256": "cf074135b65e4e07ee60669955867009e3f1517966b54b27d599d661b0598806",
-     "size": 623123717,
-     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112001/cf074135b65e4e07_data.unity3d.p001"
+     "sha256": "db2172cd1601baf879f35c09f7cc484a1a62d5bb32011e8483f812b63a274729",
+     "size": 621793628,
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112101/db2172cd1601baf8_data.unity3d.p001"
     }
    ],
    "path": "DigimonTerminus_Data/data.unity3d",
-   "sha256": "b4a051d7ea691768a108a823757263289083a54add946d5d6a7e8a279a1f05c5",
-   "size": 2663233182,
+   "sha256": "d7baa7ffc745cfc7048c121e438f5a7fd082a572fb02c5ba7d1c42f0297fc185",
+   "size": 2661903093,
    "url": "urn:dso:parts-only"
   },
   {
@@ -72727,5 +72729,5 @@
  "patches": [],
  "playExe": "DigimonTerminus.exe",
  "schema": "dso-launcher-manifest/1",
- "version": 2026112001
+ "version": 2026112101
 }

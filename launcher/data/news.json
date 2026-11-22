@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026112101",
+      "date": "2026-11-22",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Stairs, Move Digimon and map lights",
+        "pt": "Escadas, Mover Digimon e luzes dos mapas"
+      },
+      "body": {
+        "en": "Walking with the keys no longer gets stuck on the stairs and ramps we tested, such as the DATS Center ramp. The Move Digimon option now works. More than 50 maps use their own lights, and some missing effects on maps 1800 and 1801 are now drawn. On the server, spirit hatching, ShineGreymon Burst Mode and adding an item to a trade now work. This update is about 2.5 GB (keep about 7 GB free): let the launcher finish before you press PLAY.",
+        "pt": "Andar com as teclas já não fica preso nas escadas e rampas que testámos, como a rampa do DATS Center. A opção Mover Digimon já funciona. Mais de 50 mapas usam as suas próprias luzes, e alguns efeitos que faltavam nos mapas 1800 e 1801 já aparecem. No servidor, chocar Digimon espírito, o Burst Mode do ShineGreymon e pôr um objeto numa troca já funcionam. Esta atualização tem cerca de 2,5 GB (guarda cerca de 7 GB livres): deixa o launcher terminar antes de carregar em JOGAR."
+      }
+    },
+    {
       "id": "update-2026112001",
       "date": "2026-11-20",
       "tag": "client",
@@ -146,6 +160,113 @@
     }
   ],
   "notes": [
+    {
+      "id": "update-2026112101",
+      "version": "2101",
+      "date": "2026-11-22",
+      "meta": {
+        "en": "10 CHANGES · GAME UPDATE 2026112101",
+        "pt": "10 ALTERAÇÕES · ATUALIZAÇÃO 2026112101"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "STAIRS",
+              "kind": "fix",
+              "text": {
+                "en": "Walking with the keys no longer gets stuck on the stairs and ramps we tested, such as the ramp at the DATS Center.",
+                "pt": "Andar com as teclas já não fica preso nas escadas e rampas que testámos, como a rampa do DATS Center."
+              }
+            },
+            {
+              "tag": "MOVE DIGIMON",
+              "kind": "new",
+              "text": {
+                "en": "The Move Digimon option now works: when it is ticked, a click moves your Digimon and your tamer follows. If you ticked it before, it is active now.",
+                "pt": "A opção Mover Digimon já funciona: quando está marcada, um clique move o teu Digimon e o tamer segue-o. Se a marcaste antes, agora está ativa."
+              }
+            },
+            {
+              "tag": "MAP LIGHTS",
+              "kind": "fix",
+              "text": {
+                "en": "More than 50 maps now use their own lights.",
+                "pt": "Mais de 50 mapas usam agora as suas próprias luzes."
+              }
+            },
+            {
+              "tag": "MAP EFFECTS",
+              "kind": "fix",
+              "text": {
+                "en": "Some effects that were missing on maps 1800 and 1801 are now drawn.",
+                "pt": "Alguns efeitos que faltavam nos mapas 1800 e 1801 já aparecem."
+              }
+            },
+            {
+              "tag": "PORTALS",
+              "kind": "chg",
+              "text": {
+                "en": "Checked, no change: 188 of the 191 walk-in portals take you to the right place.",
+                "pt": "Verificado, sem alteração: 188 dos 191 portais onde se entra a andar levam-te ao sítio certo."
+              }
+            },
+            {
+              "tag": "MEGAPHONE",
+              "kind": "fix",
+              "text": {
+                "en": "Using a megaphone now sends your message to everyone.",
+                "pt": "Usar um megafone envia agora a tua mensagem a todos."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "SPIRIT HATCH",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: hatching a spirit Digimon at the NPC now works.",
+                "pt": "Já ativo: chocar um Digimon espírito no NPC já funciona."
+              }
+            },
+            {
+              "tag": "BURST MODE",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: ShineGreymon now evolves into ShineGreymon: Burst Mode instead of the wrong form.",
+                "pt": "Já ativo: o ShineGreymon evolui agora para ShineGreymon: Burst Mode em vez da forma errada."
+              }
+            },
+            {
+              "tag": "TRADE",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: an item you put into a trade now shows up for the other player.",
+                "pt": "Já ativo: um objeto que pões numa troca aparece agora ao outro jogador."
+              }
+            },
+            {
+              "tag": "SOCKETS",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: putting a gem into a socket now works and charges its fee.",
+                "pt": "Já ativo: pôr uma gema num encaixe já funciona e cobra a sua taxa."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "update-2026112001",
       "version": "2001",
@@ -378,41 +499,6 @@
               "text": {
                 "en": "When the launcher updates itself it restarts at most once, so it can no longer get stuck restarting.",
                 "pt": "Quando o launcher se atualiza a si próprio reinicia no máximo uma vez, por isso já não fica preso a reiniciar."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026111501",
-      "version": "1501",
-      "date": "2026-11-15",
-      "meta": {
-        "en": "2 CHANGES · GAME UPDATE 2026111501",
-        "pt": "2 ALTERAÇÕES · ATUALIZAÇÃO 2026111501"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "LAUNCHER",
-            "pt": "LAUNCHER"
-          },
-          "items": [
-            {
-              "tag": "BACKGROUND",
-              "kind": "new",
-              "text": {
-                "en": "New optional setting, Update in the background: OFF (default), ON or AT NIGHT (02:00-07:00 only). With the launcher left in the tray, it downloads game updates by itself and installs them only while the game is closed, checked with the same signature as PLAY and rolled back if anything fails.",
-                "pt": "Nova opção, Atualizar em segundo plano: NÃO (por defeito), SIM ou À NOITE (só das 02:00 às 07:00). Com o launcher na área de notificação, descarrega sozinho as atualizações do jogo e só as instala com o jogo fechado, verificadas com a mesma assinatura do JOGAR e desfeitas se alguma coisa falhar."
-              }
-            },
-            {
-              "tag": "PANELS",
-              "kind": "fix",
-              "text": {
-                "en": "The news and patch-notes panels no longer scroll sideways by 1 pixel.",
-                "pt": "Os painéis das notícias e das notas já não deslizam 1 píxel para o lado."
               }
             }
           ]
