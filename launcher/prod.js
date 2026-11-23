@@ -41,6 +41,10 @@
     return tx('Downloading · ', 'A transferir · ') + mb(q.bytes || 0) + ' / ' + mb(q.totalBytes || 0) + ' MB' + (q.eta != null ? tx(' · ' + q.eta + ' s left', ' · faltam ' + q.eta + ' s') : '') }
   var CAPS = null, INFO = { launcher: null, game: null }, NET = { server: null, ms: null, status: '', progress: -1 },
       STAT = null, REP = null, GAME = false, PLAYING = false, MSH = [], LASTERR = '';
+  /* the installed build is the release marker: ask the exe for it again (it answers hud:html with caps), never infer it */
+  var buildAsks = 0, bgAsked = '';
+  function askBuild() { if (CAPS) { buildAsks++; post('hud:html') } }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) askBuild() });
   function has(c) { return !!(CAPS && CAPS.indexOf(c) >= 0) }
   /* held rounds (mockup PROD HOLD): a round is released only while its real data exists, and held again when it goes */
   function liveSet(n, v) { var l = window.TD_LIVE || (window.TD_LIVE = {}); v = !!v; if (!!l[n] === v) return; l[n] = v; if (window.TD_LIVE_APPLY) window.TD_LIVE_APPLY() }
@@ -304,9 +308,10 @@
       /* an exe that sends hud.err says explicitly whether the status is a failure (its texts are pt/en player messages now);
          only an older exe without the flag is still guessed from its English text */
       var bad = typeof m.err === 'boolean' ? m.err : /fail|error|refused|could not|não/i.test(NET.status);
-      if (bad && NET.status) { LASTERR = NET.status; if (PLAYING && NET.progress < 0) { PLAYING = false; DONE = NET.status } }
+      if (bad && NET.status) { LASTERR = NET.status; if (PLAYING && NET.progress < 0) { PLAYING = false; DONE = NET.status; askBuild() } }
       soon();
     } else if (m.t === 'caps') {
+      if (buildAsks) { buildAsks--; INFO.game = m.game || null; soon(); return }
       CAPS = Array.isArray(m.caps) ? m.caps : []; INFO.launcher = m.launcher || INFO.launcher; INFO.game = m.game || null;
       /* a game that ended while this page watched closes the session; one that ended unseen (launcher killed, closed on start) drops its open start */
       if (typeof m.running === 'boolean') { var wasG = GAME; GAME = m.running; if (!GAME && wasG) sessClose(); else if (!GAME && PLOG.o) { PLOG.o = 0; psave() } }
@@ -333,13 +338,14 @@
       PLAYP = m; sigAt = Date.now(); if (!PLAYING) PLAYING = true; soon();
     } else if (m.t === 'game') {
       var wasR = GAME; GAME = !!m.running; PLAYING = false; PLAYP = null;
-      if (GAME && !wasR) sessOpen(); else if (!GAME && wasR) sessClose();
+      if (GAME && !wasR) { sessOpen(); askBuild() } else if (!GAME && wasR) sessClose();
       if (GAME) { T.setSess(0); store('last', String(Date.now())); lastPlayed(); var cl = closeOnStart(); if (cl) setTimeout(function () { post(has('quit') ? 'quit' : 'close') }, 400) }
       soon();
     } else if (m.t === 'bgupdate') {
       /* R156 page part: inert until an exe that sends the bgupdate cap reports its mode and last result (no exe does yet) */
       if (!has('bgupdate')) return;
       var la = m.last && typeof m.last === 'object' ? m.last : null;
+      if (la && la.result === 'applied' && String(la.to) !== String(INFO.game || '') && la.to + '|' + la.at !== bgAsked) { bgAsked = la.to + '|' + la.at; askBuild() }
       liveSet(156, true);
       try { if (window.__r156msg) window.__r156msg({ mode: /^(off|on|night)$/.test(m.mode) ? m.mode : 'off', last: la ? { result: String(la.result || ''), to: esc(fmtGame(la.to)), nv: /^\d{10}$/.test(String(la.to)) ? String(la.to).slice(6) : '', seen: !!la.seen } : null }) } catch (e) {}
     }
@@ -485,14 +491,34 @@
 
   function pager() { var g = $('pgn'), n = T.vis().length; if (g && n) g.textContent = ((T.vis().indexOf(curIdx()) + 1) || 1) + ' / ' + n }
   function curIdx() { var on = document.querySelector('#rail .ri.on'); return on ? +on.dataset.i : 0 }
-  /* the hero clamps a long story (prod.css); the notes panel opens with that story in full, above the patch notes */
+  /* the hero clamps a long story (prod.css), so the panel carries it in full. The block follows the pressed version tab;
+     opened from a story that has no notes entry (an older one), the panel shows that story alone until a tab is pressed */
+  var LONE = null;
   function fillNews() {
-    var nt = $('notes'), n = (T.NEWS[T.L] || [])[curIdx()]; if (!nt || !n || !$('pnv')) return;
-    var b = $('pnnews'); if (!b) { b = document.createElement('div'); b.id = 'pnnews'; nt.insertBefore(b, $('pnv')) }
-    var html = '<div class="eb">' + n.d + ' · ' + n.t + '</div><h3>' + n.h + '</h3><p>' + n.p + '</p>';
-    if (b.innerHTML !== html) b.innerHTML = html;
+    var nt = $('notes'), pv = $('pnv'); if (!nt || !pv) return;
+    var tabs = [].slice.call(pv.children), k = tabs.findIndex(function (b) { return b.getAttribute('aria-pressed') === 'true' });
+    var lone = LONE ? NEWSIDS.indexOf(LONE) : -1, note = objs(DATA.news.notes)[k], i = lone >= 0 ? lone : note ? NEWSIDS.indexOf(note.id) : -1, n = i >= 0 ? (T.NEWS[T.L] || [])[i] : null;
+    var b = $('pnnews'); if (!b) { b = document.createElement('div'); b.id = 'pnnews'; nt.insertBefore(b, pv) }
+    var html = n ? '<div class="eb">' + n.d + ' · ' + n.t + '</div><h3>' + n.h + '</h3><p>' + n.p + '</p>' : '';
+    b.hidden = !n; if (b.innerHTML !== html) b.innerHTML = html;
+    nt.classList.toggle('storyonly', lone >= 0);
+    if (lone >= 0) tabs.forEach(function (t) { t.setAttribute('aria-pressed', 'false') });
   }
-  new MutationObserver(function () { if (W.classList.contains('notesopen')) fillNews() }).observe(W, { attributes: true, attributeFilter: ['class'] });
+  function openedFromStory() {
+    if (!W.classList.contains('notesopen')) return;
+    var id = NEWSIDS[curIdx()], k = objs(DATA.news.notes).map(function (n) { return n.id }).indexOf(id), tab = $('pnv') && $('pnv').children[k];
+    LONE = null; if (k >= 0 && tab) tab.click(); else LONE = id || null;
+    fillNews();
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('#pnv button')) { LONE = null; fillNews() }
+  }, true);
+  document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('#rdl')) openedFromStory() });
+  addEventListener('keydown', function (e) {
+    var tg = e.target && e.target.tagName;
+    if ((e.key || '').toLowerCase() === 'n' && !e.ctrlKey && !e.metaKey && !e.altKey && tg !== 'INPUT' && tg !== 'TEXTAREA' && !W.classList.contains('notesopen')) setTimeout(openedFromStory, 0);
+  }, true);
+  new MutationObserver(function () { if (W.classList.contains('notesopen')) fillNews(); else LONE = null }).observe(W, { attributes: true, attributeFilter: ['class'] });
   if ($('pnb')) new MutationObserver(fillNews).observe($('pnb'), { childList: true });
   /* the title keeps the shipped fit (fit-story shrinks it 2px a step, down to 30px, until the story clears the tabs);
      only a title still over 2 lines after that is cut to 2 (.long, plain wrapping before the ellipsis) */

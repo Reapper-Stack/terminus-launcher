@@ -3165,17 +3165,19 @@ NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “wha
      The tab says LAUNCHER only (four full labels do not fit the 487 px row on one line); the version is on the chip that opens the meta line.
      RELEASE (R159 package): the rows say only what players really get in this release; no date, no "from" version (none is measured), and the
      number on the chip is the page's launcher version (LVER) only once it is real: see ver(). */
-  (function(){var LV={en:{v:'LAUNCHER',meta:'4 CHANGES · NOT A GAME UPDATE',g:[['LAUNCHER',[
+  (function(){var LV={en:{v:'LAUNCHER',meta:'5 CHANGES · NOT A GAME UPDATE',g:[['LAUNCHER',[
         ['The week card shows the server time, with its time zone when it differs from yours.','SERVER TIME'],
         ['The week strip shows each day’s events; pick a day to see them.','EVENTS'],
         ['News and events say when they are loading or could not load, and you can try again from there.','NEWS'],
-        ['These notes show the version of the launcher you have.','NOTES']]]]},
-      pt:{v:'LAUNCHER',meta:'4 ALTERAÇÕES · O JOGO NÃO MUDA',g:[['LAUNCHER',[
+        ['These notes show the version of the launcher you have.','NOTES'],
+        ['The patch notes show the story of the update you pick, and the build label follows the installed version.','BUILD']]]]},
+      pt:{v:'LAUNCHER',meta:'5 ALTERAÇÕES · O JOGO NÃO MUDA',g:[['LAUNCHER',[
         ['O cartão da semana mostra a hora do servidor, com o fuso horário quando é diferente do teu.','HORA'],
         ['A faixa da semana mostra os eventos de cada dia; escolhe um dia para os veres.','EVENTOS'],
         ['As notícias e os eventos dizem quando estão a carregar ou não carregaram, e podes tentar outra vez dali.','NOTÍCIAS'],
-        ['Estas notas mostram a versão do launcher que tens.','NOTAS']]]]}},
-      LD=[['new',''],['new',''],['chg',''],['fix','']],known=!window.TD_PROD,hooked=false,
+        ['Estas notas mostram a versão do launcher que tens.','NOTAS'],
+        ['As notas mostram a história da atualização que escolhes, e a versão mostrada acompanha a que está instalada.','VERSÃO']]]]}},
+      LD=[['new',''],['new',''],['chg',''],['fix',''],['fix','']],known=!window.TD_PROD,hooked=false,
       SEL='#ynot u[data-a="relnotes"],#ribbon u,#psub u[data-a="notes"],.ys153 u[data-g="u"]',ret=null,busy=false;
     function on(){return W.classList.contains('r157')}
     /* the number on the chip. The mockup shows its own sample LVER. The shipped page (TD_PROD) starts with that same sample in LVER and gets the real

@@ -48,3 +48,4 @@ html.prod #win .story h1.long { text-wrap: wrap; font-size: 30px !important }
 #pnnews p { margin: 0; font-size: 14px; line-height: 1.6; color: #b3c2cb }
 /* the launch view's labels stay off the cinematic's arm */
 html.prod #win .world .wl { max-width: 420px }
+#notes.storyonly > :is(#pnm, #pnd, #pnnav, #pnb), #pnnews[hidden] { display: none !important }
