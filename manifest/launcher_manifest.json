@@ -1,7 +1,7 @@
 {
  "counts": {
-  "bytes": 7155124227,
-  "files": 14425
+  "bytes": 7156132733,
+  "files": 14492
  },
  "files": [
   {
@@ -29,9 +29,9 @@
   },
   {
    "path": "DigimonTerminus_Data/Managed/Assembly-CSharp.dll",
-   "sha256": "6f799a423bbf40ee8b0f06964d0a1b9c15079e0c2e15884ec36469b7589992a2",
-   "size": 5246464,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/6f799a423bbf40ee_Assembly-CSharp.dll"
+   "sha256": "b12d8740f5772cb30480431ebc8eb872c674df0c19af801709be1716816b6c2a",
+   "size": 5268992,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/b12d8740f5772cb3_Assembly-CSharp.dll"
   },
   {
    "path": "DigimonTerminus_Data/Managed/Mono.Security.dll",
@@ -559,9 +559,9 @@
   },
   {
    "path": "DigimonTerminus_Data/RuntimeInitializeOnLoads.json",
-   "sha256": "02c9a14cb335882b8508b07abff2ac3c7757f8f08eb09fdec6c1347c04ef0eca",
-   "size": 1771,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/02c9a14cb335882b_RuntimeInitializeOnLoads.json"
+   "sha256": "358527a3c8779f530f8afabfc730f6f1eecd1ea898e6df37bbc03f5c9fec5abb",
+   "size": 2037,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/358527a3c8779f53_RuntimeInitializeOnLoads.json"
   },
   {
    "path": "DigimonTerminus_Data/ScriptingAssemblies.json",
@@ -18787,6 +18787,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/Audio/Sound/tamer/masaru/masaru_hit03.wav",
    "sha256": "2cfa58a77f12c8b8c3d12a9cde086575688d9f1bd9708167ea74dbd23f1e1dd2",
    "size": 132376
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/Audio/Sound/tamer/masaru/masaru_intro.mp3",
+   "sha256": "6ad3f27b0de50010cd79aef50262b97607d45d90e30465e396fbafa64a06e1c5",
+   "size": 410334,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/6ad3f27b0de50010_masaru_intro.mp3"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/Audio/Sound/tamer/masaru/masaru_trans.wav",
@@ -56050,6 +56056,12 @@
    "size": 5170
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Anomalocarimon_RaidBoss/0025010_Anomalocarimon_evo.tga",
+   "sha256": "6314d8a0d9cf672d709ea0aa02ac338573919da51832a1ac1a0c51c021229e1b",
+   "size": 8574,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/6314d8a0d9cf672d_0025010_Anomalocarimon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Antylamon/0051031_antylamonL.tga",
    "sha256": "e551215a4c7eea54dfaf23044548ecfd09ed22a366f02f66894d9928cd361700",
    "size": 9383
@@ -56859,6 +56871,18 @@
    "size": 8072
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Boarmon/1941071_BoarmonS.tga",
+   "sha256": "362b2cd31c19a3926a3901085f6cb69843b3bc4893f22a57ffee883528753dde",
+   "size": 6731,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/362b2cd31c19a392_1941071_BoarmonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Boarmon/1941071_Boarmon_evo.tga",
+   "sha256": "dc78f4effa5a910c2b142c278bb7705719f054c31527b4b16763ae35d4f482df",
+   "size": 9308,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/dc78f4effa5a910c_1941071_Boarmon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Bolgmon/0075034_BolgmonL.tga",
    "sha256": "36a0d212e3a40f34cb948d6222b8f5765d5872ff3da1e66f26688aeab6eb8d74",
    "size": 8514
@@ -57019,9 +57043,21 @@
    "size": 6690
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Caturamon/0053008_Caturamon_evo.tga",
+   "sha256": "3f4907c943102c1138eb5e576e1ddb647d049557a4578f177eb497d5ace5b025",
+   "size": 8752,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/3f4907c943102c11_0053008_Caturamon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Centalmon_RaidBoss/0045152_CentalmonL.tga",
    "sha256": "db2d4d37384a0a87bddce098b0dfc52c44e76ede4463c0c0323b4f6e0a8d4300",
    "size": 6170
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Centalmon_RaidBoss/0045152_Centalmon_evo.tga",
+   "sha256": "008051c13d50b4d668e51882984a086b91995fe0d198101e7357e21e1f1eb56c",
+   "size": 7670,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/008051c13d50b4d6_0045152_Centalmon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Centalmon_RaidBoss/0045152_centalmons.tga",
@@ -57366,6 +57402,18 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Darktower/0016042_DarktowerL.tga",
    "sha256": "8ddd3ec5e1078e82395994a2a7aa12534f7e59bb386565bbbd74759009eb0ed9",
    "size": 4967
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Darktower/0016042_DarktowerS.tga",
+   "sha256": "bfbc5a4e6d93305c3002f884faedb2cf574371651d5a86030b0c1748f3aae115",
+   "size": 6733,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/bfbc5a4e6d93305c_0016042_DarktowerS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Darktower/0016042_Darktower_evo.tga",
+   "sha256": "43ab48d26093236c684eff2374f0dae2caab8f3d7eb854c57101f9a0ae04bc9c",
+   "size": 7523,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/43ab48d26093236c_0016042_Darktower_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/DeadlyAxeman/0045188_DeadlyAxemanL.tga",
@@ -58505,6 +58553,12 @@
    "size": 5286
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Gerbemon_RaidBoss/0025012_Gerbemon_evo.tga",
+   "sha256": "d699050e055b42d485591b7c97ce219a33a8eb232d5241b15b928aa52c361246",
+   "size": 9154,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d699050e055b42d4_0025012_Gerbemon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Gesomon/0041176_GesomonL.tga",
    "sha256": "f6f6cee5b2b352cf0f92c228ec2511ba064ebbe53da96a23111de1e06dd88fd7",
    "size": 7358
@@ -59400,6 +59454,12 @@
    "size": 9732
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Jyagamon/0053006_jyagamon_evo.tga",
+   "sha256": "2a2d951d182ca2f0ee55d0f63eb587eae4a2849ecd95361bba453bab0df2a0cc",
+   "size": 8800,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2a2d951d182ca2f0_0053006_jyagamon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Jyagamon/0053006_jyagamons.tga",
    "sha256": "2293481529b4069f09cd94bd947927d63650e1fedbc0e68ec9dcb025179f6b83",
    "size": 6739,
@@ -59623,6 +59683,12 @@
    "size": 5705
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Koromon/1021136_Koromon_evo.tga",
+   "sha256": "ae49fe5be3e6a9b82ecd9ebe6de04385f5544598cbc6ddbb2077b0c17ce47bec",
+   "size": 7716,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ae49fe5be3e6a9b8_1021136_Koromon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Koromon/1021136_koromons.tga",
    "sha256": "319babf9b0429abf7949c1d90b2f8e7df7c64607a211f04ecadf5c08adcaace8",
    "size": 5103,
@@ -59632,6 +59698,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Koromon_Boss/0012136_Koromon_BossL.tga",
    "sha256": "ad7f6d2e24466a4348d68452d662f6fb6a1ab62644a2d524670d52dc642b9adb",
    "size": 5705
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Koromon_Boss/0012136_Koromon_Boss_evo.tga",
+   "sha256": "ae49fe5be3e6a9b82ecd9ebe6de04385f5544598cbc6ddbb2077b0c17ce47bec",
+   "size": 7716,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ae49fe5be3e6a9b8_0012136_Koromon_Boss_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Koromon_Boss/0012136_koromon_bosss.tga",
@@ -59708,6 +59780,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Kuwagamon_RaidBoss/0045150_KuwagamonS.tga",
    "sha256": "a7ffd48b000b99a614bc5a0e9bc5c13cf1cff63d6084e81bd4211b3a791b1404",
    "size": 4992
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Kuwagamon_RaidBoss/0045150_Kuwagamon_evo.tga",
+   "sha256": "4f601e99feafebeb7a4e2d90aeff0cd70fb5ce753d9e78cb04cd0e94d2afacfb",
+   "size": 8084,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/4f601e99feafebeb_0045150_Kuwagamon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Labramon/1231025_LabramonL.tga",
@@ -60079,9 +60157,27 @@
    "size": 9973
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Madleomon_Finalmode_RaidBoss/0060280_Madleomon_FinalmodeS.tga",
+   "sha256": "f1c3c9b4b6fb393e858c3d6ff4ef3bd9e9c67ae1725377420c3477620aa4194a",
+   "size": 6806,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/f1c3c9b4b6fb393e_0060280_Madleomon_FinalmodeS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Madleomon_Finalmode_RaidBoss/0060280_Madleomon_Finalmode_evo.tga",
+   "sha256": "283ae801206a70903d2263b7abc18945ded79a935e687bb1b8c012fbe56f99e5",
+   "size": 11854,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/283ae801206a7090_0060280_Madleomon_Finalmode_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Madleomon_armedmode/0045157_Madleomon_armedmodeL.tga",
    "sha256": "bf990fade437360fcc26aedada104a259793de88b3af7b460c5e8090d10a55cf",
    "size": 9896
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Madleomon_armedmode/0045157_Madleomon_armedmode_evo.tga",
+   "sha256": "901601e43a3cc96df3cdaa87433606a7c2da8e0aaf70f8a7d75811551923b18e",
+   "size": 9140,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/901601e43a3cc96d_0045157_Madleomon_armedmode_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/MagnaGarurumon/0075041_MagnaGarurumonL.tga",
@@ -60182,6 +60278,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Makuramon/0053007_MakuramonS.tga",
    "sha256": "5f87801741d6a097f19ceb1f0ea3e0e69216a370cc30e3e66c7eab646dc33cc2",
    "size": 6387
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Makuramon/0053007_Makuramon_evo.tga",
+   "sha256": "7c39efca26f41e025bc428f10cd51ab2c08e0ad237167d9f18ea04afa7d63a1e",
+   "size": 8718,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/7c39efca26f41e02_0053007_Makuramon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Marindevimon/0051156_MarindevimonL.tga",
@@ -60782,6 +60884,12 @@
    "size": 7739
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Monochromon/0045169_Monochromon_evo.tga",
+   "sha256": "0a8689dc0561ad836c683b605abd15c2615ae7760b49363ff2468b6f86011214",
+   "size": 7743,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/0a8689dc0561ad83_0045169_Monochromon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Monochromon/0045169_monochromons.tga",
    "sha256": "1388f5bfcec8d4032acb72a72241086045808a99bd31fe5e818b168b11d1dcb2",
    "size": 6341,
@@ -60791,6 +60899,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Monochromon_RaidBoss/0045151_MonochromonL.tga",
    "sha256": "579535b617469edb322fc67d8561d6c818d610636c3ef0816246c29970d2bf36",
    "size": 7739
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Monochromon_RaidBoss/0045151_Monochromon_evo.tga",
+   "sha256": "0a8689dc0561ad836c683b605abd15c2615ae7760b49363ff2468b6f86011214",
+   "size": 7743,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/0a8689dc0561ad83_0045151_Monochromon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Monochromon_RaidBoss/0045151_monochromons.tga",
@@ -60937,6 +61051,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Neodevimon/1551069_NeodevimonL.tga",
    "sha256": "17c56ed66d1ad45d4a9c8f4728de2a81c1e332e40c0e08cdb8c2d080fe24b2bb",
    "size": 7015
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Neodevimon/1551069_Neodevimon_evo.tga",
+   "sha256": "9b3d0b7c89af1ceba0d23c58cc280630d0df924e25441d27f4629591148175de",
+   "size": 11562,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/9b3d0b7c89af1ceb_1551069_Neodevimon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Neodevimon/1551069_neodevimons.tga",
@@ -61247,6 +61367,12 @@
    "size": 6673
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Orochimon_RaidBoss/0025505_Orochimon_evo.tga",
+   "sha256": "5967d39921bd2365c1b4a6aea8df9a7df31d6c0d5e68f6dd9c65330e7ae52d55",
+   "size": 10235,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/5967d39921bd2365_0025505_Orochimon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Otamamon/0035143_otamamonL.tga",
    "sha256": "2ad4d7922cb3afb7037eea5287ddad685f7999c09743338c1337cebbbc17a5e2",
    "size": 6852
@@ -61523,6 +61649,18 @@
    "size": 8738
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Pickmon/0035142_pickmonS.tga",
+   "sha256": "ceb2e04086c2ce21a8588d6303df1fbf39a473089765882485a61a37a072c4e9",
+   "size": 6710,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ceb2e04086c2ce21_0035142_pickmonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Pickmon/0035142_pickmon_evo.tga",
+   "sha256": "59163b3142704c00d9a0dca6d76a0827ab3775300e8603d39d3a4c21d0dcb088",
+   "size": 10908,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/59163b3142704c00_0035142_pickmon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Pico/1531067_picoL.tga",
    "sha256": "b64003dc81d97b2404783dfd5611b99f1744b744e7b0ca981aee94b64709d46f",
    "size": 12444
@@ -61576,6 +61714,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/PinochimonHouse_RaidBoss/0025017_PinochimonHouseS.tga",
    "sha256": "1ec717c46b7f6051400504b8ab80ee8d260474bce4375cf81c7a75dff9d3891b",
    "size": 4888
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/PinochimonHouse_RaidBoss/0025017_PinochimonHouse_evo.tga",
+   "sha256": "d492d85cfaccd9eae9dd33e5ee3da77476d9a75fc1614076f6f2117e18e85f84",
+   "size": 10986,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d492d85cfaccd9ea_0025017_PinochimonHouse_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Pinochimon_RaidBoss/0025016_PinochimonL.tga",
@@ -61838,6 +61982,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/RedMonument_RaidBoss/0016051_RedMonument_RaidBossL.tga",
    "sha256": "a602d87e101a4184bc6179ab3ab9b85f9bbd237f21be55305cedee255196b083",
    "size": 7857
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/RedMonument_RaidBoss/0016051_RedMonument_RaidBoss_evo.tga",
+   "sha256": "7bc78f8555936b3ac01516e5e9bb31956f7ed32dc2b52073a87392eac9da0d53",
+   "size": 7775,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/7bc78f8555936b3a_0016051_RedMonument_RaidBoss_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/RedMonument_RaidBoss/0016051_redmonument_raidbosss.tga",
@@ -62826,6 +62976,12 @@
    "size": 7899
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Tanemon_Boss/0012137_Tanemon_Boss_evo.tga",
+   "sha256": "873be37207634166c85cc3ff8eb1a7ecc70e3d2b95df5c3054106bf6a1ded0f2",
+   "size": 9620,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/873be37207634166_0012137_Tanemon_Boss_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Tanemon_Boss/0012137_tanemon_bosss.tga",
    "sha256": "f8c8e5ecf489bf346a4d3b2aabef7d5baf6fd581b7f46bf21ec4f98ddba64a78",
    "size": 5040,
@@ -63000,6 +63156,18 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Troopmon/0035146_TroopmonL.tga",
    "sha256": "0e596eabbed74f7e4208f011b2cecb5229f3dd1be94999e1da2d95412ca1c643",
    "size": 8093
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Troopmon/0035146_TroopmonS.tga",
+   "sha256": "d20e1a10839ac243a3eecadced3a409518adc5e7c0d5bfed7cec20b37a82a72f",
+   "size": 6739,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d20e1a10839ac243_0035146_TroopmonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Troopmon/0035146_Troopmon_evo.tga",
+   "sha256": "46bebe11996bb74545aa6caf78bfabb88e281f209cfb830a6b966f53fd256aec",
+   "size": 10232,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/46bebe11996bb745_0035146_Troopmon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Tsukaimon/0033069_TsukaimonL.tga",
@@ -63322,6 +63490,12 @@
    "size": 10358
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Vikaralamon_RaidBoss/0025504_vikaralamon_evo.tga",
+   "sha256": "33aacc627f486ad083d5571d37ead25f3d7ac5f6f1697081d39d71969d6b8dea",
+   "size": 10875,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/33aacc627f486ad0_0025504_vikaralamon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Vikaralamon_RaidBoss/0025504_vikaralamons.tga",
    "sha256": "c06308be08fd93b5847223e4a3db4fc1b53f5fe8a4d260a22542b6eda3840890",
    "size": 6742,
@@ -63423,6 +63597,12 @@
    "size": 8946
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Warumon/2451124_Warumon_evo.tga",
+   "sha256": "d89d89503fb8c539c8d0ce60a40dbb728c50598daf672ca97dd1d58a3a89a64a",
+   "size": 10864,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d89d89503fb8c539_2451124_Warumon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Warumon/2451124_warumons.tga",
    "sha256": "68218065c8da71502edcbec8b51edc31ec9d39806bf5aaf8a010c831a6ac78af",
    "size": 5154,
@@ -63432,6 +63612,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Warumon_Boss/0015124_Warumon_BossL.tga",
    "sha256": "f9a01b72bfc9487d461904440227dff57a58e91b96cee7f59d3cb706cbcb018a",
    "size": 8946
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Warumon_Boss/0015124_Warumon_Boss_evo.tga",
+   "sha256": "d89d89503fb8c539c8d0ce60a40dbb728c50598daf672ca97dd1d58a3a89a64a",
+   "size": 10864,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d89d89503fb8c539_0015124_Warumon_Boss_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/Warumon_Boss/0015124_warumon_bosss.tga",
@@ -64754,6 +64940,12 @@
    "size": 7573
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/monzaemon/0051123_Monzaemon_evo.tga",
+   "sha256": "ca8aac5524197382584c4c0a17ba27a1f7ae381dc043d109da21914ca31232a3",
+   "size": 8578,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ca8aac5524197382_0051123_Monzaemon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/monzaemon/0051123_monzaemons.tga",
    "sha256": "ab15198b5de44a8d0c5a56bffc180c44fabf1fd49730aed2ec8cbb270efe6c69",
    "size": 6720,
@@ -65020,6 +65212,18 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/redveggiemon/0041166_redveggiemonL.tga",
    "sha256": "c7d791d2aa6685a6eca3cc6c3533fa7b863d720761db2ff0237ea0e311692b1a",
    "size": 9321
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/redveggiemon/0041166_redveggiemonS.tga",
+   "sha256": "15d7dbc7249cb5a9c01156b41b9609b5a9902747aeef3974fe79c0b3b9b5a0bb",
+   "size": 6818,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/15d7dbc7249cb5a9_0041166_redveggiemonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/redveggiemon/0041166_redveggiemon_evo.tga",
+   "sha256": "6a5f0b655f1d26d44bb9a844e31309507cf1b17082acad8826991bbfd6aa420f",
+   "size": 11399,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/6a5f0b655f1d26d4_0041166_redveggiemon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/reptiledramonX/0075302_reptiledramonXL.tga",
@@ -65315,6 +65519,12 @@
    "size": 6826
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/tsunomon/2521133_tsunomon_evo.tga",
+   "sha256": "3a96660035040d447d20fc4b5705e2445e2f2b89790da1dd824c662b7506814a",
+   "size": 9191,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/3a96660035040d44_2521133_tsunomon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/tsunomon/2521133_tsunomons.tga",
    "sha256": "310a2da9fe26e1724f7b4d25c8505a56a4c894d8d54b2d01ad3d24aa813e5af6",
    "size": 5118,
@@ -65324,6 +65534,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/tsunomon_Boss/0012133_tsunomon_BossL.tga",
    "sha256": "959c711edc535aaffbd7adf269ae834cca7fe21353b22c9fc8bcdb9a546bbbb6",
    "size": 6826
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/tsunomon_Boss/0012133_tsunomon_Boss_evo.tga",
+   "sha256": "3a96660035040d447d20fc4b5705e2445e2f2b89790da1dd824c662b7506814a",
+   "size": 9191,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/3a96660035040d44_0012133_tsunomon_Boss_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/tsunomon_Boss/0012133_tsunomon_bosss.tga",
@@ -65337,9 +65553,27 @@
    "size": 5980
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/ukidarumon_Boss/0062080_ukidarumonS.tga",
+   "sha256": "59e5c642dbd9524697d7bab0bd9529ec5e6fa3c12201263089c0f85c6c782ffe",
+   "size": 6193,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/59e5c642dbd95246_0062080_ukidarumonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/ukidarumon_Boss/0062080_ukidarumon_evo.tga",
+   "sha256": "ceac11d43f9c3ca562504d50d46540c205253a36cd4b7b41dc8dafe76804f957",
+   "size": 9877,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ceac11d43f9c3ca5_0062080_ukidarumon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon/1921135_upampnL.tga",
    "sha256": "7aa5236677d13a953a691564448ac6911e77cc75b52de4ce7e68b89931f36193",
    "size": 6508
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon/1921135_upampn_evo.tga",
+   "sha256": "7f3adbe59ec168d7c146a944bab34909c2d66d76831b8f66f7f45cf2fede4818",
+   "size": 6648,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/7f3adbe59ec168d7_1921135_upampn_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon/1921135_upampns.tga",
@@ -65351,6 +65585,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon_Boss/0012135_upamon_BossL.tga",
    "sha256": "7aa5236677d13a953a691564448ac6911e77cc75b52de4ce7e68b89931f36193",
    "size": 6508
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon_Boss/0012135_upamon_Boss_evo.tga",
+   "sha256": "7f3adbe59ec168d7c146a944bab34909c2d66d76831b8f66f7f45cf2fede4818",
+   "size": 6648,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/7f3adbe59ec168d7_0012135_upamon_Boss_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/upamon_Boss/0012135_upamon_bosss.tga",
@@ -65392,6 +65632,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/vikaralamon/1951035_vikaralamonL.tga",
    "sha256": "c91fd8f9244b62782ca582d75d2377e341c7035c900770bce4203d2d99a00443",
    "size": 10358
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/vikaralamon/1951035_vikaralamon_evo.tga",
+   "sha256": "33aacc627f486ad083d5571d37ead25f3d7ac5f6f1697081d39d71969d6b8dea",
+   "size": 10875,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/33aacc627f486ad0_1951035_vikaralamon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Digimon/vikaralamon/1951035_vikaralamons.tga",
@@ -68701,6 +68947,12 @@
    "size": 6372
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Bokomon/0031024_bokomon_evo.tga",
+   "sha256": "0d6a92ac9e31c9f33663811084df2aee4d729bf8871d16de15946f7befdbf3cf",
+   "size": 6108,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/0d6a92ac9e31c9f3_0031024_bokomon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Bokomon/0031024_bokomons.tga",
    "sha256": "ac3c7fb04302a5b54e98e4e122e4c3b0fc2ebaa508e3164ef2c59cc170be5e7a",
    "size": 6639,
@@ -68748,6 +69000,12 @@
    "size": 6216
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Culumon/0092102_Culumon_evo.tga",
+   "sha256": "2e9ae4c26168689d7b1e266911ae752dc9067092447b4f6496c1002801e33d83",
+   "size": 6292,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2e9ae4c26168689d_0092102_Culumon_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Culumon/0092102_culumons.tga",
    "sha256": "e1744a0bca7f76d23ec9e6bd485a25ceb16797bbda8aaa99d9d49e82e7f4356b",
    "size": 5169,
@@ -68782,6 +69040,18 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Digitamamon/0090111_DigitamamonL.tga",
    "sha256": "718e19eb21e8aca846db004232bb615d69a4b6db60b030672cd4deedf58a35d0",
    "size": 8307
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Digitamamon/0090111_DigitamamonS.tga",
+   "sha256": "833be5125d5cc5646bdecb85611f8c18dc982fb3d7af892b930161335cbdac6f",
+   "size": 5771,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/833be5125d5cc564_0090111_DigitamamonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Digitamamon/0090111_Digitamamon_evo.tga",
+   "sha256": "2864d0eedfc1f49851b3cc1a43196574fb053e8a4e4906a7a4b8bad76b3a41b4",
+   "size": 8092,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2864d0eedfc1f498_0090111_Digitamamon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/Drimogemon/0090098_DrimogemonL.tga",
@@ -69653,6 +69923,18 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/ukidarumon/0090107_ukidarumonL.tga",
    "sha256": "042b4708a588819845fdb41680c9f5948270e33916338fa4716932c81731a57c",
    "size": 5980
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/ukidarumon/0090107_ukidarumonS.tga",
+   "sha256": "59e5c642dbd9524697d7bab0bd9529ec5e6fa3c12201263089c0f85c6c782ffe",
+   "size": 6193,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/59e5c642dbd95246_0090107_ukidarumonS.tga"
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/ukidarumon/0090107_ukidarumon_evo.tga",
+   "sha256": "ceac11d43f9c3ca562504d50d46540c205253a36cd4b7b41dc8dafe76804f957",
+   "size": 9877,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ceac11d43f9c3ca5_0090107_ukidarumon_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Npc/vending01/0090024_vendingL.tga",
@@ -71562,6 +71844,12 @@
    "size": 6989
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/AkiyamaRyo/0080017_AkiyamaRyo_evo.tga",
+   "sha256": "67088384e8175e3289db8ff5c633cf0b8d8b8c6ab4b9627374c736c80ff3c427",
+   "size": 9074,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/67088384e8175e32_0080017_AkiyamaRyo_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/HigashimitaraiKiyoshiro/0080020_HigashimitaraiKiyoshiroL.tga",
    "sha256": "880ca7899f7f86162e221e5937c8aac0a4d841990461cd72885bed4498b58084",
    "size": 23463
@@ -71570,6 +71858,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/HigashimitaraiKiyoshiro/0080020_HigashimitaraiKiyoshiroS.tga",
    "sha256": "c3015c1179c633e5813c0fb9ff56cb38d114a4ba33bce15bb9c610eeaae6e270",
    "size": 6489
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/HigashimitaraiKiyoshiro/0080020_HigashimitaraiKiyoshiro_evo.tga",
+   "sha256": "0678e222eb054bbdd7fed700647cf0928743905c8d764f856bf37ec54b26e0ce",
+   "size": 9022,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/0678e222eb054bbd_0080020_HigashimitaraiKiyoshiro_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Hikari/0080009_HikariL.tga",
@@ -71582,6 +71876,12 @@
    "size": 2961
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Hikari/0080009_Hikari_evo.tga",
+   "sha256": "9156d3cec54e1dcec98c75df1319c5c03a1f6e131f7aab910caefac713cb877f",
+   "size": 8614,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/9156d3cec54e1dce_0080009_Hikari_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Hiro/0080018_AmanokawaHiroL.tga",
    "sha256": "a902e5037ea0ef21d3b5f5d0168608c3001bea48dcc8d911fea0d626e58af665",
    "size": 23336
@@ -71590,6 +71890,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Hiro/0080018_AmanokawaHiroS.tga",
    "sha256": "79ae3755753e704bec4326ccb62496711a76bec1fdbdb48c13461c1d27eff729",
    "size": 6726
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Hiro/0080018_AmanokawaHiro_evo.tga",
+   "sha256": "676a531cc971d18a0c9599bdf091f284afcd604d66062847e2efe26ad064b69e",
+   "size": 8987,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/676a531cc971d18a_0080018_AmanokawaHiro_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Joe/0080015_JoeL.tga",
@@ -71602,6 +71908,12 @@
    "size": 4728
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Joe/0080015_Joe_evo.tga",
+   "sha256": "9c6086177f53cd198ce4c346e4143472d7a3a34e8c1a0e5a6d83c6d7129ab265",
+   "size": 9061,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/9c6086177f53cd19_0080015_Joe_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Jyenrya/0080013_JyenryaL.tga",
    "sha256": "772a430b561a6966de8768295631e01e7416911c9bb8eb353b075cb4c62f2853",
    "size": 22914
@@ -71610,6 +71922,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Jyenrya/0080013_JyenryaS.tga",
    "sha256": "83676bd59cfed9e8b80818f59b223fbbdff77c980e42ea402c85eafd512db489",
    "size": 2999
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Jyenrya/0080013_Jyenrya_evo.tga",
+   "sha256": "6f8ffa5291d8be30af45730f908533f80b756ebfcefd3f0f2c649a320f779676",
+   "size": 8837,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/6f8ffa5291d8be30_0080013_Jyenrya_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/KatoJury/0080016_KatoJuriL.tga",
@@ -71622,6 +71940,12 @@
    "size": 6988
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/KatoJury/0080016_KatoJuri_evo.tga",
+   "sha256": "d4825183e123c766685e461a9091919628601fffa53fe857d809d8c8031f65b6",
+   "size": 9174,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/d4825183e123c766_0080016_KatoJuri_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Ruki/0080012_RukiL.tga",
    "sha256": "ed580ea4b551db7f5ef2e153607797e732ab948d76aa70408d237fc43d313561",
    "size": 22744
@@ -71630,6 +71954,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Ruki/0080012_RukiS.tga",
    "sha256": "5495b02fce871fbfe5115aa7625f1b5a1c40e4afd12b9fafac40aa81d64282e1",
    "size": 2917
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Ruki/0080012_Ruki_evo.tga",
+   "sha256": "2d5a0bb1078eb8c469e3869b47cae1c4f252fb51ed2b326f49dfe1a84b8e6296",
+   "size": 8662,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2d5a0bb1078eb8c4_0080012_Ruki_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Ruli/0080019_Tsukiyono_RuliL.tga",
@@ -71642,6 +71972,12 @@
    "size": 6576
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Ruli/0080019_Tsukiyono_Ruli_evo.tga",
+   "sha256": "51c9a8ae2df5e867682765ba39e32fc5e931e3be52974fb00370ad79b71c7c04",
+   "size": 8818,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/51c9a8ae2df5e867_0080019_Tsukiyono_Ruli_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Takato/0080011_TakatoL.tga",
    "sha256": "79cfb7c0098930aaffd2b15d02ca0ffb9512202abc72a4a5a1aac0e511f6962a",
    "size": 22802
@@ -71650,6 +71986,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Takato/0080011_TakatoS.tga",
    "sha256": "cde15d2dd5a6d2d09292b3e1d3e8bc031b5bf75137016230d8cc61c9d88bca6c",
    "size": 3068
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/Takato/0080011_Takato_evo.tga",
+   "sha256": "c5db9058c33ce3ddef38d56bfa20dcf1c79177e5c939529a1b2d857950cc0a28",
+   "size": 9086,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/c5db9058c33ce3dd_0080011_Takato_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/ikuto/0080004_ikutoL.tga",
@@ -71662,6 +72004,12 @@
    "size": 2645
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/ikuto/0080004_ikuto_evo.tga",
+   "sha256": "513eab454d63bad002ae0b05641d0f383ab6d39d26f3af299f1bdd4d93f5c6fa",
+   "size": 9155,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/513eab454d63bad0_0080004_ikuto_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/izmi/0080014_izmiL.tga",
    "sha256": "63efbd3634ae680d142ae7ef44d36ed9380a9f9be32433af4123cc28213a0074",
    "size": 22423
@@ -71670,6 +72018,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/izmi/0080014_izmiS.tga",
    "sha256": "66df2cff87bca791a50ac59514955c765adce3cea4374851ab49392b8b2dc231",
    "size": 4542
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/izmi/0080014_izmi_evo.tga",
+   "sha256": "dbf19b2d3b00edaaad193da43c45e48f6042da02282b67da4fb3749b7a6a53af",
+   "size": 9080,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/dbf19b2d3b00edaa_0080014_izmi_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/masaru/0080001_masaruL.tga",
@@ -71682,6 +72036,12 @@
    "size": 2874
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/masaru/0080001_masaru_evo.tga",
+   "sha256": "656ba09ec1c9bf7ebeab4b6e76103f6928ea93a8ebde7501afbc2037680ed0f7",
+   "size": 9000,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/656ba09ec1c9bf7e_0080001_masaru_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/mimi/0080006_MIMIL.tga",
    "sha256": "e31c9d9069ca9db24d00f619ad36e32688527b83d5d7213bfd874367ba5bbba6",
    "size": 22878
@@ -71690,6 +72050,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/mimi/0080006_MIMIS.tga",
    "sha256": "dab5458a18bf528ac3d1b0bbcd3b3a6393528ccde2e6ba529660a0ad76c0c91f",
    "size": 3018
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/mimi/0080006_MIMI_evo.tga",
+   "sha256": "ce6a69ed525e8dfe23e2425165097c927027f4fe1f6a7a29fcd3a448d8fa51c8",
+   "size": 8988,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/ce6a69ed525e8dfe_0080006_MIMI_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/sora/0080010_SoraL.tga",
@@ -71702,6 +72068,12 @@
    "size": 3029
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/sora/0080010_Sora_evo.tga",
+   "sha256": "2e6c62f624ffdd483320597c5f4b6aaa1166ff687e444e701314649677c5ab30",
+   "size": 8945,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2e6c62f624ffdd48_0080010_Sora_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/taichi/0080005_taichiL.tga",
    "sha256": "0f2de55bb61ca1cd70b69fe4907ff0125af44186fe16f0a3e0bc78bdeebb7c83",
    "size": 23374
@@ -71710,6 +72082,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/taichi/0080005_taichiS.tga",
    "sha256": "b66612c3b57903d93dec37a6f1f6275a49ebb232989b957e22f8764f5deb3d78",
    "size": 3276
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/taichi/0080005_taichi_evo.tga",
+   "sha256": "8230060eb5606bc84851af3b5312e98d9b4c15406f8b01369c33ee88ad6bb1f2",
+   "size": 9141,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/8230060eb5606bc8_0080005_taichi_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/takeru/0080008_takeruL.tga",
@@ -71722,6 +72100,12 @@
    "size": 2949
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/takeru/0080008_takeru_evo.tga",
+   "sha256": "4f72b3d446d2461b117f618c8abb545b2517ab8253e131c853062b44c2cd6e4d",
+   "size": 9019,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/4f72b3d446d2461b_0080008_takeru_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/tohma/0080002_TohmaL.tga",
    "sha256": "c690dfb35e0ad4b47c26c5828fe77bd699b9b331fb0d50dd12498e03ed215cc0",
    "size": 22818
@@ -71730,6 +72114,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/tohma/0080002_TohmaS.tga",
    "sha256": "1ea03b3edd3f1a728c90c16bc68ff30719a5a318d3769c499f1188bccf3b4b92",
    "size": 2947
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/tohma/0080002_Tohma_evo.tga",
+   "sha256": "2dec6e01056b1342c636e15ac1aa3eadfa234a0990285846462581d727fa6250",
+   "size": 8961,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/2dec6e01056b1342_0080002_Tohma_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/yamato/0080007_yamatoL.tga",
@@ -71742,6 +72132,12 @@
    "size": 2881
   },
   {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/yamato/0080007_yamato_evo.tga",
+   "sha256": "48620697ed125b58456403286e009b1f88f6a20c57e0ef9672e528a32902c576",
+   "size": 9028,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/48620697ed125b58_0080007_yamato_evo.tga"
+  },
+  {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/yoshino/0080003_YoshinoL.tga",
    "sha256": "b4664ee77b8a671048700db919cf680c73e3234c6ad11e250aef67da3ce64e15",
    "size": 23329
@@ -71750,6 +72146,12 @@
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/yoshino/0080003_YoshinoS.tga",
    "sha256": "72726f5c9708f4c47e6c08acde5497e256eee0b2461e2e82efe927b9700c963e",
    "size": 2994
+  },
+  {
+   "path": "DigimonTerminus_Data/StreamingAssets/UiRef/Tamer/yoshino/0080003_Yoshino_evo.tga",
+   "sha256": "b74162461ba8c826a35190134eb06b83f01edd2e0b38ba73fe6ccff0e1a056f7",
+   "size": 9075,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/b74162461ba8c826_0080003_Yoshino_evo.tga"
   },
   {
    "path": "DigimonTerminus_Data/StreamingAssets/UiRef/TamerStatus_New/TamerStatus_C_slot.tga",
@@ -72312,31 +72714,32 @@
   },
   {
    "path": "DigimonTerminus_Data/app.info",
-   "sha256": "ea4a3d44fd2f06a1203b6b233c746e9ac74bba364aec8b03864cc3e6ea14f5da",
-   "size": 26
+   "sha256": "b09b6d2d130a417964dc0e543df07381518dc1da46e2c304675a2787896a2b50",
+   "size": 25,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/b09b6d2d130a4179_app.info"
   },
   {
    "path": "DigimonTerminus_Data/boot.config",
-   "sha256": "568df1b7500d8e934e9893c2e080f7eaaf031d52919fcd8b117e5f37618a4c45",
+   "sha256": "60ec9970af20b6c59c153c9a52aff6acea2fe3452a5cf43a2cc87c7899838bab",
    "size": 156,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/568df1b7500d8e93_boot.config"
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/60ec9970af20b6c5_boot.config"
   },
   {
    "parts": [
     {
-     "sha256": "719c9fb0ce0a6095d1e873779f112d646f730b83d76e4b912a7ec3fd087b38a1",
+     "sha256": "7b5f5a8eeebff8e52b9f10cb2efc1b2ba1f27813857d269901cea6ce1e0e13fd",
      "size": 2040109465,
-     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/719c9fb0ce0a6095_data.unity3d.p000"
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/7b5f5a8eeebff8e5_data.unity3d.p000"
     },
     {
-     "sha256": "bac26cbb099183ca83493c2f2fcd0b91c57d4df6ac00b1708ce7ae56a3d108dd",
-     "size": 622333698,
-     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/bac26cbb099183ca_data.unity3d.p001"
+     "sha256": "37f95fd6d4188dda2f9dc5dce86a15e6cc4d9093877ab9745b28a6cd72eac4c7",
+     "size": 622335464,
+     "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112402/37f95fd6d4188dda_data.unity3d.p001"
     }
    ],
    "path": "DigimonTerminus_Data/data.unity3d",
-   "sha256": "8b0f1455a48bec72a8a7886eda0d5cff612767240877ff3998165300dbacdfe4",
-   "size": 2662443163,
+   "sha256": "453824e42319c2438c51deead5b74360e09311f61a8778062223500831ed110f",
+   "size": 2662444929,
    "url": "urn:dso:parts-only"
   },
   {
@@ -73916,5 +74319,5 @@
  "patches": [],
  "playExe": "DigimonTerminus.exe",
  "schema": "dso-launcher-manifest/1",
- "version": 2026112401
+ "version": 2026112402
 }

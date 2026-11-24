@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026112402",
+      "date": "2026-11-24",
+      "tag": "client",
+      "thumb": "img/thumbs/n4.png",
+      "title": {
+        "en": "New icons, a voice on tamer creation and the game's new name",
+        "pt": "Novos ícones, uma voz na criação de tamer e o novo nome do jogo"
+      },
+      "body": {
+        "en": "66 Digimon, NPC and tamer icons that were missing now show in the game. On tamer creation, Masaru introduces himself. The game window is now called Digimon Terminus, and your options and saved login carry over on the first start. This update is about 2.5 GB (keep about 7 GB free): let the launcher finish before you press PLAY.",
+        "pt": "66 ícones de Digimon, NPC e tamers que faltavam aparecem agora no jogo. Na criação de tamer, o Masaru apresenta-se. A janela do jogo chama-se agora Digimon Terminus, e as tuas opções e o login guardado passam para a nova versão no primeiro arranque. Esta atualização tem cerca de 2,5 GB (guarda cerca de 7 GB livres): deixa o launcher terminar antes de carregar em JOGAR."
+      }
+    },
+    {
       "id": "update-2026112401",
       "date": "2026-11-24",
       "tag": "client",
@@ -174,6 +188,65 @@
     }
   ],
   "notes": [
+    {
+      "id": "update-2026112402",
+      "version": "2402",
+      "date": "2026-11-24",
+      "meta": {
+        "en": "4 CHANGES · GAME UPDATE 2026112402",
+        "pt": "4 ALTERAÇÕES · ATUALIZAÇÃO 2026112402"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "ICONS",
+              "kind": "new",
+              "text": {
+                "en": "66 Digimon, NPC and tamer icons that were missing now show: evolution bars and small portraits.",
+                "pt": "66 ícones de Digimon, NPC e tamers que faltavam aparecem agora: barras de evolução e retratos pequenos."
+              }
+            },
+            {
+              "tag": "TAMER CREATION",
+              "kind": "new",
+              "text": {
+                "en": "On tamer creation, Masaru now introduces himself, and the music goes quieter while he speaks.",
+                "pt": "Na criação de tamer, o Masaru apresenta-se agora, e a música baixa enquanto ele fala."
+              }
+            },
+            {
+              "tag": "GAME NAME",
+              "kind": "chg",
+              "text": {
+                "en": "The game window is now called Digimon Terminus. Your options and saved login carry over on the first start.",
+                "pt": "A janela do jogo chama-se agora Digimon Terminus. As tuas opções e o login guardado passam para a nova versão no primeiro arranque."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "ATTRIBUTES",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: when a Digimon's attribute experience reaches its maximum, you now hear the game's sound for it.",
+                "pt": "Já ativo: quando a experiência de atributo de um Digimon chega ao máximo, ouves agora o som do jogo para isso."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "update-2026112401",
       "version": "2401",
@@ -454,89 +527,6 @@
               "text": {
                 "en": "Already live: putting a gem into a socket now works and charges its fee.",
                 "pt": "Já ativo: pôr uma gema num encaixe já funciona e cobra a sua taxa."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026112001",
-      "version": "2001",
-      "date": "2026-11-20",
-      "meta": {
-        "en": "7 CHANGES · GAME UPDATE 2026112001",
-        "pt": "7 ALTERAÇÕES · ATUALIZAÇÃO 2026112001"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "MODELS",
-              "kind": "new",
-              "text": {
-                "en": "43 models that were missing from the game are now included, most of them Digimon: among them Gammamon, Betelgammamon, Aegisdramon, Siriusmon, Lotusmon, Medievaldukemon and Shoutmon X4 and X5.",
-                "pt": "Foram incluídos 43 modelos que faltavam no jogo, a maioria Digimon: entre eles Gammamon, Betelgammamon, Aegisdramon, Siriusmon, Lotusmon, Medievaldukemon e Shoutmon X4 e X5."
-              }
-            },
-            {
-              "tag": "MOVEMENT",
-              "kind": "fix",
-              "text": {
-                "en": "Digimon move their legs at the original walking and running pace for their size.",
-                "pt": "Os Digimon mexem as pernas ao ritmo original de andar e de correr para o seu tamanho."
-              }
-            },
-            {
-              "tag": "STUN",
-              "kind": "fix",
-              "text": {
-                "en": "A stunned monster now freezes in place until the stun ends.",
-                "pt": "Um monstro atordoado fica agora parado até o atordoamento acabar."
-              }
-            },
-            {
-              "tag": "NPCS",
-              "kind": "fix",
-              "text": {
-                "en": "An NPC no longer turns bright pink if your mouse rests on it while it fades in.",
-                "pt": "Um NPC já não fica cor-de-rosa forte se o rato estiver em cima dele enquanto aparece."
-              }
-            },
-            {
-              "tag": "TARGET",
-              "kind": "fix",
-              "text": {
-                "en": "The element and attribute tips in the target window show up again when you point at them.",
-                "pt": "As dicas de elemento e de atributo na janela do alvo voltam a aparecer quando lhes apontas."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "SERVER",
-            "pt": "SERVIDOR"
-          },
-          "items": [
-            {
-              "tag": "DUNGEON DOORS",
-              "kind": "new",
-              "text": {
-                "en": "Already live: the dungeon exits on maps 1702 to 1706 start closed. In the dungeon on map 1702, defeating its guards and then its boss opens the doors one after another.",
-                "pt": "Já ativo: as saídas das dungeons dos mapas 1702 a 1706 começam fechadas. Na dungeon do mapa 1702, derrotar os guardas e depois o chefe abre as portas uma a uma."
-              }
-            },
-            {
-              "tag": "BAG",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: moving an item into some bag slots no longer gets stuck. A bag with gaps between its slots is tidied when you enter a map.",
-                "pt": "Já ativo: mover um objeto para certas posições da mochila já não fica preso. Uma mochila com espaços em falta é arrumada quando entras num mapa."
               }
             }
           ]
