@@ -7,20 +7,35 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Never cancel a deploy that is already running: a cancelled deploy mid-release left Pages on the old manifest.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
-  deploy:
+  # Upload in its own job. deploy-pages looks the artifact up by name about 0.3 s after the upload when both
+  # run in one job, and GitHub's artifact listing sometimes still returns 0 then ("No artifacts named
+  # github-pages", runs 45419112521, 45424450897, 45490268582 on 2026-11-24). A separate job adds the
+  # job-scheduling gap, and the deploy job retries once after 60 s if the lookup still misses.
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    steps:
       - id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+      - id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
