@@ -5,6 +5,20 @@
   },
   "items": [
     {
+      "id": "update-2026112401",
+      "date": "2026-11-24",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Skill effects, new login screens and a new loading screen",
+        "pt": "Efeitos das técnicas, novos ecrãs de entrada e novo ecrã de carregamento"
+      },
+      "body": {
+        "en": "Skill effects now reach the monster you target, and each skill plays its own animation. New login, tamer select and tamer creation screens, and a new loading screen. Log Out now takes you back to tamer select. The DATS Center and Data Trade rooms open, the Blur Effect option works, and NPCs zoom in when you talk to them. This update is about 2.5 GB (keep about 7 GB free): let the launcher finish before you press PLAY.",
+        "pt": "Os efeitos das técnicas chegam agora ao monstro que escolhes, e cada técnica tem a sua própria animação. Novos ecrãs de entrada, de escolha e de criação de tamer, e um novo ecrã de carregamento. Sair da conta leva-te de volta à escolha de tamer. As salas do DATS Center e da Data Trade abrem, a opção Blur Effect funciona e os NPC aparecem em grande quando falas com eles. Esta atualização tem cerca de 2,5 GB (guarda cerca de 7 GB livres): deixa o launcher terminar antes de carregar em JOGAR."
+      }
+    },
+    {
       "id": "update-2026112101",
       "date": "2026-11-22",
       "tag": "client",
@@ -160,6 +174,185 @@
     }
   ],
   "notes": [
+    {
+      "id": "update-2026112401",
+      "version": "2401",
+      "date": "2026-11-24",
+      "meta": {
+        "en": "19 CHANGES · GAME UPDATE 2026112401",
+        "pt": "19 ALTERAÇÕES · ATUALIZAÇÃO 2026112401"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "SKILL EFFECTS",
+              "kind": "fix",
+              "text": {
+                "en": "Skill effects now fly to and land on the monster you target.",
+                "pt": "Os efeitos das técnicas voam agora até ao monstro que escolheste e acertam nele."
+              }
+            },
+            {
+              "tag": "SKILLS 2-5",
+              "kind": "fix",
+              "text": {
+                "en": "Each skill now plays its own animation and effect. Before, the second skill repeated the first one.",
+                "pt": "Cada técnica tem agora a sua própria animação e efeito. Antes, a segunda técnica repetia a primeira."
+              }
+            },
+            {
+              "tag": "COMBAT",
+              "kind": "fix",
+              "text": {
+                "en": "Damage numbers, Miss and the hit reaction now appear when the blow lands, not before the swing.",
+                "pt": "Os números de dano, o Miss e a reação ao golpe aparecem agora quando o golpe acerta, e não antes do ataque."
+              }
+            },
+            {
+              "tag": "MONSTER DEATH",
+              "kind": "fix",
+              "text": {
+                "en": "A defeated monster now shows its vanishing effect.",
+                "pt": "Um monstro derrotado mostra agora o seu efeito de desaparecer."
+              }
+            },
+            {
+              "tag": "OUT OF SIGHT",
+              "kind": "fix",
+              "text": {
+                "en": "When a target is behind an obstacle, the game now tells you \"Target is out of sight\" instead of doing nothing.",
+                "pt": "Quando o alvo está atrás de um obstáculo, o jogo diz-te agora que o alvo está fora de vista, em vez de não fazer nada."
+              }
+            },
+            {
+              "tag": "EVOLUTION",
+              "kind": "fix",
+              "text": {
+                "en": "Evolutions and partner switches now play their fade, size change and voice.",
+                "pt": "As evoluções e as trocas de parceiro mostram agora o desvanecer, a mudança de tamanho e a voz."
+              }
+            },
+            {
+              "tag": "LOGIN SCREENS",
+              "kind": "new",
+              "text": {
+                "en": "New login, tamer select and tamer creation screens.",
+                "pt": "Novos ecrãs de entrada, de escolha de tamer e de criação de tamer."
+              }
+            },
+            {
+              "tag": "LOADING",
+              "kind": "new",
+              "text": {
+                "en": "New loading screen. Options › Graphic › Reduce Motion makes its animation calmer.",
+                "pt": "Novo ecrã de carregamento. Options › Graphic › Reduce Motion torna a animação mais calma."
+              }
+            },
+            {
+              "tag": "LOG OUT",
+              "kind": "chg",
+              "text": {
+                "en": "Log Out now takes you back to tamer select instead of closing the game.",
+                "pt": "Sair da conta leva-te agora de volta à escolha de tamer, em vez de fechar o jogo."
+              }
+            },
+            {
+              "tag": "BLUR",
+              "kind": "fix",
+              "text": {
+                "en": "The Blur Effect option now adds its glow effect.",
+                "pt": "A opção Blur Effect acrescenta agora o seu efeito de brilho."
+              }
+            },
+            {
+              "tag": "DATS CENTER",
+              "kind": "new",
+              "text": {
+                "en": "The DATS Center and the Data Trade room now open in their own 3D room.",
+                "pt": "O DATS Center e a sala da Data Trade abrem agora na sua própria sala em 3D."
+              }
+            },
+            {
+              "tag": "PARTNER DOWN",
+              "kind": "chg",
+              "text": {
+                "en": "When your partner falls, a box now offers to move you to the village.",
+                "pt": "Quando o teu parceiro cai, aparece agora uma caixa que te oferece voltar à vila."
+              }
+            },
+            {
+              "tag": "MASTERS MATCH",
+              "kind": "fix",
+              "text": {
+                "en": "You can drag an item from the bag into the Masters Match window, and your team icon shows over your head.",
+                "pt": "Podes arrastar um objeto do saco para a janela do Masters Match, e o ícone da tua equipa aparece por cima da tua cabeça."
+              }
+            },
+            {
+              "tag": "TARGET",
+              "kind": "fix",
+              "text": {
+                "en": "The target window drops to 0% when the monster dies and closes when it disappears.",
+                "pt": "A janela do alvo desce a 0% quando o monstro morre e fecha quando ele desaparece."
+              }
+            },
+            {
+              "tag": "NPC TALK",
+              "kind": "new",
+              "text": {
+                "en": "The NPC you talk to now appears zoomed in, and portal NPCs carry a mark above them.",
+                "pt": "O NPC com quem falas aparece agora em grande, e os NPC de portal têm uma marca por cima."
+              }
+            },
+            {
+              "tag": "QUESTS",
+              "kind": "fix",
+              "text": {
+                "en": "The option to hand in a quest now appears at the NPC who receives it.",
+                "pt": "A opção de entregar uma missão aparece agora no NPC que a recebe."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "CHANNELS",
+              "kind": "chg",
+              "text": {
+                "en": "Already live: choosing another channel now gives an answer. For now each map has one channel.",
+                "pt": "Já ativo: escolher outro canal dá agora uma resposta. Por agora, cada mapa tem um só canal."
+              }
+            },
+            {
+              "tag": "AREA SKILLS",
+              "kind": "fix",
+              "text": {
+                "en": "Already live: an area skill now shows the damage on each target it hits.",
+                "pt": "Já ativo: uma técnica de área mostra agora o dano em cada alvo que atinge."
+              }
+            },
+            {
+              "tag": "PARTNER BUFFS",
+              "kind": "fix",
+              "text": {
+                "en": "A tamer skill that boosts your Digimon now shows the boost on it.",
+                "pt": "Uma técnica de tamer que reforça o teu Digimon mostra agora o reforço nele."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "update-2026112101",
       "version": "2101",
@@ -344,161 +537,6 @@
               "text": {
                 "en": "Already live: moving an item into some bag slots no longer gets stuck. A bag with gaps between its slots is tidied when you enter a map.",
                 "pt": "Já ativo: mover um objeto para certas posições da mochila já não fica preso. Uma mochila com espaços em falta é arrumada quando entras num mapa."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026111901",
-      "version": "1901",
-      "date": "2026-11-19",
-      "meta": {
-        "en": "15 CHANGES · GAME UPDATE 2026111901",
-        "pt": "15 ALTERAÇÕES · ATUALIZAÇÃO 2026111901"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "MAPS",
-              "kind": "chg",
-              "text": {
-                "en": "23 maps rebuilt and checked by entering each one in the new client: Shinjuku West and East (day and night), Stadium, Road, Rainbow Bridge, Miso Village, Forest of the Beginning, Marine Dragon Domain, Wasteland Area (day and night), Forest Area, Ocean Area, Four Holy Beast Area, Four Holy Beast Area (D-Reaper), Collapsed Four Holy Beast Area, Cloud Area, Zhuqiaomon's Resting Area, Chaotic Battlefield, Final Battle, Battle with Demon and Battle with Belphemon.",
-                "pt": "23 mapas refeitos e verificados, entrando em cada um no novo cliente: Shinjuku West e East (dia e noite), Stadium, Road, Rainbow Bridge, Miso Village, Forest of the Beginning, Marine Dragon Domain, Wasteland Area (dia e noite), Forest Area, Ocean Area, Four Holy Beast Area, Four Holy Beast Area (D-Reaper), Collapsed Four Holy Beast Area, Cloud Area, Zhuqiaomon's Resting Area, Chaotic Battlefield, Final Battle, Battle with Demon e Battle with Belphemon."
-              }
-            },
-            {
-              "tag": "SCENERY",
-              "kind": "fix",
-              "text": {
-                "en": "Moving scenery fixed: the giant spiders' legs move again and stay attached to the body, and a portal ring that sat at the wrong height is back in place.",
-                "pt": "Cenário animado corrigido: as pernas das aranhas gigantes voltam a mexer-se e ficam presas ao corpo, e um anel de portal que estava à altura errada voltou ao lugar."
-              }
-            },
-            {
-              "tag": "DOORS",
-              "kind": "fix",
-              "text": {
-                "en": "Dungeon doors and portals open and close with their own animation, and a portal only lets you through while it is open.",
-                "pt": "As portas e os portais das dungeons abrem e fecham com a sua própria animação, e um portal só te deixa passar enquanto está aberto."
-              }
-            },
-            {
-              "tag": "PORTALS",
-              "kind": "fix",
-              "text": {
-                "en": "Walking into a portal takes you to the destination it is meant to, not to another map.",
-                "pt": "Entrar num portal leva-te ao destino certo, e não a outro mapa."
-              }
-            },
-            {
-              "tag": "TEXTURES",
-              "kind": "chg",
-              "text": {
-                "en": "Ground, effect and sky textures refreshed on 31 maps.",
-                "pt": "Texturas do chão, dos efeitos e do céu atualizadas em 31 mapas."
-              }
-            },
-            {
-              "tag": "EFFECTS",
-              "kind": "new",
-              "text": {
-                "en": "Smoke, fog and other particle effects now appear on 28 maps. On a few of them these effects stand still and do not move.",
-                "pt": "Fumo, nevoeiro e outros efeitos de partículas passam a aparecer em 28 mapas. Em alguns deles estes efeitos ficam parados."
-              }
-            },
-            {
-              "tag": "EVOLUTION FX",
-              "kind": "fix",
-              "text": {
-                "en": "Level-up and evolution effects fixed: no more white squares.",
-                "pt": "Efeitos de subida de nível e de evolução corrigidos: acabaram os quadrados brancos."
-              }
-            },
-            {
-              "tag": "DIGIVOLUTION",
-              "kind": "fix",
-              "text": {
-                "en": "Digivolution now happens in place, where your partner stands.",
-                "pt": "A digievolução passa a acontecer no mesmo sítio, onde o teu parceiro está."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "SERVER",
-            "pt": "SERVIDOR"
-          },
-          "items": [
-            {
-              "tag": "QUEST ITEMS",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: in 23 quests the item you need never dropped. It now drops from the right monster while the quest is active.",
-                "pt": "Já ativo: em 23 quests o item de que precisas nunca caía. Agora cai do monstro certo enquanto a quest está ativa."
-              }
-            },
-            {
-              "tag": "QUEST START",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: 33 quests that refused to start when you accepted them now start, which opens the quests that follow them. 11 story quests no longer give you an unrelated item when you accept them.",
-                "pt": "Já ativo: 33 quests que não começavam quando as aceitavas passam a começar, o que abre as quests que vêm a seguir. 11 quests da história já não te dão um item sem relação quando as aceitas."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "LAUNCHER",
-            "pt": "LAUNCHER"
-          },
-          "items": [
-            {
-              "tag": "ERRORS",
-              "kind": "new",
-              "text": {
-                "en": "Errors now say in plain words what happened and what you can do, with no technical text. They follow the launcher's language, Portuguese or English.",
-                "pt": "Os erros passam a dizer, em palavras simples, o que aconteceu e o que podes fazer, sem texto técnico. Seguem a língua do launcher, português ou inglês."
-              }
-            },
-            {
-              "tag": "SETTINGS",
-              "kind": "new",
-              "text": {
-                "en": "An update can no longer overwrite your own files: the server address, the saved login, your background-update choice and the last error report are never written by an update.",
-                "pt": "Uma atualização já não pode escrever por cima dos teus ficheiros: o endereço do servidor, o login guardado, a tua escolha de atualização em segundo plano e o último relatório de erro ficam sempre como estão."
-              }
-            },
-            {
-              "tag": "SAFER UPDATES",
-              "kind": "chg",
-              "text": {
-                "en": "Only files signed as part of the launcher can replace the launcher itself.",
-                "pt": "Só ficheiros assinados como parte do launcher podem substituir o próprio launcher."
-              }
-            },
-            {
-              "tag": "OLD INSTALLS",
-              "kind": "new",
-              "text": {
-                "en": "If your install is too old to be patched, the launcher checks every file again or asks you to extract the full client into a new, empty folder, instead of failing halfway.",
-                "pt": "Se a tua instalação for antiga demais para ser atualizada, o launcher volta a verificar todos os ficheiros ou pede-te para extraíres o cliente completo numa pasta nova e vazia, em vez de falhar a meio."
-              }
-            },
-            {
-              "tag": "SELF-UPDATE",
-              "kind": "fix",
-              "text": {
-                "en": "When the launcher updates itself it restarts at most once, so it can no longer get stuck restarting.",
-                "pt": "Quando o launcher se atualiza a si próprio reinicia no máximo uma vez, por isso já não fica preso a reiniciar."
               }
             }
           ]
