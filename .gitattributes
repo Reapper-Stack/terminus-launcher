@@ -1,0 +1,27 @@
+# Sources are LF in every checkout (Windows with core.autocrlf, the Pages runner, a scratch clone): same bytes everywhere.
+# After adding this file once:  git add --renormalize .  (turns the CRLF blobs already committed into LF in one commit)
+*.html   text eol=lf
+*.js     text eol=lf
+*.css    text eol=lf
+*.json   text eol=lf
+*.py     text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+# images and audio are never converted
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.mp3    binary
+*.ogg    binary
+*.wav    binary
+*.ico    binary
+*.ttf    binary
+*.woff   binary
+*.woff2  binary
+*.svg    text eol=lf
+# A-12: the manifest and its signature are verified against the exact bytes that were signed, so no
+# line-ending conversion may ever touch them. These lines come last so they win over the *.json rule above.
+manifest/launcher_manifest.json      -text
+manifest/launcher_manifest.json.sig  binary
