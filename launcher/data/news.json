@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "update-2026112503",
+      "date": "2026-11-25",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Window frame fix: clean buttons on hover",
+        "pt": "Correção da moldura: botões limpos ao passar o rato"
+      },
+      "body": {
+        "en": "In windowed mode, moving the mouse over the minimise, maximise or close button of the new window frame could show a plain Windows button on top of it, most often after a click on the window's edge. That no longer happens. This update is small (about 5 MB).",
+        "pt": "Em modo janela, passar o rato sobre o botão de minimizar, maximizar ou fechar da nova moldura podia mostrar por cima um botão normal do Windows, sobretudo depois de um clique na borda da janela. Isso já não acontece. Esta atualização é pequena (cerca de 5 MB)."
+      },
+      "lede": {
+        "en": "The minimise, maximise and close buttons no longer show a Windows button when you hover over them.",
+        "pt": "Os botões de minimizar, maximizar e fechar já não mostram um botão do Windows quando passas o rato."
+      }
+    },
+    {
       "id": "update-2026112502",
       "date": "2026-11-25",
       "tag": "client",
@@ -277,6 +295,33 @@
   ],
   "notes": [
     {
+      "id": "update-2026112503",
+      "version": "2503",
+      "date": "2026-11-25",
+      "meta": {
+        "en": "1 CHANGE · GAME UPDATE 2026112503",
+        "pt": "1 ALTERAÇÃO · ATUALIZAÇÃO 2026112503"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "WINDOW",
+              "kind": "fix",
+              "text": {
+                "en": "Windowed mode: the minimise, maximise and close buttons no longer show a Windows button when you hover over them.",
+                "pt": "Modo janela: os botões de minimizar, maximizar e fechar já não mostram um botão do Windows quando passas o rato por cima."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "update-2026112502",
       "version": "2502",
       "date": "2026-11-25",
@@ -364,65 +409,6 @@
               "text": {
                 "en": "New look: crests on the news, a new server picture, a welcome card on the first start and slightly larger text.",
                 "pt": "Visual novo: brasões nas notícias, uma nova imagem do servidor, um cartão de boas-vindas no primeiro arranque e texto um pouco maior."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026112402",
-      "version": "2402",
-      "date": "2026-11-24",
-      "meta": {
-        "en": "4 CHANGES · GAME UPDATE 2026112402",
-        "pt": "4 ALTERAÇÕES · ATUALIZAÇÃO 2026112402"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "ICONS",
-              "kind": "new",
-              "text": {
-                "en": "66 Digimon, NPC and tamer icons that were missing now show: evolution bars and small portraits.",
-                "pt": "66 ícones de Digimon, NPC e tamers que faltavam aparecem agora: barras de evolução e retratos pequenos."
-              }
-            },
-            {
-              "tag": "TAMER CREATION",
-              "kind": "new",
-              "text": {
-                "en": "On tamer creation, Masaru now introduces himself, and the music goes quieter while he speaks.",
-                "pt": "Na criação de tamer, o Masaru apresenta-se agora, e a música baixa enquanto ele fala."
-              }
-            },
-            {
-              "tag": "GAME NAME",
-              "kind": "chg",
-              "text": {
-                "en": "The game window is now called Digimon Terminus. Your options and saved login carry over on the first start.",
-                "pt": "A janela do jogo chama-se agora Digimon Terminus. As tuas opções e o login guardado passam para a nova versão no primeiro arranque."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "SERVER",
-            "pt": "SERVIDOR"
-          },
-          "items": [
-            {
-              "tag": "ATTRIBUTES",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: when a Digimon's attribute experience reaches its maximum, you now hear the game's sound for it.",
-                "pt": "Já ativo: quando a experiência de atributo de um Digimon chega ao máximo, ouves agora o som do jogo para isso."
               }
             }
           ]

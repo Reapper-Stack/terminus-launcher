@@ -1,6 +1,6 @@
 {
  "counts": {
-  "bytes": 7157694846,
+  "bytes": 7157695358,
   "files": 14613
  },
  "files": [
@@ -29,9 +29,9 @@
   },
   {
    "path": "DigimonTerminus_Data/Managed/Assembly-CSharp.dll",
-   "sha256": "a184a2e9388eb283bb9e5fe6bdbfd93f2fbb8cea2e058b16e738698e25b2f8d4",
-   "size": 5309440,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112502/a184a2e9388eb283_Assembly-CSharp.dll"
+   "sha256": "bc525b5c92e6ec7d23ae7710b309db4ce5ed4317cdf9249099f381ae827e24d3",
+   "size": 5309952,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112503/bc525b5c92e6ec7d_Assembly-CSharp.dll"
   },
   {
    "path": "DigimonTerminus_Data/Managed/Mono.Security.dll",
@@ -72720,9 +72720,9 @@
   },
   {
    "path": "DigimonTerminus_Data/boot.config",
-   "sha256": "18c9414d5b6adcd5a930d2b8f8d4d9453fadcd47617c2a02e163cda4b31b7274",
+   "sha256": "8164d70cf42709685837b1ea9d90241774b1d86c0f016811ba8aca24db10b8ce",
    "size": 156,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112502/18c9414d5b6adcd5_boot.config"
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112503/8164d70cf4270968_boot.config"
   },
   {
    "parts": [
@@ -75051,5 +75051,5 @@
  "patches": [],
  "playExe": "DigimonTerminus.exe",
  "schema": "dso-launcher-manifest/1",
- "version": 2026112502
+ "version": 2026112503
 }
