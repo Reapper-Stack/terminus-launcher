@@ -13,7 +13,7 @@
   "folder": "img/cine/",
   "idle": "idle.webp",
   "body": "b{n}.webp",
-  "fx": "f{n}.jpg",
+  "fx": "f{n}.webp",
   "sound": {
     "voice": "audio/omegamon_skill01.mp3",
     "voiceOffset": 0.65,

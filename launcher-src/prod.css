@@ -8,7 +8,7 @@ html.prod #ylb, html.prod .prod-off, html.prod #dlogs { display: none !important
 html.prod #win.nodiscord .comm { display: none !important }
 /* exe features appear only when the exe says it has them */
 html.prod #win:not(.caps2) .sh-a { display: none !important }
-html.prod #win:not(.caps2) [aria-label=Minimise] { visibility: hidden !important }
+html.prod #win:not(.caps2) :is([aria-label=Minimise], .wmin) { visibility: hidden !important }
 /* the server dot while the first check is out */
 html.prod #win .srv .d.wait { background: #4B8AA5; box-shadow: none }
 /* the demo's in-page tray card: the real launcher uses the Windows notification-area icon instead */
@@ -40,12 +40,38 @@ html.prod #win:is([data-st=verify],[data-st=dl],[data-st=running],[data-st=launc
 /* a long news item never runs over the tabs and cards: the body keeps 2 lines (the approved spacing above the tabs at
    1158x644); the title first shrinks as it always did (fit-story), and only a title still over 2 lines at the smallest
    size is cut to 2 (.long); the read button stays in place and the notes panel carries the full text */
-html.prod #win .story p, html.prod #win .story h1.long { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden }
-html.prod #win .story h1.long { text-wrap: wrap; font-size: 30px !important }
+html.prod #win .story p, html.prod #win .story h1.long { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden }
+html.prod #win .story h1.long { text-wrap: wrap; font-size: 30px !important; line-height: 1.15 }
+/* A-110: the FIRST TIME HERE line is for the idle bar, not under a download, a launch, a running game or an offline notice */
+html.prod #win:is([data-st=verify],[data-st=dl],[data-st=launching],[data-st=running],[data-st=offline]) #ylp.first { visibility: hidden }
 #pnnews { margin-top: 18px; padding: 14px 0 16px; border-top: 1px solid var(--un); border-bottom: 1px solid var(--un) }
 #pnnews .eb { font: 11px Consolas, monospace; color: var(--lb); letter-spacing: 2px }
 #pnnews h3 { margin: 8px 0; font: 400 24px/1.2 Georgia, serif; color: var(--gl) }
 #pnnews p { margin: 0; font-size: 14px; line-height: 1.6; color: #b3c2cb }
 /* the launch view's labels stay off the cinematic's arm */
 html.prod #win .world .wl { max-width: 420px }
+html.prod #win .world .wl #wcx { margin-top: 14px }
+/* Compact: the launching row has no room for CANCEL (it sat over the progress); cancel from the full window */
+html.prod #win.mini .world .wl #wcx { display: none }
 #notes.storyonly > :is(#pnm, #pnd, #pnnav, #pnb), #pnnews[hidden] { display: none !important }
+/* A-21: the first-round hero scene is hidden by round 2 and never shown in the shipped page; do not fetch its 986 KB picture */
+html.prod #win .scene { background-image: none }
+/* A-20/A-120: the ambient layers park (frozen, not hidden) while the window is hidden or unfocused, or after 60 s without input; prod.js sets the class, never during a download, verify or launch */
+#win.still120 :is(.pair, .motes i, .sweep, .streaks i, .shafts i, .emb144 i, .aura145 i, .floor u, .play .sheen, .plinth i, .gatebadge .sg.l, .mxb167 i, .take .eb i) { animation-play-state: paused !important }
+/* A-122: the animated header of the patch notes (329 KB) is fetched when the notes open, not at startup (the panel is only visibility:hidden until then); prod.js fetches it once at an idle moment so the first open does not flash empty */
+html.prod #win:not(.notesopen) #notes .pnart { background-image: none }
+/* A-112 (a11y final pass): one visually hidden status line carries the progress announcements; the bar and the world panel are no longer live regions */
+.sr-only { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; pointer-events: none }
+/* a11y final pass: the animated GIF of the notes and the article view is a still picture when the system or the launcher asks for reduced motion (it cannot be paused, so it is not shown moving) */
+@media (prefers-reduced-motion: reduce) {
+  html.prod #win.notesopen .pnart, html.prod #win.artopen .art .pic { background-image: var(--na178s, var(--na178)) }
+}
+html.prod #win.rm.notesopen .pnart, html.prod #win.rm.artopen .art .pic { background-image: var(--na178s, var(--na178)) }
+/* a11y final pass: more contrast on request (the system or the app asks for it): borders and the muted tier get lighter, the focus ring is 2 px */
+@media (prefers-contrast: more) {
+  #win#win { --td: #4A9BB4; --lb: #9CC6D8; --un: #2B6275 }
+  #win#win :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px }
+  #win#win .play:focus-visible { outline: 2px solid #F7E7A8; outline-offset: 4px }
+  #win#win :is(.cats button, .lng button, .pg button, .ymar button, .sh-a button, .ib, .tst, .seg button, .wc button) { border-color: var(--tb) }
+  #win#win div.tg:not(.on) { border-color: #9CC6D8 }
+}
