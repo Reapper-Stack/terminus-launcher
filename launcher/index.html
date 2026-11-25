@@ -3340,18 +3340,18 @@ NOTES[157]='<b>Round 157 · What changed stays in the launcher.</b> Every “wha
      RELEASE (R159 package): the rows say only what players really get in this release; no date, no "from" version (none is measured), and the
      number on the chip is the page's launcher version (LVER) only once it is real: see ver(). */
   (function(){var LV={en:{v:'LAUNCHER',meta:'5 CHANGES · NOT A GAME UPDATE',g:[['LAUNCHER',[
-        ['The week card shows the server time, with its time zone when it differs from yours.','SERVER TIME'],
-        ['The week strip shows each day’s events; pick a day to see them.','EVENTS'],
-        ['News and events say when they are loading or could not load, and you can try again from there.','NEWS'],
-        ['These notes show the version of the launcher you have.','NOTES'],
-        ['The patch notes show the story of the update you pick, and the build label follows the installed version.','BUILD']]]]},
+        ['You can now stop a download with CANCEL.','CANCEL'],
+        ['An update cut off half-way, by a crash or a power cut, is put right on the next start.','UPDATES'],
+        ['Support can make an error report with the launcher and game logs; your account details are hidden.','REPORT'],
+        ['The first time the launcher goes to the tray, it tells you where it is and how to close it.','TRAY'],
+        ['New look: crests on the news, a new server picture, a welcome card on the first start and larger text.','LOOK']]]]},
       pt:{v:'LAUNCHER',meta:'5 ALTERAÇÕES · O JOGO NÃO MUDA',g:[['LAUNCHER',[
-        ['O cartão da semana mostra a hora do servidor, com o fuso horário quando é diferente do teu.','HORA'],
-        ['A faixa da semana mostra os eventos de cada dia; escolhe um dia para os veres.','EVENTOS'],
-        ['As notícias e os eventos dizem quando estão a carregar ou não carregaram, e podes tentar outra vez dali.','NOTÍCIAS'],
-        ['Estas notas mostram a versão do launcher que tens.','NOTAS'],
-        ['As notas mostram a história da atualização que escolhes, e a versão mostrada acompanha a que está instalada.','VERSÃO']]]]}},
-      LD=[['new',''],['new',''],['chg',''],['fix',''],['fix','']],known=!window.TD_PROD,hooked=false,
+        ['Já podes parar uma transferência com CANCELAR.','CANCELAR'],
+        ['Uma atualização cortada a meio, por um erro ou uma falha de luz, é reparada no arranque seguinte.','REPARAR'],
+        ['O Suporte faz um relatório de erro com os registos do launcher e do jogo; os dados da tua conta ficam escondidos.','RELATÓRIO'],
+        ['Na primeira vez que o launcher vai para a área de notificação, diz-te onde está e como o fechar.','AVISO'],
+        ['Visual novo: brasões nas notícias, uma nova imagem do servidor, um cartão de boas-vindas no primeiro arranque e texto maior.','VISUAL']]]]}},
+      LD=[['new',''],['fix',''],['new',''],['chg',''],['new','']],known=!window.TD_PROD,hooked=false,
       SEL='#ynot u[data-a="relnotes"],#ribbon u,#psub u[data-a="notes"],.ys153 u[data-g="u"]',ret=null,busy=false;
     function on(){return W.classList.contains('r157')}
     /* the number on the chip. The mockup shows its own sample LVER. The shipped page (TD_PROD) starts with that same sample in LVER and gets the real
