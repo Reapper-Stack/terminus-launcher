@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "update-2026112501",
+      "date": "2026-11-25",
+      "tag": "client",
+      "thumb": "img/thumbs/n3.png",
+      "title": {
+        "en": "A new launcher: safer updates, CANCEL and a fresh look",
+        "pt": "Um launcher novo: atualizações mais seguras, CANCELAR e um visual novo"
+      },
+      "body": {
+        "en": "The launcher updates itself to 0.7.6 the next time you open it: it restarts once by itself. Downloads can now be cancelled, an update cut off by a crash or power loss is put right on the next start, and an error report can be made from the launcher. The news now show crests, and the first start shows a welcome card. The game itself does not change: there is nothing big to download. If the launcher does not come back after you close the game (some antivirus programs hold the old one while it updates), just open it again: it closes the stuck one by itself.",
+        "pt": "O launcher atualiza-se sozinho para a 0.7.6 da próxima vez que o abrires: reinicia uma vez por si. Já podes cancelar uma transferência, uma atualização cortada por um erro ou falha de luz é reparada no arranque seguinte, e podes fazer um relatório de erro a partir do launcher. As notícias mostram agora brasões, e o primeiro arranque mostra um cartão de boas-vindas. O jogo não muda: não há nada grande para transferir. Se o launcher não voltar depois de fechares o jogo (alguns antivírus seguram o antigo enquanto se atualiza), abre-o outra vez: ele fecha sozinho o que ficou preso."
+      },
+      "lede": {
+        "en": "Launcher 0.7.6 can cancel a download, recovers an interrupted update and gets a new look.",
+        "pt": "O launcher 0.7.6 cancela uma transferência, recupera uma atualização interrompida e muda de visual."
+      }
+    },
+    {
       "id": "update-2026112402",
       "date": "2026-11-24",
       "tag": "client",
@@ -241,6 +259,65 @@
   ],
   "notes": [
     {
+      "id": "update-2026112501",
+      "version": "2501",
+      "date": "2026-11-25",
+      "meta": {
+        "en": "5 CHANGES · GAME UPDATE 2026112501",
+        "pt": "5 ALTERAÇÕES · ATUALIZAÇÃO 2026112501"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "LAUNCHER",
+            "pt": "LAUNCHER"
+          },
+          "items": [
+            {
+              "tag": "UPDATES",
+              "kind": "fix",
+              "text": {
+                "en": "Safer updates: an update cut off half-way is put right on the next start, and a stalled download retries by itself.",
+                "pt": "Atualizações mais seguras: uma atualização cortada a meio é reparada no arranque seguinte, e uma transferência parada tenta de novo sozinha."
+              }
+            },
+            {
+              "tag": "CANCEL",
+              "kind": "new",
+              "text": {
+                "en": "You can now cancel a download with CANCEL.",
+                "pt": "Já podes cancelar uma transferência com CANCELAR."
+              }
+            },
+            {
+              "tag": "ERROR REPORT",
+              "kind": "new",
+              "text": {
+                "en": "Support has an error report button: it gathers the launcher and game logs, with your account details hidden.",
+                "pt": "O Suporte tem um botão de relatório de erro: junta os registos do launcher e do jogo, com os dados da tua conta escondidos."
+              }
+            },
+            {
+              "tag": "TRAY",
+              "kind": "chg",
+              "text": {
+                "en": "The first time the launcher goes to the tray, it tells you where it is and how to close it.",
+                "pt": "Na primeira vez que o launcher vai para a área de notificação, diz-te onde está e como o fechar."
+              }
+            },
+            {
+              "tag": "LOOK",
+              "kind": "new",
+              "text": {
+                "en": "New look: crests on the news, a new server picture, a welcome card on the first start and slightly larger text.",
+                "pt": "Visual novo: brasões nas notícias, uma nova imagem do servidor, um cartão de boas-vindas no primeiro arranque e texto um pouco maior."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "update-2026112402",
       "version": "2402",
       "date": "2026-11-24",
@@ -472,113 +549,6 @@
               "text": {
                 "en": "A tamer skill that boosts your Digimon now shows the boost on it.",
                 "pt": "Uma técnica de tamer que reforça o teu Digimon mostra agora o reforço nele."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026112101",
-      "version": "2101",
-      "date": "2026-11-22",
-      "meta": {
-        "en": "10 CHANGES · GAME UPDATE 2026112101",
-        "pt": "10 ALTERAÇÕES · ATUALIZAÇÃO 2026112101"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "STAIRS",
-              "kind": "fix",
-              "text": {
-                "en": "Walking with the keys no longer gets stuck on the stairs and ramps we tested, such as the ramp at the DATS Center.",
-                "pt": "Andar com as teclas já não fica preso nas escadas e rampas que testámos, como a rampa do DATS Center."
-              }
-            },
-            {
-              "tag": "MOVE DIGIMON",
-              "kind": "new",
-              "text": {
-                "en": "The Move Digimon option now works: when it is ticked, a click moves your Digimon and your tamer follows. If you ticked it before, it is active now.",
-                "pt": "A opção Mover Digimon já funciona: quando está marcada, um clique move o teu Digimon e o tamer segue-o. Se a marcaste antes, agora está ativa."
-              }
-            },
-            {
-              "tag": "MAP LIGHTS",
-              "kind": "fix",
-              "text": {
-                "en": "More than 50 maps now use their own lights.",
-                "pt": "Mais de 50 mapas usam agora as suas próprias luzes."
-              }
-            },
-            {
-              "tag": "MAP EFFECTS",
-              "kind": "fix",
-              "text": {
-                "en": "Some effects that were missing on maps 1800 and 1801 are now drawn.",
-                "pt": "Alguns efeitos que faltavam nos mapas 1800 e 1801 já aparecem."
-              }
-            },
-            {
-              "tag": "PORTALS",
-              "kind": "chg",
-              "text": {
-                "en": "Checked, no change: 188 of the 191 walk-in portals take you to the right place.",
-                "pt": "Verificado, sem alteração: 188 dos 191 portais onde se entra a andar levam-te ao sítio certo."
-              }
-            },
-            {
-              "tag": "MEGAPHONE",
-              "kind": "fix",
-              "text": {
-                "en": "Using a megaphone now sends your message to everyone.",
-                "pt": "Usar um megafone envia agora a tua mensagem a todos."
-              }
-            }
-          ]
-        },
-        {
-          "title": {
-            "en": "SERVER",
-            "pt": "SERVIDOR"
-          },
-          "items": [
-            {
-              "tag": "SPIRIT HATCH",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: hatching a spirit Digimon at the NPC now works.",
-                "pt": "Já ativo: chocar um Digimon espírito no NPC já funciona."
-              }
-            },
-            {
-              "tag": "BURST MODE",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: ShineGreymon now evolves into ShineGreymon: Burst Mode instead of the wrong form.",
-                "pt": "Já ativo: o ShineGreymon evolui agora para ShineGreymon: Burst Mode em vez da forma errada."
-              }
-            },
-            {
-              "tag": "TRADE",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: an item you put into a trade now shows up for the other player.",
-                "pt": "Já ativo: um objeto que pões numa troca aparece agora ao outro jogador."
-              }
-            },
-            {
-              "tag": "SOCKETS",
-              "kind": "fix",
-              "text": {
-                "en": "Already live: putting a gem into a socket now works and charges its fee.",
-                "pt": "Já ativo: pôr uma gema num encaixe já funciona e cobra a sua taxa."
               }
             }
           ]

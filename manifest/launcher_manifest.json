@@ -1,7 +1,7 @@
 {
  "counts": {
-  "bytes": 7156132733,
-  "files": 14492
+  "bytes": 7157641709,
+  "files": 14613
  },
  "files": [
   {
@@ -12,9 +12,9 @@
   {
    "owner": "launcher",
    "path": "DigimonTerminus.Launcher.exe",
-   "sha256": "6eb7672c531bf8bfc6d10f75182c42722a19d967e4bd70603d79b5db767483e4",
-   "size": 1026048,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111901/6eb7672c531bf8bf_DigimonTerminus.Launcher.exe"
+   "sha256": "243a89173f384d5552e55024ec1d66fbcaa321e01a03776d3489bf800971e625",
+   "size": 1080832,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/243a89173f384d55_DigimonTerminus.Launcher.exe"
   },
   {
    "owner": "launcher",
@@ -72918,21 +72918,21 @@
   },
   {
    "path": "art/html/build_data.py",
-   "sha256": "581e7bfd744a031a95e095721dfe3b1bdd5c235269fbbd91ba2afd923891252f",
-   "size": 1824,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/581e7bfd744a031a_build_data.py"
+   "sha256": "605b845bd16a663668772b1dcd2f41f9ed281ab8711e1e6425b533342638782e",
+   "size": 7505,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/605b845bd16a6636_build_data.py"
   },
   {
    "path": "art/html/data/events.json",
-   "sha256": "ccda7509ccf1df148b4742f2e3e1a9dafee5c78f7c1c04e113d40afaf4b8136d",
-   "size": 652,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/ccda7509ccf1df14_events.json"
+   "sha256": "7ef18d2cfd0c7522fa014a1cde3e4a307040acb81816f42b275ffbfa2139626c",
+   "size": 648,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/7ef18d2cfd0c7522_events.json"
   },
   {
    "path": "art/html/data/news.json",
-   "sha256": "6d5bc965823c1e522f508ee15dc176460f6cef5fa95de0732c7492b9de4737eb",
-   "size": 26973,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/6d5bc965823c1e52_news.json"
+   "sha256": "0fcf13d5d28b6eec87a875c945d05ebb0843ee67a31d56f3be61d60df25a972a",
+   "size": 30616,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/0fcf13d5d28b6eec_news.json"
   },
   {
    "path": "art/html/img/cine/b00.webp",
@@ -73571,10 +73571,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/b546d89bf1969baf_f00.jpg"
   },
   {
+   "path": "art/html/img/cine/f00.webp",
+   "sha256": "73a55a7371a6b927ab8bc6d91da5f2a598d6a660b9572f68b54548a6e1f934b1",
+   "size": 40732,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/73a55a7371a6b927_f00.webp"
+  },
+  {
    "path": "art/html/img/cine/f01.jpg",
    "sha256": "6614e76650cd692c0fa7a8c153448089816e551a9ada400c0102e2a8996f4cdc",
    "size": 84098,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/6614e76650cd692c_f01.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f01.webp",
+   "sha256": "92298e3313b8a17c88b8587b473d5f088545dfca1b366a070a3107cae85c5454",
+   "size": 43384,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/92298e3313b8a17c_f01.webp"
   },
   {
    "path": "art/html/img/cine/f02.jpg",
@@ -73583,10 +73595,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/e75c40c00b23e392_f02.jpg"
   },
   {
+   "path": "art/html/img/cine/f02.webp",
+   "sha256": "dcc87e58b29eff085dc30300ab06fd4c860950f065d900de9519a6c50a7b895d",
+   "size": 45590,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/dcc87e58b29eff08_f02.webp"
+  },
+  {
    "path": "art/html/img/cine/f03.jpg",
    "sha256": "bc4b2e0d68ea7e6a1881e18312580f6427445099e4c2f1308f8c409be0c11d1c",
    "size": 86915,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/bc4b2e0d68ea7e6a_f03.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f03.webp",
+   "sha256": "052e797ba3e657685282ada63e7b4a6d603717dfbdbe8a58ac6fc04094b5c6e5",
+   "size": 45574,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/052e797ba3e65768_f03.webp"
   },
   {
    "path": "art/html/img/cine/f04.jpg",
@@ -73595,10 +73619,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/1e5ecceba16a486b_f04.jpg"
   },
   {
+   "path": "art/html/img/cine/f04.webp",
+   "sha256": "c4e33db268081b11c33bebd2bdd1f86594282c45cba756f835e5c4668da162b6",
+   "size": 44400,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c4e33db268081b11_f04.webp"
+  },
+  {
    "path": "art/html/img/cine/f05.jpg",
    "sha256": "67c0b4b841bb67ef46cc5e31568abb6cb311655327598e96989286c500d7b4c9",
    "size": 82458,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/67c0b4b841bb67ef_f05.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f05.webp",
+   "sha256": "835784cd4a80861d840ca0ebef4341b06fd1673995fc3e2f4fbc5445fd4a11ba",
+   "size": 42670,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/835784cd4a80861d_f05.webp"
   },
   {
    "path": "art/html/img/cine/f06.jpg",
@@ -73607,10 +73643,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/2deedef185953474_f06.jpg"
   },
   {
+   "path": "art/html/img/cine/f06.webp",
+   "sha256": "7ba37d95f7098cdc2899382a95965187fc339f5c1e5d6b9a5d228cb28375c722",
+   "size": 41674,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/7ba37d95f7098cdc_f06.webp"
+  },
+  {
    "path": "art/html/img/cine/f07.jpg",
    "sha256": "cd0e98a7a1588b186c11fb1a8ecf85f7a4addc57912e869c0a8e8534ffcbe935",
    "size": 77247,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/cd0e98a7a1588b18_f07.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f07.webp",
+   "sha256": "8693f500843d7c399b3e2843d9e9c52a764a27926f715510c4ffabb1da58d8de",
+   "size": 39580,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/8693f500843d7c39_f07.webp"
   },
   {
    "path": "art/html/img/cine/f08.jpg",
@@ -73619,10 +73667,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/2139e807d9f0e9fa_f08.jpg"
   },
   {
+   "path": "art/html/img/cine/f08.webp",
+   "sha256": "dc5ca6dcfd55472a337b08e53746748d622beeea96187515534086f82057a8e2",
+   "size": 36834,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/dc5ca6dcfd55472a_f08.webp"
+  },
+  {
    "path": "art/html/img/cine/f09.jpg",
    "sha256": "2794caa2c9db10cb47113bf441d58fecaa5dc3648d18c398add21107112d54a0",
    "size": 68378,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/2794caa2c9db10cb_f09.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f09.webp",
+   "sha256": "e2d2e53e7cbec69c0865769572de4b926704b8f740a0fd91e8c1c568c1d5f66b",
+   "size": 33584,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/e2d2e53e7cbec69c_f09.webp"
   },
   {
    "path": "art/html/img/cine/f10.jpg",
@@ -73631,10 +73691,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/e1ffad0e950b9edb_f10.jpg"
   },
   {
+   "path": "art/html/img/cine/f10.webp",
+   "sha256": "090cc020bbd2a214309bd8099b6918b76075f4e643ac0070c7de9d9c0d9c233f",
+   "size": 30452,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/090cc020bbd2a214_f10.webp"
+  },
+  {
    "path": "art/html/img/cine/f100.jpg",
    "sha256": "d75f738867bc297d8e9e9a6f1a4b1d2868f78dccb18f9e06b5c6c7c589c63e9e",
    "size": 219360,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/d75f738867bc297d_f100.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f100.webp",
+   "sha256": "107409381e116a58f5e734e4de74af8b8516764fe5beae9c0dd7af0d1c0bb7d1",
+   "size": 158232,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/107409381e116a58_f100.webp"
   },
   {
    "path": "art/html/img/cine/f101.jpg",
@@ -73643,10 +73715,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/6a576b6771675403_f101.jpg"
   },
   {
+   "path": "art/html/img/cine/f101.webp",
+   "sha256": "d2748cbcd6591631d690093eae746f75617bbfc95155b6e26470d3fa5948cd34",
+   "size": 159104,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d2748cbcd6591631_f101.webp"
+  },
+  {
    "path": "art/html/img/cine/f102.jpg",
    "sha256": "2687166473ff613b1a09f8d9a5afae3b75ecb18dc7f70bffea4b990a25fc3533",
    "size": 212294,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/2687166473ff613b_f102.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f102.webp",
+   "sha256": "baec621a802b16c9ec2f32112344741de3ec2ab6cdaca3c12546114d49d8bcca",
+   "size": 152378,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/baec621a802b16c9_f102.webp"
   },
   {
    "path": "art/html/img/cine/f103.jpg",
@@ -73655,10 +73739,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/fb06b3b82fd524f8_f103.jpg"
   },
   {
+   "path": "art/html/img/cine/f103.webp",
+   "sha256": "261112a70d6bbc0a8d63595c05e6f710558c6a22f5e737e7e2d56edeafe28c12",
+   "size": 143478,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/261112a70d6bbc0a_f103.webp"
+  },
+  {
    "path": "art/html/img/cine/f104.jpg",
    "sha256": "705563eb2a6341cc72c6d0d248e55614738764306359c070c36b15972d91629f",
    "size": 189841,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/705563eb2a6341cc_f104.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f104.webp",
+   "sha256": "677c898bae368ead1ce978affa73427fb9c8ea0460bc0c71d1bbbe21dcec27c4",
+   "size": 132446,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/677c898bae368ead_f104.webp"
   },
   {
    "path": "art/html/img/cine/f11.jpg",
@@ -73667,10 +73763,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/406de42a8e60252e_f11.jpg"
   },
   {
+   "path": "art/html/img/cine/f11.webp",
+   "sha256": "73f8680c253e2a6d93436f3a4355ba2b9c0db3b194fd91fc0263cbb1afef60df",
+   "size": 26718,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/73f8680c253e2a6d_f11.webp"
+  },
+  {
    "path": "art/html/img/cine/f12.jpg",
    "sha256": "29d63b8c17890c8b6c2752dd9b0d57a3b301d8e3da4fde471425455720c3cd9e",
    "size": 53970,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/29d63b8c17890c8b_f12.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f12.webp",
+   "sha256": "a8e00754b49f0939517dd1ef6928c48aca69dfc5d5d911c37637ad3edb2de1ec",
+   "size": 23974,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a8e00754b49f0939_f12.webp"
   },
   {
    "path": "art/html/img/cine/f13.jpg",
@@ -73679,10 +73787,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/8a8ccab8d25a03be_f13.jpg"
   },
   {
+   "path": "art/html/img/cine/f13.webp",
+   "sha256": "10fe4153264bc4f0cef5a9193d65753468afc8257fb0aaf6d2de88f8f2c63093",
+   "size": 20494,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/10fe4153264bc4f0_f13.webp"
+  },
+  {
    "path": "art/html/img/cine/f14.jpg",
    "sha256": "ebb103202ea501a39dda044597ccb0244ef4b49e109dcd1b62549821da2badcd",
    "size": 46238,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/ebb103202ea501a3_f14.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f14.webp",
+   "sha256": "2cb774770ef833108020e76869b27a8313be5a59a5552a77eca0970c07490532",
+   "size": 19548,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/2cb774770ef83310_f14.webp"
   },
   {
    "path": "art/html/img/cine/f15.jpg",
@@ -73691,10 +73811,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/d87740e668d66cd2_f15.jpg"
   },
   {
+   "path": "art/html/img/cine/f15.webp",
+   "sha256": "8d518691fa099abf70ec0748249ceee0a31137ff864dbe9289b9960f109bd150",
+   "size": 16948,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/8d518691fa099abf_f15.webp"
+  },
+  {
    "path": "art/html/img/cine/f16.jpg",
    "sha256": "e94161ee066f74f866be28c5f7e93704bd2e4b0b8fa79128b19bab44344a4c01",
    "size": 38432,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/e94161ee066f74f8_f16.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f16.webp",
+   "sha256": "869ce1117130ec639ae207c60aef8f70fad6a7a1adda1200013b7c2c45e4c49b",
+   "size": 14990,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/869ce1117130ec63_f16.webp"
   },
   {
    "path": "art/html/img/cine/f17.jpg",
@@ -73703,10 +73835,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/383fd3fc4131ae68_f17.jpg"
   },
   {
+   "path": "art/html/img/cine/f17.webp",
+   "sha256": "b0ff70182925fef0f0c4069b4b81c40740dd72a100b534f874abbe8ac6fdce3a",
+   "size": 14324,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/b0ff70182925fef0_f17.webp"
+  },
+  {
    "path": "art/html/img/cine/f18.jpg",
    "sha256": "107e11b9308418491660e87534c016af3ac0f51d88ef00070007ca0e651e4ba9",
    "size": 33671,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/107e11b930841849_f18.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f18.webp",
+   "sha256": "7c590ac7b39dde607bb15f80856e5a571dddffce817ee776c681b254828cfd32",
+   "size": 12710,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/7c590ac7b39dde60_f18.webp"
   },
   {
    "path": "art/html/img/cine/f19.jpg",
@@ -73715,10 +73859,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/e1dfba2a8f08c3b7_f19.jpg"
   },
   {
+   "path": "art/html/img/cine/f19.webp",
+   "sha256": "210eb95e79688a8081865a2b7222320d08e0f14945cf6c05abeda8d604c53fb2",
+   "size": 11834,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/210eb95e79688a80_f19.webp"
+  },
+  {
    "path": "art/html/img/cine/f20.jpg",
    "sha256": "97acedad8894e11c3fa981de1060d74c07dec2c573843070ad7cc69b11560b99",
    "size": 29812,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/97acedad8894e11c_f20.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f20.webp",
+   "sha256": "19331c0882893e2bae6f4f0e5e8ab8494cfa954a89da9709f8b47a08a6aca0e1",
+   "size": 11306,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/19331c0882893e2b_f20.webp"
   },
   {
    "path": "art/html/img/cine/f21.jpg",
@@ -73727,10 +73883,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/30f3f224dc8558b0_f21.jpg"
   },
   {
+   "path": "art/html/img/cine/f21.webp",
+   "sha256": "1e83a17e58c5cb5201e813cff3ec5489dfa3652ab69a9492b4db8d35cf33f287",
+   "size": 10050,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/1e83a17e58c5cb52_f21.webp"
+  },
+  {
    "path": "art/html/img/cine/f22.jpg",
    "sha256": "7909033c9f52993e67bb95e962059d453bd4b191c45cd27bace7298d867cfb25",
    "size": 25409,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/7909033c9f52993e_f22.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f22.webp",
+   "sha256": "9d72a04861ab16242c913f114a8cff95e76b8ac8f0306a5766bed49982cae3f4",
+   "size": 9488,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/9d72a04861ab1624_f22.webp"
   },
   {
    "path": "art/html/img/cine/f23.jpg",
@@ -73739,10 +73907,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f629fdd78abb4584_f23.jpg"
   },
   {
+   "path": "art/html/img/cine/f23.webp",
+   "sha256": "03020cdd5ceccecef794938b8865f2aa93bfb1adbe181df9f7679dd73485fcf0",
+   "size": 8378,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/03020cdd5ceccece_f23.webp"
+  },
+  {
    "path": "art/html/img/cine/f24.jpg",
    "sha256": "1cd18b5a090f6bcc065924a01563140e7119d4f71e5cfb89378e7797b4c2b062",
    "size": 19541,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/1cd18b5a090f6bcc_f24.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f24.webp",
+   "sha256": "19c589ee732eab67c015e9a5b859e1189ff673cfc66a9424a79a51e6eba9e252",
+   "size": 6922,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/19c589ee732eab67_f24.webp"
   },
   {
    "path": "art/html/img/cine/f25.jpg",
@@ -73751,10 +73931,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f25.jpg"
   },
   {
+   "path": "art/html/img/cine/f25.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f25.webp"
+  },
+  {
    "path": "art/html/img/cine/f26.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f26.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f26.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f26.webp"
   },
   {
    "path": "art/html/img/cine/f27.jpg",
@@ -73763,10 +73955,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f27.jpg"
   },
   {
+   "path": "art/html/img/cine/f27.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f27.webp"
+  },
+  {
    "path": "art/html/img/cine/f28.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f28.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f28.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f28.webp"
   },
   {
    "path": "art/html/img/cine/f29.jpg",
@@ -73775,10 +73979,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f29.jpg"
   },
   {
+   "path": "art/html/img/cine/f29.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f29.webp"
+  },
+  {
    "path": "art/html/img/cine/f30.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f30.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f30.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f30.webp"
   },
   {
    "path": "art/html/img/cine/f31.jpg",
@@ -73787,10 +74003,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f31.jpg"
   },
   {
+   "path": "art/html/img/cine/f31.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f31.webp"
+  },
+  {
    "path": "art/html/img/cine/f32.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f32.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f32.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f32.webp"
   },
   {
    "path": "art/html/img/cine/f33.jpg",
@@ -73799,10 +74027,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f33.jpg"
   },
   {
+   "path": "art/html/img/cine/f33.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f33.webp"
+  },
+  {
    "path": "art/html/img/cine/f34.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f34.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f34.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f34.webp"
   },
   {
    "path": "art/html/img/cine/f35.jpg",
@@ -73811,10 +74051,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f35.jpg"
   },
   {
+   "path": "art/html/img/cine/f35.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f35.webp"
+  },
+  {
    "path": "art/html/img/cine/f36.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f36.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f36.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f36.webp"
   },
   {
    "path": "art/html/img/cine/f37.jpg",
@@ -73823,10 +74075,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f37.jpg"
   },
   {
+   "path": "art/html/img/cine/f37.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f37.webp"
+  },
+  {
    "path": "art/html/img/cine/f38.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f38.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f38.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f38.webp"
   },
   {
    "path": "art/html/img/cine/f39.jpg",
@@ -73835,10 +74099,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f39.jpg"
   },
   {
+   "path": "art/html/img/cine/f39.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f39.webp"
+  },
+  {
    "path": "art/html/img/cine/f40.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f40.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f40.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f40.webp"
   },
   {
    "path": "art/html/img/cine/f41.jpg",
@@ -73847,10 +74123,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f41.jpg"
   },
   {
+   "path": "art/html/img/cine/f41.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f41.webp"
+  },
+  {
    "path": "art/html/img/cine/f42.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f42.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f42.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f42.webp"
   },
   {
    "path": "art/html/img/cine/f43.jpg",
@@ -73859,10 +74147,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f43.jpg"
   },
   {
+   "path": "art/html/img/cine/f43.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f43.webp"
+  },
+  {
    "path": "art/html/img/cine/f44.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f44.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f44.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f44.webp"
   },
   {
    "path": "art/html/img/cine/f45.jpg",
@@ -73871,10 +74171,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f45.jpg"
   },
   {
+   "path": "art/html/img/cine/f45.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f45.webp"
+  },
+  {
    "path": "art/html/img/cine/f46.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f46.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f46.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f46.webp"
   },
   {
    "path": "art/html/img/cine/f47.jpg",
@@ -73883,10 +74195,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f47.jpg"
   },
   {
+   "path": "art/html/img/cine/f47.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f47.webp"
+  },
+  {
    "path": "art/html/img/cine/f48.jpg",
    "sha256": "5c098a8ac2a7a81004cd5c81d28a280e5f55a0717d413c06245ef4a91ce84ba7",
    "size": 5684,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f48.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f48.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f48.webp"
   },
   {
    "path": "art/html/img/cine/f49.jpg",
@@ -73895,10 +74219,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c098a8ac2a7a810_f49.jpg"
   },
   {
+   "path": "art/html/img/cine/f49.webp",
+   "sha256": "098804881b7dbb060cb1badc142cea87f2d8cc561dcaa66a3262c4f1e558c086",
+   "size": 1700,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/098804881b7dbb06_f49.webp"
+  },
+  {
    "path": "art/html/img/cine/f50.jpg",
    "sha256": "2060eb0b16907fca10c1b2ccb57a5ef3c669037d82e5aef02b9f6a75879ae6fa",
    "size": 7927,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/2060eb0b16907fca_f50.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f50.webp",
+   "sha256": "5e1cc61d93c5e8470b1e3f89d93908bc80db047b2aa7669d2cd1aee0d6477092",
+   "size": 3084,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/5e1cc61d93c5e847_f50.webp"
   },
   {
    "path": "art/html/img/cine/f51.jpg",
@@ -73907,10 +74243,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/bbbc21b921a31b98_f51.jpg"
   },
   {
+   "path": "art/html/img/cine/f51.webp",
+   "sha256": "15a404b48423ff5d9638f0d9070d84780a94e3de7231b86ccd228cc7f6f18c5c",
+   "size": 4588,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/15a404b48423ff5d_f51.webp"
+  },
+  {
    "path": "art/html/img/cine/f52.jpg",
    "sha256": "68b3eaa8a54c32db231d89140c754cdb7dd9bfb69f191f6ce75a78f3cafaf38d",
    "size": 12352,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/68b3eaa8a54c32db_f52.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f52.webp",
+   "sha256": "6a438e374e33f8b9ab313059ab83b6d0b4f8ae65624588446d473e03b680edaf",
+   "size": 5462,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/6a438e374e33f8b9_f52.webp"
   },
   {
    "path": "art/html/img/cine/f53.jpg",
@@ -73919,10 +74267,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/50873ba807ad594d_f53.jpg"
   },
   {
+   "path": "art/html/img/cine/f53.webp",
+   "sha256": "50dd62b9e236dad20451a9f59761c6008c28660556e1ba4038bcc2d34c07b0f4",
+   "size": 5248,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/50dd62b9e236dad2_f53.webp"
+  },
+  {
    "path": "art/html/img/cine/f54.jpg",
    "sha256": "19dc08b35209cbecc4fb09a65206298053a7b218766a2de7f8e2220b802d1e4c",
    "size": 10238,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/19dc08b35209cbec_f54.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f54.webp",
+   "sha256": "280abf75f4600b2313c362465454f237e44e9309f471b9f505e271f21dd6c130",
+   "size": 4496,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/280abf75f4600b23_f54.webp"
   },
   {
    "path": "art/html/img/cine/f55.jpg",
@@ -73931,10 +74291,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/9aceb54e85ec6f72_f55.jpg"
   },
   {
+   "path": "art/html/img/cine/f55.webp",
+   "sha256": "2b17c52dbf511dcca53dd291432910dcc3b161e6f8f219bf9f3387223f738bd7",
+   "size": 4240,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/2b17c52dbf511dcc_f55.webp"
+  },
+  {
    "path": "art/html/img/cine/f56.jpg",
    "sha256": "85470a700d3ed5316ab6fed729b4d000c82de607fbcd4b69b93a1f34a8d24d1a",
    "size": 10619,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/85470a700d3ed531_f56.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f56.webp",
+   "sha256": "80d3a628e790ff0d347310258b6e82c4258311be86eb731ebe5587ea456198d3",
+   "size": 4898,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/80d3a628e790ff0d_f56.webp"
   },
   {
    "path": "art/html/img/cine/f57.jpg",
@@ -73943,10 +74315,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/fd657f5018d7f7f6_f57.jpg"
   },
   {
+   "path": "art/html/img/cine/f57.webp",
+   "sha256": "c256958981166f2580bb35922620e11b8f447d7e61fc7206a9dbf0ec9f064424",
+   "size": 5834,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c256958981166f25_f57.webp"
+  },
+  {
    "path": "art/html/img/cine/f58.jpg",
    "sha256": "c9fb2e0cb98b96c429bb6ea2aa59d0f3b141eba5aa582dadc1c5b613888f89ba",
    "size": 12530,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/c9fb2e0cb98b96c4_f58.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f58.webp",
+   "sha256": "6b30b8ecf1527dde17df54524e8c354eeea8769535440b4858cbbb9d2b0422da",
+   "size": 5874,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/6b30b8ecf1527dde_f58.webp"
   },
   {
    "path": "art/html/img/cine/f59.jpg",
@@ -73955,10 +74339,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/88dd77c14cf23a9a_f59.jpg"
   },
   {
+   "path": "art/html/img/cine/f59.webp",
+   "sha256": "16e9ecb79e1aef5063ff3f55c6711e662f541cb4a9fe36f095ceecab4e82c963",
+   "size": 4548,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/16e9ecb79e1aef50_f59.webp"
+  },
+  {
    "path": "art/html/img/cine/f60.jpg",
    "sha256": "3d92d4ab89db2012686745aab11a90c3fd8ceea8248593d87cdc0f4581ee7af7",
    "size": 7586,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/3d92d4ab89db2012_f60.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f60.webp",
+   "sha256": "62f3e1c637d9799c7b8bd91154735e02bfd4b0b1ee2a74d09ec06b586835bb0e",
+   "size": 3120,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/62f3e1c637d9799c_f60.webp"
   },
   {
    "path": "art/html/img/cine/f61.jpg",
@@ -73967,10 +74363,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/322f36f09237b94d_f61.jpg"
   },
   {
+   "path": "art/html/img/cine/f61.webp",
+   "sha256": "635a3f8c7407c225f31563ae02086640181e4d4f8854f1ddbf039159f0259a9d",
+   "size": 2504,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/635a3f8c7407c225_f61.webp"
+  },
+  {
    "path": "art/html/img/cine/f62.jpg",
    "sha256": "70034ba6f9194c78809225bcbf80a526f2add39edeaba515452299bb6b3472bd",
    "size": 6597,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/70034ba6f9194c78_f62.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f62.webp",
+   "sha256": "1f5f036af5afe0998074e904079f9c11efb99c8f9f0435072412411c5a5c030c",
+   "size": 2326,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/1f5f036af5afe099_f62.webp"
   },
   {
    "path": "art/html/img/cine/f63.jpg",
@@ -73979,10 +74387,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/4b363671e5fa899a_f63.jpg"
   },
   {
+   "path": "art/html/img/cine/f63.webp",
+   "sha256": "a965bcafe38a79e964d4a78b1296c946bbafe580f4bdc9143e78e36fc01c29e1",
+   "size": 1948,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a965bcafe38a79e9_f63.webp"
+  },
+  {
    "path": "art/html/img/cine/f64.jpg",
    "sha256": "4d1eaaa61c753197646453a662eaf2ce1d7f82b86e6b325879e5bdc457ea1d2a",
    "size": 5722,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/4d1eaaa61c753197_f64.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f64.webp",
+   "sha256": "c5e21a47208ae3fa74928bfe0b1931574dfa1365d06f60229092a6ee93a503ed",
+   "size": 1708,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c5e21a47208ae3fa_f64.webp"
   },
   {
    "path": "art/html/img/cine/f65.jpg",
@@ -73991,10 +74411,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/e7c44e05cf607fc5_f65.jpg"
   },
   {
+   "path": "art/html/img/cine/f65.webp",
+   "sha256": "55b8be990c58d8e1dda7bf33123466d623496159976c1abd275d1d538d8063fd",
+   "size": 52516,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/55b8be990c58d8e1_f65.webp"
+  },
+  {
    "path": "art/html/img/cine/f66.jpg",
    "sha256": "773d1366c82f447afb49d1c4600a3a3b3f9b0fcdb63fd169e692543ae561d74a",
    "size": 109571,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/773d1366c82f447a_f66.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f66.webp",
+   "sha256": "fa2950b1fac4ab86c7c3b515eace0e4914f8add64c604e1d83f111c95ed0ae89",
+   "size": 71272,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/fa2950b1fac4ab86_f66.webp"
   },
   {
    "path": "art/html/img/cine/f67.jpg",
@@ -74003,10 +74435,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/a35c496eff5ebb25_f67.jpg"
   },
   {
+   "path": "art/html/img/cine/f67.webp",
+   "sha256": "ef848f3f0855a7de5d24521775cbaf9d45de31378954d7a6e165bb5f6a35eb33",
+   "size": 76758,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/ef848f3f0855a7de_f67.webp"
+  },
+  {
    "path": "art/html/img/cine/f68.jpg",
    "sha256": "4a2a6bb8933b9062f894e7dc875bcd8ec5097ec06edd94eaead701188c29bccb",
    "size": 151601,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/4a2a6bb8933b9062_f68.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f68.webp",
+   "sha256": "ddd35f578012176347acaa7e2a99088e38d6806c271bf5ddd8cd9996fc77c59c",
+   "size": 101312,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/ddd35f5780121763_f68.webp"
   },
   {
    "path": "art/html/img/cine/f69.jpg",
@@ -74015,10 +74459,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/d288b84e252dd2d9_f69.jpg"
   },
   {
+   "path": "art/html/img/cine/f69.webp",
+   "sha256": "bb573a14d1d289df2baa57b1de9a6da9b86e07c11ea003aa4e2146a15a6a0fc4",
+   "size": 115352,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/bb573a14d1d289df_f69.webp"
+  },
+  {
    "path": "art/html/img/cine/f70.jpg",
    "sha256": "669355714adfc9246162f67e4e712bc36f2159fe686d3bf7c4ac8e2d54fb8b5d",
    "size": 169719,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/669355714adfc924_f70.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f70.webp",
+   "sha256": "f063fdcd4bdc17d995f658dcbc178cce352ef84d5eb63d6efab41f8cd39ecc98",
+   "size": 114820,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/f063fdcd4bdc17d9_f70.webp"
   },
   {
    "path": "art/html/img/cine/f71.jpg",
@@ -74027,10 +74483,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/1f192b1a0745efab_f71.jpg"
   },
   {
+   "path": "art/html/img/cine/f71.webp",
+   "sha256": "c139ae498138b0249b59e59c760c559c057cf75fbe085f174618ff1004355258",
+   "size": 130216,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c139ae498138b024_f71.webp"
+  },
+  {
    "path": "art/html/img/cine/f72.jpg",
    "sha256": "15d6cae35051b3cbb906cae647e79a1da727a5fa2a09cc1c9036d1f5322b4f24",
    "size": 201635,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/15d6cae35051b3cb_f72.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f72.webp",
+   "sha256": "c469ca4451c09ddd91e1f81d8145ccce67eefeae63092831362c987d761b7266",
+   "size": 146378,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c469ca4451c09ddd_f72.webp"
   },
   {
    "path": "art/html/img/cine/f73.jpg",
@@ -74039,10 +74507,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/81a710b43d0c6f50_f73.jpg"
   },
   {
+   "path": "art/html/img/cine/f73.webp",
+   "sha256": "7579993bfd8873135b40cddcaf6fb2a1f6e947641ea372b8cc082cf22df040b1",
+   "size": 166408,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/7579993bfd887313_f73.webp"
+  },
+  {
    "path": "art/html/img/cine/f74.jpg",
    "sha256": "3ceba9b9b262d7f9eb43164b4018dc1e23f004264ebcf3cbd21accc80d70234f",
    "size": 240664,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/3ceba9b9b262d7f9_f74.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f74.webp",
+   "sha256": "a93a2551c1a5a558b24ffa0654579f7d61e428010ff478bab57256fda55d2853",
+   "size": 177670,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a93a2551c1a5a558_f74.webp"
   },
   {
    "path": "art/html/img/cine/f75.jpg",
@@ -74051,10 +74531,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/25647fcb1b88c6ed_f75.jpg"
   },
   {
+   "path": "art/html/img/cine/f75.webp",
+   "sha256": "cadac23ba9f903f5ff4e739f59376126dd85cdf854e9e6f191746aede419e9f7",
+   "size": 172192,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/cadac23ba9f903f5_f75.webp"
+  },
+  {
    "path": "art/html/img/cine/f76.jpg",
    "sha256": "db3766d6a26d128e3246d322e6319812bb61ef8c9e2caef343e98007e0e2cb07",
    "size": 218495,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/db3766d6a26d128e_f76.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f76.webp",
+   "sha256": "4273a43800cceabd3cf53100afa1bb3a89421d08e06357927f66b1f54acd1196",
+   "size": 158874,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/4273a43800cceabd_f76.webp"
   },
   {
    "path": "art/html/img/cine/f77.jpg",
@@ -74063,10 +74555,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/1ba6f143732aa0b6_f77.jpg"
   },
   {
+   "path": "art/html/img/cine/f77.webp",
+   "sha256": "65dd3f47f2acdbe994752932303a91b2e8cb36bf37e4bde437dd9112077e76b3",
+   "size": 148832,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/65dd3f47f2acdbe9_f77.webp"
+  },
+  {
    "path": "art/html/img/cine/f78.jpg",
    "sha256": "b2cf7bf84b1d7c6a64a0615c90fb52da5849d6caf448b2d613b6ed4f87431096",
    "size": 203747,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/b2cf7bf84b1d7c6a_f78.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f78.webp",
+   "sha256": "c51451ed615d3bf232aef4ce201b98ead58547a27464be807af20f80a37ef4bf",
+   "size": 143640,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/c51451ed615d3bf2_f78.webp"
   },
   {
    "path": "art/html/img/cine/f79.jpg",
@@ -74075,10 +74579,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f13160f521300102_f79.jpg"
   },
   {
+   "path": "art/html/img/cine/f79.webp",
+   "sha256": "f6a484bcd4c91e01630e83ca94c44a453bd55a6ab99b0bc37febb751796267d8",
+   "size": 139082,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/f6a484bcd4c91e01_f79.webp"
+  },
+  {
    "path": "art/html/img/cine/f80.jpg",
    "sha256": "b837e1ba2d97696db98185d9136fbd13fb598c287edb4b4bc8eba8609414163e",
    "size": 193459,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/b837e1ba2d97696d_f80.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f80.webp",
+   "sha256": "26fa24457caae432b9db2c2fe0076408f7895ec356db0513ff18bb89b89722d3",
+   "size": 133512,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/26fa24457caae432_f80.webp"
   },
   {
    "path": "art/html/img/cine/f81.jpg",
@@ -74087,10 +74603,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f524a3494d4e16e3_f81.jpg"
   },
   {
+   "path": "art/html/img/cine/f81.webp",
+   "sha256": "bb31e81b62b6e6c010929d182150fc1dcd295e83e763fd5583672f88635d7da9",
+   "size": 131156,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/bb31e81b62b6e6c0_f81.webp"
+  },
+  {
    "path": "art/html/img/cine/f82.jpg",
    "sha256": "5c3e008df5296d24886a5940b28738e4801310587dd2014532de8553ef2d910d",
    "size": 196148,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5c3e008df5296d24_f82.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f82.webp",
+   "sha256": "77a86429b8c5400665c74817c956e2fffbc7659ec97bdf72f15374f04afc899d",
+   "size": 137580,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/77a86429b8c54006_f82.webp"
   },
   {
    "path": "art/html/img/cine/f83.jpg",
@@ -74099,10 +74627,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/be7e73df74095c7c_f83.jpg"
   },
   {
+   "path": "art/html/img/cine/f83.webp",
+   "sha256": "f605b0f524f1b2b1d797c6db8f5137ebd0a17779141c22e964fcf999668e7998",
+   "size": 147728,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/f605b0f524f1b2b1_f83.webp"
+  },
+  {
    "path": "art/html/img/cine/f84.jpg",
    "sha256": "f73fde8bc199c6afa84618d0f567db17be8194726a16e8e441e9c8cbbab11bba",
    "size": 217491,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f73fde8bc199c6af_f84.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f84.webp",
+   "sha256": "e21615036257080031b23f4cb21b96077247f3c77d1f292073385928167ec9b5",
+   "size": 153826,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/e216150362570800_f84.webp"
   },
   {
    "path": "art/html/img/cine/f85.jpg",
@@ -74111,10 +74651,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/083295ba94768841_f85.jpg"
   },
   {
+   "path": "art/html/img/cine/f85.webp",
+   "sha256": "00b265c009b6157efe14a9064af6be92a699245e81e163f6f53a353e4865c231",
+   "size": 157852,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/00b265c009b6157e_f85.webp"
+  },
+  {
    "path": "art/html/img/cine/f86.jpg",
    "sha256": "38a3d8888368ec51db7a746b33aaf98d735fa81ccd529707d7f7498db59dd40e",
    "size": 218968,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/38a3d8888368ec51_f86.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f86.webp",
+   "sha256": "cbcdf45003fb20d5ee7ab786919fcff440af44b2d7771fd6621512a895e4ee89",
+   "size": 156858,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/cbcdf45003fb20d5_f86.webp"
   },
   {
    "path": "art/html/img/cine/f87.jpg",
@@ -74123,10 +74675,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/02b2fe44196d435a_f87.jpg"
   },
   {
+   "path": "art/html/img/cine/f87.webp",
+   "sha256": "a4a525254127bddc3ba567093b2c85bc31b36c68f1a47465c1ad5ea34350ffc3",
+   "size": 150696,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a4a525254127bddc_f87.webp"
+  },
+  {
    "path": "art/html/img/cine/f88.jpg",
    "sha256": "f5328142f151d2919c17e03930d985f7df241e458c59599f41e40ad2eccb1145",
    "size": 210727,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f5328142f151d291_f88.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f88.webp",
+   "sha256": "d44bc616dde1f52041696c0fd58f232559529729c38cca2a372b6841665d0e53",
+   "size": 149934,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d44bc616dde1f520_f88.webp"
   },
   {
    "path": "art/html/img/cine/f89.jpg",
@@ -74135,10 +74699,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/000609c4ee4f2644_f89.jpg"
   },
   {
+   "path": "art/html/img/cine/f89.webp",
+   "sha256": "25e7a2818d341a5cfe8cb41372fa0d8ec767716708ea2df1dd66037238af16a6",
+   "size": 143278,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/25e7a2818d341a5c_f89.webp"
+  },
+  {
    "path": "art/html/img/cine/f90.jpg",
    "sha256": "d1204b51f7f4fc567c5338aac86a25876514ad06c18beda77d0927be39299bce",
    "size": 199752,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/d1204b51f7f4fc56_f90.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f90.webp",
+   "sha256": "a58830d0134af2bfb6486eccb43e7054ca77bdbd84126d9def968c8e1a0038ed",
+   "size": 140452,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a58830d0134af2bf_f90.webp"
   },
   {
    "path": "art/html/img/cine/f91.jpg",
@@ -74147,10 +74723,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/b0d38efa7da9d454_f91.jpg"
   },
   {
+   "path": "art/html/img/cine/f91.webp",
+   "sha256": "d0303a09cbc9b40c1f76e6616f82d73dfe5bd90781bf46863c0fc35c34c84fa3",
+   "size": 141898,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d0303a09cbc9b40c_f91.webp"
+  },
+  {
    "path": "art/html/img/cine/f92.jpg",
    "sha256": "931b1dbbebaeb1589aa4bc047db6ca23d713d182717a37d34b9855a00dd73c41",
    "size": 204476,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/931b1dbbebaeb158_f92.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f92.webp",
+   "sha256": "12ca6b4ecb2e8685158b20a19d5c96589d972e74725d7acc7c29876c08e4a496",
+   "size": 145524,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/12ca6b4ecb2e8685_f92.webp"
   },
   {
    "path": "art/html/img/cine/f93.jpg",
@@ -74159,10 +74747,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/8d1fd84dd3a80356_f93.jpg"
   },
   {
+   "path": "art/html/img/cine/f93.webp",
+   "sha256": "72871c96fa2223ee6e55050719cd5cda60be0be8de4f5ea6a01956d3fb5ba84f",
+   "size": 145970,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/72871c96fa2223ee_f93.webp"
+  },
+  {
    "path": "art/html/img/cine/f94.jpg",
    "sha256": "5db00554da082f549d42609fbf1902b2d9dbe7f826163266a20abff1c11defa9",
    "size": 206722,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/5db00554da082f54_f94.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f94.webp",
+   "sha256": "fbcbd314adb7f7b7fd2945c5be2e3d712ca310bfdb550a667c614dfe57dccef5",
+   "size": 146384,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/fbcbd314adb7f7b7_f94.webp"
   },
   {
    "path": "art/html/img/cine/f95.jpg",
@@ -74171,10 +74771,22 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/767f022f59cba6ce_f95.jpg"
   },
   {
+   "path": "art/html/img/cine/f95.webp",
+   "sha256": "3ecd7349294ee7f8552a75a80d0dd2df6ff9b786cff2bf2ec86952b1f55007d4",
+   "size": 143960,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/3ecd7349294ee7f8_f95.webp"
+  },
+  {
    "path": "art/html/img/cine/f96.jpg",
    "sha256": "faf2a36121313102930d883ed1f06b952d47d7bb3842525572a647558de19f08",
    "size": 203751,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/faf2a36121313102_f96.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f96.webp",
+   "sha256": "e73a5d2eb7027d2153e8ee4234cd364cff986a02bf326904e5498358fccd984d",
+   "size": 144402,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/e73a5d2eb7027d21_f96.webp"
   },
   {
    "path": "art/html/img/cine/f97.jpg",
@@ -74183,16 +74795,34 @@
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/f1244e49e399a7ba_f97.jpg"
   },
   {
+   "path": "art/html/img/cine/f97.webp",
+   "sha256": "6e2c513b02744749104c6819997643cbf27fd329e7c0fc706a6ec11699d5a4ac",
+   "size": 144818,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/6e2c513b02744749_f97.webp"
+  },
+  {
    "path": "art/html/img/cine/f98.jpg",
    "sha256": "4ee048611be5a4f98b462da6eca7821cae5f0095d471104f26d5d57f4c9bf67e",
    "size": 210705,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/4ee048611be5a4f9_f98.jpg"
   },
   {
+   "path": "art/html/img/cine/f98.webp",
+   "sha256": "f01c06cf0dd300c60ab7647a82a24f0fa863d6175b6a6dd2f3f27962bb7a2f4f",
+   "size": 149870,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/f01c06cf0dd300c6_f98.webp"
+  },
+  {
    "path": "art/html/img/cine/f99.jpg",
    "sha256": "983604069ed3ae52cac5b9ce392d9593c21729391181dce62d7e3b6f85d7f9d0",
    "size": 215650,
    "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/983604069ed3ae52_f99.jpg"
+  },
+  {
+   "path": "art/html/img/cine/f99.webp",
+   "sha256": "67bee613af271dd4a9cb7426b41613c773b8a0b322aa82f55be72521546e1e6d",
+   "size": 154180,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/67bee613af271dd4_f99.webp"
   },
   {
    "path": "art/html/img/cine/idle.webp",
@@ -74202,39 +74832,9 @@
   },
   {
    "path": "art/html/img/cine/meta.json",
-   "sha256": "a1f1fc1059ebfd596a426f45e75582bb2c2845ff969e6a3aefc69592fc060d6d",
-   "size": 1163,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026111501/a1f1fc1059ebfd59_meta.json"
-  },
-  {
-   "path": "art/html/img/hero_2560.png",
-   "sha256": "4ae768910439e80012213bf498841f432c6d1400f26ebb9e2d5675af50eabefe",
-   "size": 986422
-  },
-  {
-   "path": "art/html/img/hero_alpha.png",
-   "sha256": "3b09f7bd426bb67f53a0e42d63187a74a08ef965ce7235e5aedaa705a5408c6f",
-   "size": 401842
-  },
-  {
-   "path": "art/html/img/hero_cannon_2560.png",
-   "sha256": "2d9a6ce4346c5dd6eb026a28420b22ef461efb639b5cbaa5a5c552ef2eb2f8d0",
-   "size": 2565479
-  },
-  {
-   "path": "art/html/img/hero_cannon_alpha.png",
-   "sha256": "a83a912a49fbc8e9d976367fc18f38bd99c5aba75a543acae8312e6a089bfc6d",
-   "size": 683643
-  },
-  {
-   "path": "art/html/img/hero_cannon_plate.png",
-   "sha256": "34e7f53b71dfe8ce9fac2722ec0173903ba79b82131e55e479a8b0398c26087b",
-   "size": 2129334
-  },
-  {
-   "path": "art/html/img/hero_close_alpha.png",
-   "sha256": "210535072d64c2a4e642afa5fdec218aa3e5d4f337dc16225d3feafbbdc5526a",
-   "size": 950961
+   "sha256": "bbacddf2901bad3151df921927c6a7063e0bff9427605a5f5dfdfabf2ba5d31d",
+   "size": 1134,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/bbacddf2901bad31_meta.json"
   },
   {
    "path": "art/html/img/hero_skill.jpg",
@@ -74247,9 +74847,21 @@
    "size": 43559
   },
   {
+   "path": "art/html/img/server_omegamon_r174.webp",
+   "sha256": "330ac2797f17810fe99470b27043ca771dcd00e147f71acef923dfb7e4b1d30c",
+   "size": 125576,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/330ac2797f17810f_server_omegamon_r174.webp"
+  },
+  {
    "path": "art/html/img/thumbs/c1.png",
    "sha256": "b432a3db736e0187d7ee55b73e8736a7f55c3ac4ad0bab6aa59c73576bf757ff",
    "size": 33495
+  },
+  {
+   "path": "art/html/img/thumbs/c1.webp",
+   "sha256": "48846b48159325dcce2619c6268b39389c8be1591bfc902de3ff868d60563ed4",
+   "size": 24280,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/48846b48159325dc_c1.webp"
   },
   {
    "path": "art/html/img/thumbs/c2.png",
@@ -74257,9 +74869,21 @@
    "size": 44355
   },
   {
+   "path": "art/html/img/thumbs/c2.webp",
+   "sha256": "b16beaca283596fd14c90f5f11bdffa14f5fd25c433a946b85148923ed1990c9",
+   "size": 32344,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/b16beaca283596fd_c2.webp"
+  },
+  {
    "path": "art/html/img/thumbs/c3.png",
    "sha256": "34850f684ee9d8a30ae7dbece9505e9fb270ff3a1d0aedcafe4a7a8c19d8a1a1",
    "size": 27621
+  },
+  {
+   "path": "art/html/img/thumbs/c3.webp",
+   "sha256": "cf024a9e5d21df31c211b31e88bd4ff52182622fe37a28333e0e63ac7f7d72c1",
+   "size": 19902,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/cf024a9e5d21df31_c3.webp"
   },
   {
    "path": "art/html/img/thumbs/c4.png",
@@ -74267,9 +74891,21 @@
    "size": 55140
   },
   {
+   "path": "art/html/img/thumbs/c4.webp",
+   "sha256": "0faa33cfe37c4c7ed17894c52326ac9ad8ccb20f6f79e39b3c4107c84baa8427",
+   "size": 40560,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/0faa33cfe37c4c7e_c4.webp"
+  },
+  {
    "path": "art/html/img/thumbs/c5.png",
    "sha256": "09443c71df01faa78617f6170a15aa30f22ec7d71ce5fe1ec4fa3f81e1e6b4a1",
    "size": 78670
+  },
+  {
+   "path": "art/html/img/thumbs/c5.webp",
+   "sha256": "326ab7e5fa0f7cb448e778f81bdbbc7f2159c7c5dfd6195d6a79e429229eb76d",
+   "size": 59616,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/326ab7e5fa0f7cb4_c5.webp"
   },
   {
    "path": "art/html/img/thumbs/n1.png",
@@ -74297,27 +74933,123 @@
    "size": 12542
   },
   {
+   "path": "art/html/img/thumbs/still/unity.png",
+   "sha256": "d09c3c0ea99201b2cf1118f1731d92438e2bf0c6af2c79bcec15d96d7243a003",
+   "size": 53197,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d09c3c0ea99201b2_unity.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026110906.png",
+   "sha256": "7d5465908cace54afcc732c8cd470a17625e261828907189d2983bea483f2ab6",
+   "size": 53365,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/7d5465908cace54a_update-2026110906.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026111501.png",
+   "sha256": "f5775fd1b02964bc09ee13049a264e12690528610da9c5dda01e5a9bd82ece6a",
+   "size": 43037,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/f5775fd1b02964bc_update-2026111501.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026111901.png",
+   "sha256": "d34b13799aecaffc822895eaa17fcd9b917f72ea3c06d3de442f50f4394d2131",
+   "size": 56732,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d34b13799aecaffc_update-2026111901.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026112001.png",
+   "sha256": "90972b37f807061de12be179cab8a4b1c94d8c6e52447a4bce4fc632851914b2",
+   "size": 54363,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/90972b37f807061d_update-2026112001.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026112101.png",
+   "sha256": "5ea578722bddf31df1e5e9b5bfd8b0b767edeec9a9f2b281c0a270c015118797",
+   "size": 50318,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/5ea578722bddf31d_update-2026112101.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026112401.png",
+   "sha256": "ff21b678a8c32d41cb8761b66fbad85df3fe497bf18256a3bba560e5c8d3a4bd",
+   "size": 41001,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/ff21b678a8c32d41_update-2026112401.png"
+  },
+  {
+   "path": "art/html/img/thumbs/still/update-2026112402.png",
+   "sha256": "1546524932e5c7737279858c90c06522a4286459863adfdad0f836b26831b334",
+   "size": 41721,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/1546524932e5c773_update-2026112402.png"
+  },
+  {
+   "path": "art/html/img/thumbs/unity.webp",
+   "sha256": "d9f6c5208b0c73d23741aff71b9969f1786aa44e12fff55aa0da9d8250409cd5",
+   "size": 273518,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/d9f6c5208b0c73d2_unity.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026110906.webp",
+   "sha256": "afd97b3490a4765f8cae7855802a6633a8d39a868ca1d33ed84f92739062b852",
+   "size": 291368,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/afd97b3490a4765f_update-2026110906.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026111501.webp",
+   "sha256": "bf1327af2d7abb8a48ceb61d00085f60f71e004f9a75a87d0786099d85603689",
+   "size": 228498,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/bf1327af2d7abb8a_update-2026111501.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026111901.webp",
+   "sha256": "1c77cdc87aa7d95982c2620681c694a7bf76841de84d5fbf998dcaa071c6db31",
+   "size": 242688,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/1c77cdc87aa7d959_update-2026111901.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026112001.webp",
+   "sha256": "0facfb3c4c9a6ae5509674c0dbb057524d53590dcc5daf2a839a12e07cdf3a79",
+   "size": 217558,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/0facfb3c4c9a6ae5_update-2026112001.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026112101.webp",
+   "sha256": "70d67b06be3bd7cf7a36ce71de46888aa8b469ed35901a30dc0021b8ea820d97",
+   "size": 302448,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/70d67b06be3bd7cf_update-2026112101.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026112401.webp",
+   "sha256": "a9aebe2b525fb2c5bab1cd972782f285c92869a30b871d35843a8e731dc7890b",
+   "size": 240522,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/a9aebe2b525fb2c5_update-2026112401.webp"
+  },
+  {
+   "path": "art/html/img/thumbs/update-2026112402.webp",
+   "sha256": "5d6aa9785c4c2a7b901c46ec538482213266be4684843ec6e9b1600bb545d5c6",
+   "size": 251636,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/5d6aa9785c4c2a7b_update-2026112402.webp"
+  },
+  {
    "path": "art/html/index.html",
-   "sha256": "271d80c7980ced3211147bb3d3cc6ab38936c0ae134ded0fa6627cd4d48e9fd1",
-   "size": 482873,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/271d80c7980ced32_index.html"
+   "sha256": "36bb0c59892980068e48a90cea4248e52b89966159aaefd62b6ec8f69da6ea46",
+   "size": 540952,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/36bb0c5989298006_index.html"
   },
   {
    "path": "art/html/prod.css",
-   "sha256": "a3db90e5b3b7a61754b1c700c5aff9d86d56c1b34bad65412b8f18de167dc7b3",
-   "size": 4484,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/a3db90e5b3b7a617_prod.css"
+   "sha256": "25b7939eb9accd406da0b45c4ac5498de26ea9bff6fd3c40bd569c70185a2fc6",
+   "size": 7299,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/25b7939eb9accd40_prod.css"
   },
   {
    "path": "art/html/prod.js",
-   "sha256": "0528b1bece03f3e559acb89814d562f25073d8d04ba2bca677252fdd9bac8c38",
-   "size": 56367,
-   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112401/0528b1bece03f3e5_prod.js"
+   "sha256": "14da02d277d63b3b12824147ccaf7ad3b06d4b411dc8256bc53c853038f326b9",
+   "size": 78433,
+   "url": "https://github.com/Reapper-Stack/terminus-launcher/releases/download/v2026112501/14da02d277d63b3b_prod.js"
   }
  ],
  "minimumVersion": 2026110906,
  "patches": [],
  "playExe": "DigimonTerminus.exe",
  "schema": "dso-launcher-manifest/1",
- "version": 2026112402
+ "version": 2026112501
 }
