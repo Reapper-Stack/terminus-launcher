@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "update-2026112701",
+      "date": "2026-11-27",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Icons, skills, quests and a language choice",
+        "pt": "Ícones, skills, missões e escolha de língua"
+      },
+      "body": {
+        "en": "Items that had no icon, or another item's icon, now show their own, with the grade frame. About 600 skills, buffs and item stat lines that were missing are back, and skill tooltips show their effects. NPCs offer the quests they were missing, and only the ones you can take. The Data Trade NPC can now swap upgrades and evolutions. Evolution forms no longer show as boxes and maps look closer to the original. In Options you can choose English or Portuguese for the interface. On the server, many quest items now drop and quest summon cards call their boss. This update is about 3.7 GB.",
+        "pt": "Os itens que não tinham ícone, ou tinham o de outro item, mostram agora o seu, com a moldura do grau. Voltaram cerca de 600 skills, buffs e atributos de itens em falta, e as dicas das skills mostram os efeitos. Os NPCs oferecem as missões que faltavam, e só as que podes aceitar. O NPC de Troca de Dados já troca upgrades e evoluções. As evoluções já não aparecem como caixas e os mapas estão mais fiéis. Nas Opções podes escolher inglês ou português para a interface. No servidor, muitos itens de missão já caem e as cartas de invocação chamam o seu boss. Esta atualização tem cerca de 3,7 GB."
+      },
+      "lede": {
+        "en": "Every item has its own icon, NPCs offer all their quests, and the game speaks English or Portuguese.",
+        "pt": "Cada item tem o seu ícone, os NPCs oferecem todas as missões e o jogo fala inglês ou português."
+      }
+    },
+    {
       "id": "update-2026112503",
       "date": "2026-11-25",
       "tag": "client",
@@ -295,6 +313,153 @@
   ],
   "notes": [
     {
+      "id": "update-2026112701",
+      "version": "2701",
+      "date": "2026-11-27",
+      "meta": {
+        "en": "15 CHANGES · GAME UPDATE 2026112701",
+        "pt": "15 ALTERAÇÕES · ATUALIZAÇÃO 2026112701"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "ICONS",
+              "kind": "fix",
+              "text": {
+                "en": "Every item now shows its own icon (about 3,500 had none or another item's), in bags, shops and tooltips, with its grade frame.",
+                "pt": "Todos os itens mostram agora o seu ícone (cerca de 3 500 não tinham ou tinham o de outro), no inventário, nas lojas e nas dicas, com a moldura do grau."
+              }
+            },
+            {
+              "tag": "SKILLS",
+              "kind": "new",
+              "text": {
+                "en": "About 600 missing skills and 170 buffs added, with names and icons; 430 more items show their stat lines.",
+                "pt": "Cerca de 600 skills e 170 buffs que faltavam, com nomes e ícones; mais 430 itens mostram as linhas de atributos."
+              }
+            },
+            {
+              "tag": "SKILLS",
+              "kind": "chg",
+              "text": {
+                "en": "Skill tooltips show the skill's effect lines and its nature, as in the original game.",
+                "pt": "As dicas das skills mostram as linhas de efeito e a natureza da skill, como no jogo original."
+              }
+            },
+            {
+              "tag": "QUESTS",
+              "kind": "fix",
+              "text": {
+                "en": "NPCs offer about 940 quests they were missing, with English titles, and list only the quests you can take.",
+                "pt": "Os NPCs oferecem cerca de 940 missões que faltavam, com títulos em inglês, e mostram só as que podes aceitar."
+              }
+            },
+            {
+              "tag": "DATA TRADE",
+              "kind": "new",
+              "text": {
+                "en": "Data Trade NPC: the upgrade and evolution pages now swap them between two of your Digimon.",
+                "pt": "NPC de Troca de Dados: as páginas de upgrade e de evolução já os trocam entre dois Digimon teus."
+              }
+            },
+            {
+              "tag": "LANGUAGE",
+              "kind": "new",
+              "text": {
+                "en": "In Options, Interface tab, choose English or Portuguese. Open windows change on the next start. Item, skill and quest text stays in English.",
+                "pt": "Nas Opções, separador Interface, escolhe inglês ou português. As janelas mudam no próximo arranque. Textos de itens, skills e missões ficam em inglês."
+              }
+            },
+            {
+              "tag": "DIGIMON",
+              "kind": "fix",
+              "text": {
+                "en": "Renaming a Digimon with a rename card now works: the OK button sends it and the new name stays.",
+                "pt": "Mudar o nome de um Digimon com a carta de nome já funciona: o botão OK envia e o nome novo fica."
+              }
+            },
+            {
+              "tag": "BODIES",
+              "kind": "fix",
+              "text": {
+                "en": "Evolution forms that drew as boxes now show their real bodies, more of the original animations are back, and more combat effects show.",
+                "pt": "As formas de evolução que apareciam como caixas já mostram o corpo real, voltaram mais animações originais e há mais efeitos de combate."
+              }
+            },
+            {
+              "tag": "MAPS",
+              "kind": "chg",
+              "text": {
+                "en": "Maps look closer to the original: rain and snow, spinning skies, terrain detail, lights and portal effects.",
+                "pt": "Os mapas estão mais próximos do original: chuva e neve, céus que giram, detalhe do terreno, luzes e efeitos dos portais."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "GUILD",
+              "kind": "fix",
+              "text": {
+                "en": "Handing over guild leadership no longer leaves two guild masters.",
+                "pt": "Passar a liderança da guilda já não deixa dois mestres na guilda."
+              }
+            },
+            {
+              "tag": "QUEST ITEMS",
+              "kind": "fix",
+              "text": {
+                "en": "174 quest items that no monster dropped now drop from the monsters their quests name, so about 125 more quests can be finished.",
+                "pt": "174 itens de missão que nenhum monstro largava já caem dos monstros que as missões indicam: cerca de 125 missões a mais podem ser acabadas."
+              }
+            },
+            {
+              "tag": "MONSTERS",
+              "kind": "fix",
+              "text": {
+                "en": "About 1,260 monsters that gave no EXP now do, and 25 missing monster groups (294 monsters) are back on their maps.",
+                "pt": "Cerca de 1 260 monstros que não davam EXP já dão, e 25 grupos de monstros que faltavam (294 monstros) voltaram aos mapas."
+              }
+            },
+            {
+              "tag": "SUMMON CARDS",
+              "kind": "fix",
+              "text": {
+                "en": "24 quest summon cards now call their boss (for example Ordinemon and Barbamon).",
+                "pt": "24 cartas de invocação de missões já chamam o seu boss (por exemplo Ordinemon e Barbamon)."
+              }
+            },
+            {
+              "tag": "DOORS",
+              "kind": "fix",
+              "text": {
+                "en": "The doors to maps 23 and 24 of the Seven Devils work both ways.",
+                "pt": "As portas dos mapas 23 e 24 dos Seven Devils funcionam nos dois sentidos."
+              }
+            },
+            {
+              "tag": "DUNGEONS",
+              "kind": "fix",
+              "text": {
+                "en": "Entering a dungeon nobody was in no longer leaves you stuck at the door.",
+                "pt": "Entrar numa masmorra onde não estava ninguém já não te deixa preso à porta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "update-2026112503",
       "version": "2503",
       "date": "2026-11-25",
@@ -350,65 +515,6 @@
               "text": {
                 "en": "The game window can now be resized from its edges, maximised (also by double-clicking the bar) and snapped to half of the screen.",
                 "pt": "A janela do jogo pode agora ser redimensionada pelas bordas, maximizada (também com um duplo clique na barra) e encostada a metade do ecrã."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026112501",
-      "version": "2501",
-      "date": "2026-11-25",
-      "meta": {
-        "en": "5 CHANGES · GAME UPDATE 2026112501",
-        "pt": "5 ALTERAÇÕES · ATUALIZAÇÃO 2026112501"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "LAUNCHER",
-            "pt": "LAUNCHER"
-          },
-          "items": [
-            {
-              "tag": "UPDATES",
-              "kind": "fix",
-              "text": {
-                "en": "Safer updates: an update cut off half-way is put right on the next start, and a stalled download retries by itself.",
-                "pt": "Atualizações mais seguras: uma atualização cortada a meio é reparada no arranque seguinte, e uma transferência parada tenta de novo sozinha."
-              }
-            },
-            {
-              "tag": "CANCEL",
-              "kind": "new",
-              "text": {
-                "en": "You can now cancel a download with CANCEL.",
-                "pt": "Já podes cancelar uma transferência com CANCELAR."
-              }
-            },
-            {
-              "tag": "ERROR REPORT",
-              "kind": "new",
-              "text": {
-                "en": "Support has an error report button: it gathers the launcher and game logs, with your account details hidden.",
-                "pt": "O Suporte tem um botão de relatório de erro: junta os registos do launcher e do jogo, com os dados da tua conta escondidos."
-              }
-            },
-            {
-              "tag": "TRAY",
-              "kind": "chg",
-              "text": {
-                "en": "The first time the launcher goes to the tray, it tells you where it is and how to close it.",
-                "pt": "Na primeira vez que o launcher vai para a área de notificação, diz-te onde está e como o fechar."
-              }
-            },
-            {
-              "tag": "LOOK",
-              "kind": "new",
-              "text": {
-                "en": "New look: crests on the news, a new server picture, a welcome card on the first start and slightly larger text.",
-                "pt": "Visual novo: brasões nas notícias, uma nova imagem do servidor, um cartão de boas-vindas no primeiro arranque e texto um pouco maior."
               }
             }
           ]
