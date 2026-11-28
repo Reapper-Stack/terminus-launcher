@@ -5,6 +5,24 @@
   },
   "items": [
     {
+      "id": "update-2026112801",
+      "date": "2026-11-28",
+      "tag": "client",
+      "thumb": "img/thumbs/n5.png",
+      "title": {
+        "en": "Quest guide, photo mode and Membership",
+        "pt": "Guia de missões, modo foto e Membership"
+      },
+      "body": {
+        "en": "A quest tracker shows your goals, and one key walks you to the next one. The minimap follows your character exactly. Photo mode (F11) hides the interface, with a free camera and filters. The encyclopedia shows each Digimon in 3D. Bag, shops and warehouse get search, filters, sorting and a junk mark you sell in one click. A Membership button opens remote services, and new windows arrived, such as raid ranking. Options add a frame limit, an outline switch and an optional Remaster look. Login and tamer screens were tuned. This update is about 2.5 GB.",
+        "pt": "Um painel mostra os objetivos das missões, e uma tecla leva-te até ao próximo. O minimapa segue a tua personagem com precisão. O modo foto (F11) esconde a interface, com câmara livre e filtros. A enciclopédia mostra cada Digimon em 3D. Inventário, lojas e armazém ganham pesquisa, filtros, ordenação e lixo que vendes num clique. Um botão de Membership abre serviços à distância, e chegaram janelas novas, como o ranking de raids. As Opções trazem limite de FPS, contorno on/off e o visual Remaster opcional. Os ecrãs de login e de tamer foram afinados. Esta atualização tem cerca de 2,5 GB."
+      },
+      "lede": {
+        "en": "Walk to your quest goal with one key, take photos, and see Digimon turn in 3D in the encyclopedia.",
+        "pt": "Vai até ao objetivo da missão com uma tecla, tira fotos e vê os Digimon a rodar em 3D na enciclopédia."
+      }
+    },
+    {
       "id": "update-2026112701",
       "date": "2026-11-27",
       "tag": "client",
@@ -313,6 +331,137 @@
   ],
   "notes": [
     {
+      "id": "update-2026112801",
+      "version": "2801",
+      "date": "2026-11-28",
+      "meta": {
+        "en": "13 CHANGES · GAME UPDATE 2026112801",
+        "pt": "13 ALTERAÇÕES · ATUALIZAÇÃO 2026112801"
+      },
+      "groups": [
+        {
+          "title": {
+            "en": "CLIENT",
+            "pt": "CLIENTE"
+          },
+          "items": [
+            {
+              "tag": "QUESTS",
+              "kind": "new",
+              "text": {
+                "en": "Quest tracker on screen, and a key that walks you to the current quest goal.",
+                "pt": "Painel de missões no ecrã e uma tecla que te leva a pé até ao objetivo da missão."
+              }
+            },
+            {
+              "tag": "MAPS",
+              "kind": "fix",
+              "text": {
+                "en": "The minimap and the map window follow your character exactly and use each map's real size.",
+                "pt": "O minimapa e a janela do mapa seguem a tua personagem com precisão e usam o tamanho real de cada mapa."
+              }
+            },
+            {
+              "tag": "PHOTO",
+              "kind": "new",
+              "text": {
+                "en": "Photo mode (F11): hides the interface, free camera, None / Sepia / B&W filters; photos go to Documents\\Terminus\\Screenshots.",
+                "pt": "Modo foto (F11): esconde a interface, câmara livre, filtros Normal / Sépia / P&B; as fotos vão para Documentos\\Terminus\\Screenshots."
+              }
+            },
+            {
+              "tag": "ENCYCLOPEDIA",
+              "kind": "new",
+              "text": {
+                "en": "The encyclopedia shows the Digimon in 3D beside the book, and says if you ever owned it.",
+                "pt": "A enciclopédia mostra o Digimon em 3D ao lado do livro e diz se já o tiveste."
+              }
+            },
+            {
+              "tag": "BAG",
+              "kind": "new",
+              "text": {
+                "en": "Bag and warehouse: search, filters and sorting. Mark stacks as junk and sell them all at any store.",
+                "pt": "Inventário e armazém: pesquisa, filtros e ordenação. Marca itens como lixo e vende-os todos em qualquer loja."
+              }
+            },
+            {
+              "tag": "MEMBERSHIP",
+              "kind": "new",
+              "text": {
+                "en": "Membership button: warehouse, scan / return, archive, hatch, equipment and jump from anywhere (not in battle or dungeons).",
+                "pt": "Botão de Membership: armazém, scan / devolver, arquivo, chocar, equipamento e salto à distância (não em combate nem em dungeons)."
+              }
+            },
+            {
+              "tag": "WINDOWS",
+              "kind": "new",
+              "text": {
+                "en": "New windows: raid ranking, Equipment system (with recharge), anti-macro check and more.",
+                "pt": "Janelas novas: ranking de raids, sistema de Equipamento (com recarga), verificação anti-macro e mais."
+              }
+            },
+            {
+              "tag": "GUILD",
+              "kind": "new",
+              "text": {
+                "en": "Union door, reward tab and hot-time tab now open in the client.",
+                "pt": "A porta da Union, o separador de recompensas e o de hot-time já abrem no cliente."
+              }
+            },
+            {
+              "tag": "OPTIONS",
+              "kind": "new",
+              "text": {
+                "en": "Graphic options: frame limit (30 to 165 or unlimited), cartoon outline on/off, and the optional Remaster look (off by default).",
+                "pt": "Opções gráficas: limite de FPS (30 a 165 ou sem limite), contorno cartoon ligado/desligado e o visual Remaster opcional (desligado de início)."
+              }
+            },
+            {
+              "tag": "LOGIN",
+              "kind": "chg",
+              "text": {
+                "en": "Login, tamer select and tamer creation screens tuned, in English or Portuguese.",
+                "pt": "Ecrãs de login, escolha e criação de tamer afinados, em inglês ou português."
+              }
+            },
+            {
+              "tag": "BODIES",
+              "kind": "fix",
+              "text": {
+                "en": "More Digimon bodies fixed, story-scene NPCs drawn grey as in the original, and the shop NPC close-up no longer turns pink.",
+                "pt": "Mais corpos de Digimon corrigidos, NPCs das cenas de história a cinzento como no original, e o close-up do NPC da loja já não fica rosa."
+              }
+            },
+            {
+              "tag": "SKILLS",
+              "kind": "new",
+              "text": {
+                "en": "Memory-chip skills can now be learned.",
+                "pt": "As skills de memory chip já se podem aprender."
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "SERVER",
+            "pt": "SERVIDOR"
+          },
+          "items": [
+            {
+              "tag": "MAPS",
+              "kind": "fix",
+              "text": {
+                "en": "Changing maps is much faster on the server side (about 1.5 s down to 0.2 s).",
+                "pt": "Mudar de mapa é muito mais rápido do lado do servidor (de cerca de 1,5 s para 0,2 s)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "update-2026112701",
       "version": "2701",
       "date": "2026-11-27",
@@ -480,41 +629,6 @@
               "text": {
                 "en": "Windowed mode: the minimise, maximise and close buttons no longer show a Windows button when you hover over them.",
                 "pt": "Modo janela: os botões de minimizar, maximizar e fechar já não mostram um botão do Windows quando passas o rato por cima."
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "update-2026112502",
-      "version": "2502",
-      "date": "2026-11-25",
-      "meta": {
-        "en": "2 CHANGES · GAME UPDATE 2026112502",
-        "pt": "2 ALTERAÇÕES · ATUALIZAÇÃO 2026112502"
-      },
-      "groups": [
-        {
-          "title": {
-            "en": "CLIENT",
-            "pt": "CLIENTE"
-          },
-          "items": [
-            {
-              "tag": "WINDOW",
-              "kind": "new",
-              "text": {
-                "en": "In windowed mode: a new title bar with minimise, maximise and close, in the game's colours.",
-                "pt": "Em modo janela: uma barra de título nova com minimizar, maximizar e fechar, nas cores do jogo."
-              }
-            },
-            {
-              "tag": "WINDOW",
-              "kind": "new",
-              "text": {
-                "en": "The game window can now be resized from its edges, maximised (also by double-clicking the bar) and snapped to half of the screen.",
-                "pt": "A janela do jogo pode agora ser redimensionada pelas bordas, maximizada (também com um duplo clique na barra) e encostada a metade do ecrã."
               }
             }
           ]
